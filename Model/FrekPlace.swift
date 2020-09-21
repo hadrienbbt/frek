@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FrekPlace: Decodable, Encodable {
+class FrekPlace: Identifiable, Decodable, Encodable {
     let id: String
     let name: String
     let image: URL
@@ -25,7 +25,7 @@ class FrekPlace: Decodable, Encodable {
         self.spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
         self.fmi = crowd + spotsAvailable
         self.state = CrowdParser.findState(for: frekHTML)
-        CrowdParser.findChart(for: 7, in: frekHTML)
+        // CrowdParser.findChart(for: 7, in: frekHTML)
     }
     
     var description: String {

@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct FrekPlaceRow: View {
-    @ObservedObject var crowdFetcher: CrowdFetcher
-    @Binding var frekPlace: FrekPlace
-    var cache: ImageCache
+    var frekPlace: FrekPlace
+    let image: AsyncImage<Text>
     
     var body: some View {
         HStack {
-            AsyncImage(url: frekPlace.image, placeholder: Text("⏳"), cache: self.cache) { $0.resizable() }
-                .frame(width: 100, height: 100)
+            image
+                .frame(width: 70, height: 70)
                 .clipShape(Circle())
                 .overlay(
-                    Circle().stroke(Color.white, lineWidth: 4))
+                    Circle().stroke(Color.white, lineWidth: 2))
                 .shadow(radius: 10)
                 .padding()
             VStack(alignment: .leading) {
                 Text(frekPlace.name)
-                    .font(.title)
+                    .font(.headline)
                 Text(frekPlace.state ? "Ouvert" : "Fermé")
                     .font(.subheadline)
-                // Button("Log html", action: { print(crowdFetcher.htmlDataSource[frekPlace.id] ?? "No HTML") })
+                Text("FMI: \(frekPlace.fmi)")
+                    .font(.subheadline)
             }
             Spacer()
-            Text("\(frekPlace.crowd)/\(frekPlace.fmi)")
+            Text("\(frekPlace.crowd)")
+                .font(.title)
                 .padding()
         }
         

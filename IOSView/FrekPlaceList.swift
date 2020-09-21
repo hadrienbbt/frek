@@ -10,35 +10,26 @@ import SwiftUI
 struct FrekPlaceList: View {
     @ObservedObject var crowdFetcher: CrowdFetcher
     @Environment(\.imageCache) var cache: ImageCache
+    @State var refreshed = false
+    
+    func refresh() {
+        self.crowdFetcher.refresh()
+        refreshed = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            refreshed = false
+        }
+    }
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(crowdFetcher.frekPlaces.indices, id: \.description) { i in
-                    HStack {
-                        AsyncImage(url: self.crowdFetcher.frekPlaces[i].image, placeholder: Text("⏳"), cache: self.cache) { $0.resizable() }
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle().stroke(Color.white, lineWidth: 4))
-                            .shadow(radius: 10)
-                            .padding()
-                        VStack(alignment: .leading) {
-                            Text(self.crowdFetcher.frekPlaces[i].name)
-                                .font(.title)
-                            Text(self.crowdFetcher.frekPlaces[i].state ? "Ouvert" : "Fermé")
-                                .font(.subheadline)
-                        }
-                        Spacer()
-                        Text("\(self.crowdFetcher.frekPlaces[i].crowd)/\(self.crowdFetcher.frekPlaces[i].fmi)")
-                            .padding()
-                    }
-                }
+            List(crowdFetcher.frekPlaces.sorted(by: { $0.name < $1.name })) { frekPlace in
+                FrekPlaceRow(
+                    frekPlace: frekPlace,
+                    image: AsyncImage(url: frekPlace.image, placeholder: Text("⏳"), cache: self.cache) { $0.resizable() }
+                )
             }
             .navigationBarTitle(Text("Frek Places"))
-            .navigationBarItems(trailing:
-                Button("🔄 Refresh") { self.crowdFetcher.refresh() }
-            )
+            .navigationBarItems(trailing: Button(refreshed ? "✅ Refreshed" : "🔄 Refresh") { self.refresh() }).disabled(refreshed)
         }
     }
 }
