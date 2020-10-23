@@ -42,13 +42,18 @@ let FrekWebsiteSuffix = [
 ]
 
 class CrowdFetcher: ObservableObject {
-    
-    @Published var frekPlaces = [FrekPlace]()
-    
+        
+    @Published var frekPlaces: [FrekPlace] {
+        didSet {
+            ValueStore().frekPlaces = frekPlaces
+        }
+    }
+        
     var htmlGymDataSource = [String: String?]() // id -> html
     var htmlFrekDataSource = [String: String?]() // id -> html
     
     init() {
+        frekPlaces = ValueStore().frekPlaces
         fetchAll()
     }
     
@@ -87,8 +92,8 @@ class CrowdFetcher: ObservableObject {
         self.htmlGymDataSource[id] = gymHTML
         
         DispatchQueue.main.async {
-            if let frekplace = self.frekPlaces.first(where: { $0.id == id }) {
-                self.updateFrekPlace(frekplace, frekHTML)
+            if let index = self.frekPlaces.firstIndex(where: { $0.id == id }) {
+                self.updateFrekPlace(at: index, frekHTML)
             } else {
                 self.createFrekPlace(id, name, gymHTML, frekHTML)
             }
@@ -96,15 +101,26 @@ class CrowdFetcher: ObservableObject {
     }
     
     func createFrekPlace(_ id: String, _ name: String, _ gymHTML: String, _ frekHTML: String) {
-        self.frekPlaces.append(FrekPlace(id, name, gymHTML, frekHTML))
+        frekPlaces.append(FrekPlace(id, name, gymHTML, frekHTML))
     }
     
-    func updateFrekPlace(_ freakplace: FrekPlace, _ frekHTML: String) {
-        freakplace.crowd = CrowdParser.findCrowd(from: frekHTML)
-        freakplace.spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
-        freakplace.fmi = freakplace.crowd + freakplace.spotsAvailable
+    func updateFrekPlace(at index: Int, _ frekHTML: String) {
+        frekPlaces[index].crowd = CrowdParser.findCrowd(from: frekHTML)
+        frekPlaces[index].spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
+        frekPlaces[index].fmi = frekPlaces[index].crowd + frekPlaces[index].spotsAvailable
     }
-    
+    /*
+    func toggleFavorite(_ frekPlace: FrekPlace) -> Bool {
+        guard let frekIndex = frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) else {
+            print("❌ Couldn't find frekPlace with id: \(frekPlace.id)")
+            fatalError()
+        }
+        let frekPlaces = valueStore.frekPlaces[frekIndex]
+        frekPlaces.favorite = !frekPlaces.favorite
+        valueStore.frekPlaces[frekIndex] = frekPlaces
+        return frekPlaces.favorite
+    }
+    */
     func fetchGymHTML(with suffix: String, _ completion: @escaping (String?) -> Void) {
         guard let url = URL(string: "https://www.cerclesdelaforme.com/salle-de-sport/\(suffix)/") else {
             print("❌ Unsupported gym suffix: \(suffix)")

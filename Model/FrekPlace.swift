@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FrekPlace: Identifiable, Decodable, Encodable {
+struct FrekPlace: Identifiable, Decodable, Encodable {
     let id: String
     let name: String
     let image: URL
@@ -16,6 +16,7 @@ class FrekPlace: Identifiable, Decodable, Encodable {
     var spotsAvailable: Int
     var fmi: Int
     var state: Bool
+    var favorite: Bool = false
     
     init(_ id: String, _ name: String, _ gymHTML: String, _ frekHTML: String) {
         self.id = id

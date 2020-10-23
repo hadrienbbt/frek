@@ -110,19 +110,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     private func createModularSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let text1 = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd) personnes sur place", shortText: crowdFetcher.crowd)
-        let text2 = CLKSimpleTextProvider(text: "\(crowdFetcher.fmi) personnes maximum", shortText: crowdFetcher.fmi)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
+        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
         return CLKComplicationTemplateModularSmallStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
     private func createModularLargeTemplate(forDate: Date) -> CLKComplicationTemplate {
-        let text1 = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd) personnes sur place", shortText: crowdFetcher.crowd)
-        let text2 = CLKSimpleTextProvider(text: "\(crowdFetcher.fmi) personnes maximum", shortText: crowdFetcher.fmi)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
+        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
         return CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: text1, body1TextProvider: text2)
     }
     
     private func createUtilitarianSmallFlatTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let text = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd)/\(crowdFetcher.fmi)", shortText: crowdFetcher.crowd)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text = CLKSimpleTextProvider(text: "\(frekPlace.crowd)/\(frekPlace.fmi)", shortText: frekPlace.crowd.description)
         let template = CLKComplicationTemplateUtilitarianSmallRingText(
             textProvider: text,
             fillFraction: 0.5,
@@ -133,37 +139,45 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Return a utilitarian large template.
     private func createUtilitarianLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let text = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd)/\(crowdFetcher.fmi)", shortText: crowdFetcher.crowd)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text = CLKSimpleTextProvider(text: "\(frekPlace.crowd)/\(frekPlace.fmi)", shortText: frekPlace.crowd.description)
         return CLKComplicationTemplateUtilitarianLargeFlat(textProvider: text)
     }
     
     // Return a circular small template.
     private func createCircularSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let text1 = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd) personnes sur place", shortText: crowdFetcher.crowd)
-        let text2 = CLKSimpleTextProvider(text: "\(crowdFetcher.fmi) personnes maximum", shortText: crowdFetcher.fmi)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
+        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
         return CLKComplicationTemplateCircularSmallStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
     // Return an extra large template.
     private func createExtraLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let text1 = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd) personnes sur place", shortText: crowdFetcher.crowd)
-        let text2 = CLKSimpleTextProvider(text: "\(crowdFetcher.fmi) personnes maximum", shortText: crowdFetcher.fmi)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
+        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
+        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
         return CLKComplicationTemplateExtraLargeStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
     // Return a graphic template that fills the corner of the watch face.
     private func createGraphicCornerTemplate(forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
         // Create the data providers.
         let leadingValueProvider = CLKSimpleTextProvider(text: "0")
         leadingValueProvider.tintColor = .green
         
-        let trailingValueProvider = CLKSimpleTextProvider(text: crowdFetcher.fmi)
+        let trailingValueProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
         trailingValueProvider.tintColor = .red
         
-        let crowdProvider = CLKSimpleTextProvider(text: crowdFetcher.crowd)
+        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
 
-        let crowdfloat = Float(crowdFetcher.crowd) ?? 0
-        let fmiFloat = Float(crowdFetcher.fmi) ?? 1
+        let crowdfloat = Float(frekPlace.crowd)
+        let fmiFloat = Float(frekPlace.fmi)
         let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
         let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
                                                    gaugeColors: [.green, .yellow, .red],
@@ -176,12 +190,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Return a graphic circle template.
     private func createGraphicCircleTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        // Create the data providers.
-        let crowdProvider = CLKSimpleTextProvider(text: crowdFetcher.crowd)
-        let fmiProvider = CLKSimpleTextProvider(text: crowdFetcher.fmi)
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
         
-        let crowdfloat = Float(crowdFetcher.crowd) ?? 0
-        let fmiFloat = Float(crowdFetcher.fmi) ?? 1
+        // Create the data providers.
+        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
+        let fmiProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
+        
+        let crowdfloat = Float(frekPlace.crowd)
+        let fmiFloat = Float(frekPlace.fmi)
         let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
         let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
                                                    gaugeColors: [.green, .yellow, .red],
@@ -194,17 +210,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Return a large rectangular graphic template.
     private func createGraphicRectangularTemplate(forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+        
         // Create the data providers.
-        let crowdfloat = Float(crowdFetcher.crowd) ?? 0
-        let fmiFloat = Float(crowdFetcher.fmi) ?? 1
+        let crowdfloat = Float(frekPlace.crowd)
+        let fmiFloat = Float(frekPlace.fmi)
         let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
         let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
                                                    gaugeColors: [.green, .yellow, .red],
                                                    gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
                                                    fillFraction: percentage)
         
-        let text1 = CLKSimpleTextProvider(text: "\(crowdFetcher.crowd) personnes sur place", shortText: crowdFetcher.crowd)
-        let text2 = CLKSimpleTextProvider(text: "\(crowdFetcher.fmi) personnes maximum", shortText: crowdFetcher.fmi)
+        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
+        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
         
         // Create the template using the providers.
         return CLKComplicationTemplateGraphicRectangularTextGauge(headerTextProvider: text1, body1TextProvider: text2, gaugeProvider: gaugeProvider)
@@ -212,12 +230,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Return a circular template with text that wraps around the top of the watch's bezel.
     private func createGraphicBezelTemplate(forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
         
         // Create a graphic circular template with an image provider.
         let circle = CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: #imageLiteral(resourceName: "CoffeeGraphicCircular")))
         
         // Create the text provider.
-        let crowdProvider = CLKSimpleTextProvider(text: crowdFetcher.crowd)
+        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
 
         // Create the bezel template using the circle template and the text provider.
         return CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: circle, textProvider: crowdProvider)
@@ -226,18 +245,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // Returns an extra large graphic template
     @available(watchOSApplicationExtension 7.0, *)
     private func createGraphicExtraLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
         
         // Create the data providers.
-        let crowdfloat = Float(crowdFetcher.crowd) ?? 0
-        let fmiFloat = Float(crowdFetcher.fmi) ?? 1
+        let crowdfloat = Float(frekPlace.crowd)
+        let fmiFloat = Float(frekPlace.fmi)
         let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
         let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
                                                    gaugeColors: [.green, .yellow, .red],
                                                    gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
                                                    fillFraction: percentage)
         
-        let crowdProvider = CLKSimpleTextProvider(text: crowdFetcher.crowd)
-        let fmiProvider = CLKSimpleTextProvider(text: crowdFetcher.fmi)
+        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
+        let fmiProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
         
         return CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeSimpleText(
             gaugeProvider: gaugeProvider,
