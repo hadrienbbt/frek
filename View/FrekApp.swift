@@ -25,9 +25,11 @@ struct FrekApp: View {
         
     }
     
+    #if os(iOS)
     var grid: some View {
         FrekPlaceGrid(frekPlaces: crowdFetcher.frekPlaces)
     }
+    #endif
     
     var list: some View {
         FrekPlaceList(
