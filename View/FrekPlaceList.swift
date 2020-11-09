@@ -29,20 +29,6 @@ struct FrekPlaceList: View {
         )
     }
     
-    var body: some View {
-        #if os(iOS)
-            return list
-                .listStyle(InsetGroupedListStyle())
-                .navigationBarItems(
-                    trailing: Button(refreshing ? "🔄 Refreshing" : "Refresh") { self.refresh() }
-                        .disabled(refreshing)
-                )
-        #elseif os(watchOS)
-            return list
-                .listStyle(CarouselListStyle())
-        #endif
-    }
-    
     var list: some View {
         let sortedFrekPlaces = frekPlaces.sorted(by: { $0.name < $1.name })
         let favorites = sortedFrekPlaces.filter { $0.favorite }
@@ -60,5 +46,19 @@ struct FrekPlaceList: View {
             }
             .navigationBarTitle(Text("Salles de gym"))
         }
+    }
+    
+    var body: some View {
+        #if os(iOS)
+            return list
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarItems(
+                    trailing: Button(refreshing ? "🔄 Refreshing" : "Refresh") { self.refresh() }
+                        .disabled(refreshing)
+                )
+        #elseif os(watchOS)
+            return list
+                .listStyle(CarouselListStyle())
+        #endif
     }
 }

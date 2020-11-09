@@ -13,7 +13,8 @@ struct ToggleFavoriteButton: View {
     var body: some View {
         Button(action: { withAnimation { isFavorite = !isFavorite } }, label: {
             Image(systemName: isFavorite ? "heart.fill" : "heart")
-                .accentColor(isFavorite ? .red : .gray)
+                .foregroundColor(isFavorite ? .red : .gray)
         })
+        .buttonStyle(PlainButtonStyle())
     }
 }
