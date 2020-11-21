@@ -34,6 +34,7 @@ struct FrekApp: View {
     var list: some View {
         FrekPlaceList(
             frekPlaces: crowdFetcher.frekPlaces,
+            refreshing: crowdFetcher.refreshing,
             refresh: crowdFetcher.refresh
         )
     }

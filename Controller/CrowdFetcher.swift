@@ -48,6 +48,8 @@ class CrowdFetcher: ObservableObject {
             ValueStore().frekPlaces = frekPlaces
         }
     }
+    
+    @Published var refreshing = false
         
     var htmlGymDataSource = [String: String?]() // id -> html
     var htmlFrekDataSource = [String: String?]() // id -> html
@@ -72,13 +74,22 @@ class CrowdFetcher: ObservableObject {
     }
     
     func fetchAll() {
+        refreshing = true
+        let taskGroup = DispatchGroup()
         FrekWebsiteSuffix.forEach { (key, value) in
+            taskGroup.enter()
             fetchGymHTML(with: value) { gymHTML in
                 if let gymHTML = gymHTML, let id = CrowdParser.findFrekId(from: gymHTML) {
                     self.fetchFrekHTML(id: id) { frekHTML in
                         self.onFrekPlaceFetched(id, key, gymHTML, frekHTML)
+                        taskGroup.leave()
                     }
                 }
+            }
+        }
+        taskGroup.notify(queue: .main) {
+            DispatchQueue.main.async {
+                self.refreshing = false
             }
         }
     }

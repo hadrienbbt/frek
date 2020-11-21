@@ -8,18 +8,11 @@
 import SwiftUI
 
 struct FrekPlaceList: View {
+    
     @Environment(\.imageCache) var cache: ImageCache
     @State var frekPlaces: [FrekPlace]
-    @State var refreshing = false
+    @State var refreshing: Bool
     let refresh: () -> Void
-    
-    func refreshFrekPlaces() {
-        refreshing = true
-        refresh()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            refreshing = false
-        }
-    }
     
     func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
         let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
@@ -29,36 +22,46 @@ struct FrekPlaceList: View {
         )
     }
     
-    var list: some View {
+    var body: some View {
         let sortedFrekPlaces = frekPlaces.sorted(by: { $0.name < $1.name })
         let favorites = sortedFrekPlaces.filter { $0.favorite }
         
         return NavigationView {
-            List {
-                if favorites.count > 0 {
-                    Section(header: Text("Favorites")) {
-                        ForEach(favorites) { self.createFrekPlaceRow($0) }
+            #if os(iOS)
+                List {
+                    if favorites.count > 0 {
+                        Section(header: Text("Favorites")) {
+                            ForEach(favorites) { self.createFrekPlaceRow($0) }
+                        }
+                    }
+                    Section(header: Text("Toutes")) {
+                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
                     }
                 }
-                Section(header: Text("Toutes")) {
-                    ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
-                }
-            }
-            .navigationBarTitle(Text("Salles de gym"))
-        }
-    }
-    
-    var body: some View {
-        #if os(iOS)
-            return list
                 .listStyle(InsetGroupedListStyle())
+                .navigationBarTitle(Text("Salles de gym"))
                 .navigationBarItems(
-                    trailing: Button(refreshing ? "🔄 Refreshing" : "Refresh") { self.refresh() }
+                    trailing: Button(refreshing ? "🔄 Refreshing" : "🔄 Refresh") { self.refresh() }
                         .disabled(refreshing)
                 )
-        #elseif os(watchOS)
-            return list
+            #elseif os(watchOS)
+                List {
+                    RefreshButton(
+                        refreshing: self.refreshing,
+                        refresh: self.refresh
+                    )
+                    if favorites.count > 0 {
+                        Section(header: Text("Favorites")) {
+                            ForEach(favorites) { self.createFrekPlaceRow($0) }
+                        }
+                    }
+                    Section(header: Text("Toutes")) {
+                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
+                    }
+                }
                 .listStyle(CarouselListStyle())
-        #endif
+                .navigationBarTitle(Text("Salles de gym"))
+            #endif
+        }
     }
 }

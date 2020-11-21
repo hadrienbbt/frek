@@ -55,6 +55,7 @@
 		48CBDF882519031900742F9B /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF862519031900742F9B /* AsyncImage.swift */; };
 		48CBDF90251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
 		48CBDF91251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
+		48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB13B4256893F800B01639 /* RefreshButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		48CBDF772519028300742F9B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		48CBDF862519031900742F9B /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		48CBDF8F251907DD00742F9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		48EB13B4256893F800B01639 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 				4884D1E025177B690074CA5F /* HostingController.swift */,
 				48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */,
 				4884D1EC25177B6C0074CA5F /* Assets.xcassets */,
+				48EB13B4256893F800B01639 /* RefreshButton.swift */,
 			);
 			path = WatchOSView;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				4884D2252517D6530074CA5F /* Data.swift in Sources */,
 				482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */,
 				48CBDF882519031900742F9B /* AsyncImage.swift in Sources */,
+				48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */,
 				48CBDF91251907DD00742F9B /* ImageCache.swift in Sources */,
 				4884D20C2517C7C20074CA5F /* FrekPlace.swift in Sources */,
 			);

@@ -10,21 +10,39 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    let crowdFetcher = CrowdFetcher()
+    let valueStore = ValueStore()
+    let frekPlaceIdKey = "frekplaceId"
     
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
-        let complicationCrowdIdentifier = "Crowd"
-        let crowdDescriptor = CLKComplicationDescriptor(identifier: complicationCrowdIdentifier, displayName: "Crowd", supportedFamilies: CLKComplicationFamily.allCases)
-
-        let descriptors = [crowdDescriptor]
         
+        var descriptors = [CLKComplicationDescriptor]()
+        let complicationCrowdIdentifier = "Crowd"
+        let sortedFrekPlaces = valueStore.frekPlaces.sorted(by: { $0.name < $1.name })
+        //let favorites = sortedFrekPlaces.filter { $0.favorite }
+        
+        for frekPlace in sortedFrekPlaces {
+            print("⏳ Creating descriptor for complication \(frekPlace.id)")
+            let crowdDescriptor = CLKComplicationDescriptor(
+                identifier: complicationCrowdIdentifier + ": \(frekPlace.id)",
+                displayName: frekPlace.name,
+                supportedFamilies: CLKComplicationFamily.allCases,
+                userInfo: [frekPlaceIdKey: frekPlace.id]
+            )
+            descriptors.append(crowdDescriptor)
+        }
+                
         handler(descriptors)
     }
     
     func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
-        // Do any necessary work to support these newly shared complication descriptors
+        for descriptor in complicationDescriptors {
+            guard let frekPlaceId = descriptor.userInfo?["frekPlaceId"] as? String,
+                  let index = valueStore.frekPlaces.firstIndex(where: { $0.id == frekPlaceId })
+                  else { continue }
+            valueStore.frekPlaces[index].favorite = true
+        }
     }
 
     // MARK: - Timeline Configuration
@@ -77,30 +95,32 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Select the correct template based on the complication's family.
     private func createTemplate(forComplication complication: CLKComplication, date: Date) -> CLKComplicationTemplate {
+        let frekPlaceId = complication.userInfo?[frekPlaceIdKey] as? String ?? valueStore.frekPlaces[0].id
+        
         switch complication.family {
         case .modularSmall:
-            return createModularSmallTemplate(forDate: date)
+            return createModularSmallTemplate(frekPlaceId, forDate: date)
         case .modularLarge:
-            return createModularLargeTemplate(forDate: date)
+            return createModularLargeTemplate(frekPlaceId, forDate: date)
         case .utilitarianSmall, .utilitarianSmallFlat:
-            return createUtilitarianSmallFlatTemplate(forDate: date)
+            return createUtilitarianSmallFlatTemplate(frekPlaceId, forDate: date)
         case .utilitarianLarge:
-            return createUtilitarianLargeTemplate(forDate: date)
+            return createUtilitarianLargeTemplate(frekPlaceId, forDate: date)
         case .circularSmall:
-            return createCircularSmallTemplate(forDate: date)
+            return createCircularSmallTemplate(frekPlaceId, forDate: date)
         case .extraLarge:
-            return createExtraLargeTemplate(forDate: date)
+            return createExtraLargeTemplate(frekPlaceId, forDate: date)
         case .graphicCorner:
-            return createGraphicCornerTemplate(forDate: date)
+            return createGraphicCornerTemplate(frekPlaceId, forDate: date)
         case .graphicCircular:
-            return createGraphicCircleTemplate(forDate: date)
+            return createGraphicCircleTemplate(frekPlaceId, forDate: date)
         case .graphicRectangular:
-            return createGraphicRectangularTemplate(forDate: date)
+            return createGraphicRectangularTemplate(frekPlaceId, forDate: date)
         case .graphicBezel:
-            return createGraphicBezelTemplate(forDate: date)
+            return createGraphicBezelTemplate(frekPlaceId, forDate: date)
         case .graphicExtraLarge:
             if #available(watchOSApplicationExtension 7.0, *) {
-                return createGraphicExtraLargeTemplate(forDate: date)
+                return createGraphicExtraLargeTemplate(frekPlaceId, forDate: date)
             } else {
                 fatalError("Graphic Extra Large template is only available on watchOS 7.")
             }
@@ -109,26 +129,28 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
     }
     
-    private func createModularSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+    private func createModularSmallTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
         
-        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
-        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
+        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
+        let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
+        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         return CLKComplicationTemplateModularSmallStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
-    private func createModularLargeTemplate(forDate: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
-        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
-        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
+    private func createModularLargeTemplate(_ frekPlaceId: String, forDate: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
+        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
+        let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
+        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         return CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: text1, body1TextProvider: text2)
     }
     
-    private func createUtilitarianSmallFlatTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
-        let text = CLKSimpleTextProvider(text: "\(frekPlace.crowd)/\(frekPlace.fmi)", shortText: frekPlace.crowd.description)
+    private func createUtilitarianSmallFlatTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
+        let text = CLKSimpleTextProvider(text: "\(frekPlace.name): \(frekPlace.crowd)/\(frekPlace.fmi)", shortText: "\(frekPlace.crowd)/\(frekPlace.fmi)")
         let template = CLKComplicationTemplateUtilitarianSmallRingText(
             textProvider: text,
             fillFraction: 0.5,
@@ -138,35 +160,37 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // Return a utilitarian large template.
-    private func createUtilitarianLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
+    private func createUtilitarianLargeTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
         
-        let text = CLKSimpleTextProvider(text: "\(frekPlace.crowd)/\(frekPlace.fmi)", shortText: frekPlace.crowd.description)
+        let text = CLKSimpleTextProvider(text: "\(frekPlace.name): \(frekPlace.crowd)/\(frekPlace.fmi)", shortText: "\(frekPlace.crowd)/\(frekPlace.fmi)")
         return CLKComplicationTemplateUtilitarianLargeFlat(textProvider: text)
     }
     
     // Return a circular small template.
-    private func createCircularSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
-        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
-        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
+    private func createCircularSmallTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
+        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
+        let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
+        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         return CLKComplicationTemplateCircularSmallStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
     // Return an extra large template.
-    private func createExtraLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
-        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
-        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
+    private func createExtraLargeTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
+        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
+        let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
+        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         return CLKComplicationTemplateExtraLargeStackText(line1TextProvider: text1, line2TextProvider: text2)
     }
     
     // Return a graphic template that fills the corner of the watch face.
-    private func createGraphicCornerTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
+    private func createGraphicCornerTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
         // Create the data providers.
         let leadingValueProvider = CLKSimpleTextProvider(text: "0")
         leadingValueProvider.tintColor = .green
@@ -189,9 +213,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // Return a graphic circle template.
-    private func createGraphicCircleTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
+    private func createGraphicCircleTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
         // Create the data providers.
         let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
         let fmiProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
@@ -209,9 +233,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // Return a large rectangular graphic template.
-    private func createGraphicRectangularTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
+    private func createGraphicRectangularTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
         // Create the data providers.
         let crowdfloat = Float(frekPlace.crowd)
         let fmiFloat = Float(frekPlace.fmi)
@@ -221,17 +245,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                                                    gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
                                                    fillFraction: percentage)
         
-        let text1 = CLKSimpleTextProvider(text: "\(frekPlace.crowd) personnes sur place", shortText: frekPlace.crowd.description)
-        let text2 = CLKSimpleTextProvider(text: "\(frekPlace.fmi) personnes maximum", shortText: frekPlace.fmi.description)
+        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
+        let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
+        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         
         // Create the template using the providers.
         return CLKComplicationTemplateGraphicRectangularTextGauge(headerTextProvider: text1, body1TextProvider: text2, gaugeProvider: gaugeProvider)
     }
     
     // Return a circular template with text that wraps around the top of the watch's bezel.
-    private func createGraphicBezelTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
+    private func createGraphicBezelTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
         // Create a graphic circular template with an image provider.
         let circle = CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: #imageLiteral(resourceName: "CoffeeGraphicCircular")))
         
@@ -244,9 +269,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // Returns an extra large graphic template
     @available(watchOSApplicationExtension 7.0, *)
-    private func createGraphicExtraLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
-        let frekPlace = crowdFetcher.frekPlaces.first(where: { $0.name == "Magenta" })!
-        
+    private func createGraphicExtraLargeTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
         // Create the data providers.
         let crowdfloat = Float(frekPlace.crowd)
         let fmiFloat = Float(frekPlace.fmi)
