@@ -55,7 +55,9 @@
 		48CBDF882519031900742F9B /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF862519031900742F9B /* AsyncImage.swift */; };
 		48CBDF90251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
 		48CBDF91251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
+		48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
 		48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB13B4256893F800B01639 /* RefreshButton.swift */; };
+		48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC8776256DD3E1008E6920 /* ClockKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,7 +161,9 @@
 		48CBDF772519028300742F9B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		48CBDF862519031900742F9B /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		48CBDF8F251907DD00742F9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
 		48EB13B4256893F800B01639 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
+		48FC8776256DD3E1008E6920 /* ClockKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClockKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/ClockKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +222,7 @@
 				48435FD52516DED500FFED01 /* FrekUITests */,
 				4884D1D025177B640074CA5F /* FrekWatch WatchKit App */,
 				48435FB72516DED200FFED01 /* Products */,
+				48FC8775256DD3E1008E6920 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +246,7 @@
 				4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */,
 				482A39F2252221F600A2028A /* FrekPlaceGrid.swift */,
 				48435FBD2516DED500FFED01 /* Assets.xcassets */,
+				48D1244826226527007E1805 /* FrekPlaceDetail.swift */,
 			);
 			path = IOSView;
 			sourceTree = "<group>";
@@ -321,7 +328,6 @@
 			children = (
 				48435FE72516E0B800FFED01 /* CrowdFetcher.swift */,
 				483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */,
-				4884D1EA25177B690074CA5F /* ComplicationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 		48C6FE9B25192E700051B4B3 /* FrekWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4884D1EA25177B690074CA5F /* ComplicationController.swift */,
 				4884D1E825177B690074CA5F /* NotificationView.swift */,
 				4884D1E625177B690074CA5F /* NotificationController.swift */,
 				4884D1E425177B690074CA5F /* ExtensionDelegate.swift */,
@@ -363,6 +370,14 @@
 				48C6FFE1251A42360051B4B3 /* ValueStore.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		48FC8775256DD3E1008E6920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48FC8776256DD3E1008E6920 /* ClockKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,6 +603,7 @@
 			files = (
 				48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */,
 				482A39B52522185C00A2028A /* FrekApp.swift in Sources */,
+				48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */,
 				48CBDF90251907DD00742F9B /* ImageCache.swift in Sources */,
 				48CBDF872519031900742F9B /* AsyncImage.swift in Sources */,
 				4884D2562517D91D0074CA5F /* FrekPlaceList.swift in Sources */,
@@ -947,7 +963,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = barbat.hadrien.FrekWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
@@ -971,7 +987,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = barbat.hadrien.FrekWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;

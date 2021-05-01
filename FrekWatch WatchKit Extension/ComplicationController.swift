@@ -26,7 +26,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             print("⏳ Creating descriptor for complication \(frekPlace.id)")
             let crowdDescriptor = CLKComplicationDescriptor(
                 identifier: complicationCrowdIdentifier + ": \(frekPlace.id)",
-                displayName: frekPlace.name,
+                displayName: "Fréquentation à \(frekPlace.name)",
                 supportedFamilies: CLKComplicationFamily.allCases,
                 userInfo: [frekPlaceIdKey: frekPlace.id]
             )
@@ -71,8 +71,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        let template = createTemplate(forComplication: complication, date: Date())
+        handler(template)
     }
     
     // MARK: - Private Methods
@@ -102,7 +102,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return createModularSmallTemplate(frekPlaceId, forDate: date)
         case .modularLarge:
             return createModularLargeTemplate(frekPlaceId, forDate: date)
-        case .utilitarianSmall, .utilitarianSmallFlat:
+        case .utilitarianSmall:
+            return createUtilitarianSmallTemplate(frekPlaceId, forDate: date)
+         case .utilitarianSmallFlat:
             return createUtilitarianSmallFlatTemplate(frekPlaceId, forDate: date)
         case .utilitarianLarge:
             return createUtilitarianLargeTemplate(frekPlaceId, forDate: date)
@@ -147,7 +149,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: text1, body1TextProvider: text2)
     }
     
-    private func createUtilitarianSmallFlatTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+    private func createUtilitarianSmallTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
 
         let text = CLKSimpleTextProvider(text: "\(frekPlace.name): \(frekPlace.crowd)/\(frekPlace.fmi)", shortText: "\(frekPlace.crowd)/\(frekPlace.fmi)")
@@ -156,6 +158,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             fillFraction: 0.5,
             ringStyle: .closed
         )
+        return template
+    }
+    
+    private func createUtilitarianSmallFlatTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
+        let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+
+        let text = CLKSimpleTextProvider(text: "\(frekPlace.name): \(frekPlace.crowd)/\(frekPlace.fmi)", shortText: "\(frekPlace.crowd)/\(frekPlace.fmi)")
+        let template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: text)
         return template
     }
     
@@ -188,105 +198,98 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // Return a graphic template that fills the corner of the watch face.
+    
+    func getGaugeProvider(_ crowd: Int, _ fmi: Int) -> CLKSimpleGaugeProvider {
+        let gaugeColors: [UIColor] = [.green, .yellow, .red]
+        let gaugeColorLocations = [0.0, 0.5, 1] as [NSNumber]
+        let percentage = Float(min(Float(crowd) / Float(fmi), 1.0))
+        return CLKSimpleGaugeProvider(style: .fill,
+                                                   gaugeColors: gaugeColors,
+                                                   gaugeColorLocations: gaugeColorLocations,
+                                                   fillFraction: percentage)
+    }
+    
+    func getImageProvider() -> CLKFullColorImageProvider{
+        let image = UIImage(named: "Complication/Graphic Corner")!
+        return CLKFullColorImageProvider(fullColorImage: image)
+    }
+    
     private func createGraphicCornerTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+        let crowd = frekPlace.crowd
+        let fmi = frekPlace.fmi
 
-        // Create the data providers.
-        let leadingValueProvider = CLKSimpleTextProvider(text: "0")
-        leadingValueProvider.tintColor = .green
-        
-        let trailingValueProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
-        trailingValueProvider.tintColor = .red
-        
-        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
-
-        let crowdfloat = Float(frekPlace.crowd)
-        let fmiFloat = Float(frekPlace.fmi)
-        let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
-        let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
-                                                   gaugeColors: [.green, .yellow, .red],
-                                                   gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
-                                                   fillFraction: percentage)
-        
-        let template = CLKComplicationTemplateGraphicCornerGaugeText(gaugeProvider: gaugeProvider, leadingTextProvider: leadingValueProvider, trailingTextProvider: trailingValueProvider, outerTextProvider: crowdProvider)
-        return template
+        return CLKComplicationTemplateGraphicCornerGaugeText(
+            gaugeProvider: getGaugeProvider(crowd, fmi),
+            leadingTextProvider: nil,
+            trailingTextProvider: CLKSimpleTextProvider(text: fmi.description),
+            outerTextProvider: CLKSimpleTextProvider(text: crowd.description)
+        )
+/*
+ *  Support for image in corner
+ *
+        let image = UIImage(named: "Complication/Graphic Corner")!
+        let imageProvider = CLKFullColorImageProvider(fullColorImage: image)
+        let template = CLKComplicationTemplateGraphicCornerGaugeImage(gaugeProvider: gaugeProvider, leadingTextProvider: leadingValueProvider, trailingTextProvider: trailingValueProvider, imageProvider: imageProvider)
+ */
     }
     
     // Return a graphic circle template.
     private func createGraphicCircleTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+        let crowd = frekPlace.crowd
+        let fmi = frekPlace.fmi
 
-        // Create the data providers.
-        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
-        let fmiProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
-        
-        let crowdfloat = Float(frekPlace.crowd)
-        let fmiFloat = Float(frekPlace.fmi)
-        let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
-        let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
-                                                   gaugeColors: [.green, .yellow, .red],
-                                                   gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
-                                                   fillFraction: percentage)
-        
-        // Create the template using the providers.
-        return CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gaugeProvider, bottomTextProvider: fmiProvider, centerTextProvider: crowdProvider)
+        return CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(
+            gaugeProvider: getGaugeProvider(crowd, fmi),
+            bottomTextProvider: CLKSimpleTextProvider(text: fmi.description),
+            centerTextProvider: CLKSimpleTextProvider(text: crowd.description)
+        )
     }
     
     // Return a large rectangular graphic template.
     private func createGraphicRectangularTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+        let name = frekPlace.name
+        let crowd = frekPlace.crowd
+        let fmi = frekPlace.fmi
 
-        // Create the data providers.
-        let crowdfloat = Float(frekPlace.crowd)
-        let fmiFloat = Float(frekPlace.fmi)
-        let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
-        let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
-                                                   gaugeColors: [.green, .yellow, .red],
-                                                   gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
-                                                   fillFraction: percentage)
-        
-        let text1 = CLKSimpleTextProvider(text: frekPlace.name)
         let shortText = "\(frekPlace.crowd)/\(frekPlace.fmi)"
-        let text2 = CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText)
         
-        // Create the template using the providers.
-        return CLKComplicationTemplateGraphicRectangularTextGauge(headerTextProvider: text1, body1TextProvider: text2, gaugeProvider: gaugeProvider)
+        return CLKComplicationTemplateGraphicRectangularTextGauge(
+            //headerImageProvider: getImageProvider(),
+            headerTextProvider: CLKSimpleTextProvider(text: name),
+            body1TextProvider: CLKSimpleTextProvider(text: "Fréquentation: \(shortText)", shortText: shortText),
+            gaugeProvider: getGaugeProvider(crowd, fmi)
+        )
+        
     }
     
     // Return a circular template with text that wraps around the top of the watch's bezel.
     private func createGraphicBezelTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
 
-        // Create a graphic circular template with an image provider.
-        let circle = CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: #imageLiteral(resourceName: "CoffeeGraphicCircular")))
+        let circularTemplate = createGraphicCircleTemplate(frekPlaceId, forDate: date)
+        let image = CLKComplicationTemplateGraphicCircularImage(imageProvider: getImageProvider())
+        let template = circularTemplate as? CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText ?? image
         
-        // Create the text provider.
-        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
-
-        // Create the bezel template using the circle template and the text provider.
-        return CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: circle, textProvider: crowdProvider)
+        return CLKComplicationTemplateGraphicBezelCircularText(
+            circularTemplate: template,
+            textProvider: CLKSimpleTextProvider(text: frekPlace.name)
+        )
     }
     
     // Returns an extra large graphic template
     @available(watchOSApplicationExtension 7.0, *)
     private func createGraphicExtraLargeTemplate(_ frekPlaceId: String, forDate date: Date) -> CLKComplicationTemplate {
         let frekPlace = ValueStore().frekPlaces.first(where: { $0.id == frekPlaceId })!
+        let crowd = frekPlace.crowd
+        let fmi = frekPlace.fmi
 
-        // Create the data providers.
-        let crowdfloat = Float(frekPlace.crowd)
-        let fmiFloat = Float(frekPlace.fmi)
-        let percentage = Float(min(crowdfloat / fmiFloat, 1.0))
-        let gaugeProvider = CLKSimpleGaugeProvider(style: .fill,
-                                                   gaugeColors: [.green, .yellow, .red],
-                                                   gaugeColorLocations: [0.0, fmiFloat / 2, fmiFloat] as [NSNumber],
-                                                   fillFraction: percentage)
-        
-        let crowdProvider = CLKSimpleTextProvider(text: frekPlace.crowd.description)
-        let fmiProvider = CLKSimpleTextProvider(text: frekPlace.fmi.description)
-        
         return CLKComplicationTemplateGraphicExtraLargeCircularOpenGaugeSimpleText(
-            gaugeProvider: gaugeProvider,
-            bottomTextProvider: fmiProvider,
-            centerTextProvider: crowdProvider)
+            gaugeProvider: getGaugeProvider(crowd, fmi),
+            bottomTextProvider: CLKSimpleTextProvider(text: fmi.description),
+            centerTextProvider: CLKSimpleTextProvider(text: crowd.description)
+        )
     }
 }

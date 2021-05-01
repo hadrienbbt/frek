@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct FrekPlaceRow: View {
     @Binding var frekPlace: FrekPlace
@@ -13,17 +14,20 @@ struct FrekPlaceRow: View {
     let image: AsyncImage<Text>
     
     var body: some View {
-        HStack {
-            FrekThumbnail(image: image)
-                .padding([.top, .bottom], 10)
-            FrekDescription(frekPlace: $frekPlace)
-            Spacer()
-            VStack {
-                Text("\(frekPlace.crowd)")
-                    .font(.title)
-                Text("Personnes\nsur place")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
+        let frekPlaceDetail = FrekPlaceDetail(frekPlace: $frekPlace)
+        NavigationLink(destination: frekPlaceDetail) {
+            HStack {
+                FrekThumbnail(image: image)
+                    .padding([.top, .bottom], 10)
+                FrekDescription(frekPlace: $frekPlace)
+                Spacer()
+                VStack {
+                    Text("\(frekPlace.crowd)")
+                        .font(.title)
+                    Text("Personnes\nsur place")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ struct RefreshButton: View {
     let refresh: () -> Void
     
     var body: some View {
-        Button(action: { withAnimation { self.refresh() } }, label: { Text(refreshing ? "🔄 Refreshing" : "🔄 Refresh") })
+        Button(action: { self.refresh() }, label: { Text(refreshing ? "🔄 Refreshing" : "🔄 Refresh") })
         .buttonStyle(PlainButtonStyle())
     }
 }

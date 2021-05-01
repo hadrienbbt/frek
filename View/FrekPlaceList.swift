@@ -47,8 +47,8 @@ struct FrekPlaceList: View {
             #elseif os(watchOS)
                 List {
                     RefreshButton(
-                        refreshing: self.refreshing,
-                        refresh: self.refresh
+                        refreshing: refreshing,
+                        refresh: refresh
                     )
                     if favorites.count > 0 {
                         Section(header: Text("Favorites")) {
