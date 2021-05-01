@@ -76,6 +76,26 @@ class CrowdParser {
         return state
     }
     
+    static func findLatitude(for html: String) -> Double? {
+        print("⏳ Searching for latitude...")
+        guard let latitudeStr = CrowdParser.findSubstringBetween("latitude\":\"", "\"", in: html) else {
+            print("❌ Couldn't find latitude")
+            return nil
+        }
+        print("✅ Latitude found: \(latitudeStr)")
+        return Double(latitudeStr)
+    }
+    
+    static func findLongitude(for html: String) -> Double? {
+        print("⏳ Searching for longitude...")
+        guard let longitudeStr = CrowdParser.findSubstringBetween("longitude\":\"", "\"", in: html) else {
+            print("❌ Couldn't find longitude")
+            return nil
+        }
+        print("✅ Longitude found: \(longitudeStr)")
+        return Double(longitudeStr)
+    }
+    
     static func findChart(for index: Int, in html: String) -> [String: [String: String]]? {
         guard let chart = CrowdParser.findSubstringBetween("new Chart(canvas\(index)", "options: {", in: html),
               let datasets = CrowdParser.findSubstringBetween("datasets: [", "pointStyle: \"line\"", in: chart),

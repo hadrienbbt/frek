@@ -12,6 +12,9 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
     let name: String
     let image: URL
     
+    var latitude: Double?
+    var longitude: Double?
+
     var crowd: Int
     var spotsAvailable: Int
     var fmi: Int
@@ -26,6 +29,9 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
         self.spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
         self.fmi = crowd + spotsAvailable
         self.state = CrowdParser.findState(for: frekHTML)
+        self.latitude = CrowdParser.findLatitude(for: gymHTML)
+        self.longitude = CrowdParser.findLongitude(for: gymHTML)
+
         // CrowdParser.findChart(for: 7, in: frekHTML)
     }
     
