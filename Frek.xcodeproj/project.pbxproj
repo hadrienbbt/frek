@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480836DA265A8358009C15D9 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480836D9265A8358009C15D9 /* HTTPHelper.swift */; };
+		480836DB265A8358009C15D9 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480836D9265A8358009C15D9 /* HTTPHelper.swift */; };
 		4817E80B2657B9A200128396 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4817E80A2657B9A200128396 /* GoogleService-Info.plist */; };
 		4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817E80C2657BA9400128396 /* AppDelegate.swift */; };
 		482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		482A39B52522185C00A2028A /* FrekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A39B42522185C00A2028A /* FrekApp.swift */; };
 		482A39B62522185C00A2028A /* FrekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A39B42522185C00A2028A /* FrekApp.swift */; };
-		482A39D025221A4000A2028A /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D2552517D91D0074CA5F /* FrekPlaceList.swift */; };
 		482A39F3252221F600A2028A /* FrekPlaceGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A39F2252221F600A2028A /* FrekPlaceGrid.swift */; };
+		482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
+		482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
+		482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
+		482E2F35265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
 		483A3C3C25181F7C00FB37C5 /* CrowdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */; };
 		483A3C3D25181F7C00FB37C5 /* CrowdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */; };
 		48435FBA2516DED200FFED01 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FB92516DED200FFED01 /* MainView.swift */; };
@@ -42,7 +47,6 @@
 		4884D22C2517D6570074CA5F /* frekPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 4884D2142517C86E0074CA5F /* frekPlaces.json */; };
 		4884D23B2517D6780074CA5F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D23A2517D6780074CA5F /* extensions.swift */; };
 		4884D2482517D67B0074CA5F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D23A2517D6780074CA5F /* extensions.swift */; };
-		4884D2562517D91D0074CA5F /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D2552517D91D0074CA5F /* FrekPlaceList.swift */; };
 		4884D25E2517D97B0074CA5F /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */; };
 		48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */; };
 		48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
@@ -50,12 +54,6 @@
 		48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
-		48CBDF782519028300742F9B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF772519028300742F9B /* ImageLoader.swift */; };
-		48CBDF792519028300742F9B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF772519028300742F9B /* ImageLoader.swift */; };
-		48CBDF872519031900742F9B /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF862519031900742F9B /* AsyncImage.swift */; };
-		48CBDF882519031900742F9B /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF862519031900742F9B /* AsyncImage.swift */; };
-		48CBDF90251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
-		48CBDF91251907DD00742F9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDF8F251907DD00742F9B /* ImageCache.swift */; };
 		48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
 		48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB13B4256893F800B01639 /* RefreshButton.swift */; };
 		48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC8776256DD3E1008E6920 /* ClockKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -128,11 +126,14 @@
 		1B45679E65851EF17455A179 /* Pods_FrekWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		207334EE2546749CD79199F3 /* Pods_FrekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E4B0C2AA57853466E3674D /* Pods-FrekWatch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-FrekWatch WatchKit App/Pods-FrekWatch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		480836D9265A8358009C15D9 /* HTTPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 		4817E80A2657B9A200128396 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4817E80C2657BA9400128396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		482A399E2522126900A2028A /* FrekThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekThumbnail.swift; sourceTree = "<group>"; };
 		482A39B42522185C00A2028A /* FrekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekApp.swift; sourceTree = "<group>"; };
 		482A39F2252221F600A2028A /* FrekPlaceGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceGrid.swift; sourceTree = "<group>"; };
+		482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrekPlaceAssets.xcassets; sourceTree = "<group>"; };
+		482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
 		483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdParser.swift; sourceTree = "<group>"; };
 		48435FB62516DED200FFED01 /* Frek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48435FB92516DED200FFED01 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -164,15 +165,11 @@
 		4884D2142517C86E0074CA5F /* frekPlaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frekPlaces.json; sourceTree = "<group>"; };
 		4884D21D2517D2020074CA5F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4884D23A2517D6780074CA5F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		4884D2552517D91D0074CA5F /* FrekPlaceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
 		4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeta.swift; sourceTree = "<group>"; };
 		48C6FFE1251A42360051B4B3 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteButton.swift; sourceTree = "<group>"; };
-		48CBDF772519028300742F9B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		48CBDF862519031900742F9B /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
-		48CBDF8F251907DD00742F9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
 		48EB13B4256893F800B01639 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		48FC8776256DD3E1008E6920 /* ClockKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClockKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/ClockKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -359,6 +356,7 @@
 			children = (
 				4884D2142517C86E0074CA5F /* frekPlaces.json */,
 				4884D21D2517D2020074CA5F /* Data.swift */,
+				482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -390,7 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				482A39B42522185C00A2028A /* FrekApp.swift */,
-				4884D2552517D91D0074CA5F /* FrekPlaceList.swift */,
+				482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */,
 				482A399E2522126900A2028A /* FrekThumbnail.swift */,
 				48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */,
 				48435FB82516DED200FFED01 /* IOSView */,
@@ -403,11 +401,9 @@
 			isa = PBXGroup;
 			children = (
 				4884D23A2517D6780074CA5F /* extensions.swift */,
-				48CBDF772519028300742F9B /* ImageLoader.swift */,
-				48CBDF862519031900742F9B /* AsyncImage.swift */,
-				48CBDF8F251907DD00742F9B /* ImageCache.swift */,
 				48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */,
 				48C6FFE1251A42360051B4B3 /* ValueStore.swift */,
+				480836D9265A8358009C15D9 /* HTTPHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -623,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */,
 				4817E80B2657B9A200128396 /* GoogleService-Info.plist in Resources */,
 				4884D2152517C86E0074CA5F /* frekPlaces.json in Resources */,
 				48435FBE2516DED500FFED01 /* Assets.xcassets in Resources */,
@@ -663,6 +660,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */,
 				4884D1F025177B6C0074CA5F /* Preview Assets.xcassets in Resources */,
 				4884D22C2517D6570074CA5F /* frekPlaces.json in Resources */,
 				4884D1ED25177B6C0074CA5F /* Assets.xcassets in Resources */,
@@ -849,9 +847,7 @@
 				482A39B52522185C00A2028A /* FrekApp.swift in Sources */,
 				4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */,
 				48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */,
-				48CBDF90251907DD00742F9B /* ImageCache.swift in Sources */,
-				48CBDF872519031900742F9B /* AsyncImage.swift in Sources */,
-				4884D2562517D91D0074CA5F /* FrekPlaceList.swift in Sources */,
+				480836DA265A8358009C15D9 /* HTTPHelper.swift in Sources */,
 				482A39F3252221F600A2028A /* FrekPlaceGrid.swift in Sources */,
 				4884D25E2517D97B0074CA5F /* FrekPlaceRow.swift in Sources */,
 				482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */,
@@ -859,10 +855,10 @@
 				48435FBA2516DED200FFED01 /* MainView.swift in Sources */,
 				48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */,
 				48435FE82516E0B800FFED01 /* CrowdFetcher.swift in Sources */,
-				48CBDF782519028300742F9B /* ImageLoader.swift in Sources */,
 				48435FED2516E18F00FFED01 /* FrekPlace.swift in Sources */,
 				48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */,
 				4884D23B2517D6780074CA5F /* extensions.swift in Sources */,
+				482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */,
 				483A3C3C25181F7C00FB37C5 /* CrowdParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,7 +885,6 @@
 			files = (
 				4884D1E125177B690074CA5F /* HostingController.swift in Sources */,
 				48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */,
-				48CBDF792519028300742F9B /* ImageLoader.swift in Sources */,
 				482A39B62522185C00A2028A /* FrekApp.swift in Sources */,
 				4884D1E725177B690074CA5F /* NotificationController.swift in Sources */,
 				48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */,
@@ -897,16 +892,15 @@
 				4884D1E525177B690074CA5F /* ExtensionDelegate.swift in Sources */,
 				483A3C3D25181F7C00FB37C5 /* CrowdParser.swift in Sources */,
 				4884D1E925177B690074CA5F /* NotificationView.swift in Sources */,
-				482A39D025221A4000A2028A /* FrekPlaceList.swift in Sources */,
 				4884D2482517D67B0074CA5F /* extensions.swift in Sources */,
 				4884D20425177C310074CA5F /* CrowdFetcher.swift in Sources */,
 				4884D1EB25177B690074CA5F /* ComplicationController.swift in Sources */,
 				4884D2252517D6530074CA5F /* Data.swift in Sources */,
+				480836DB265A8358009C15D9 /* HTTPHelper.swift in Sources */,
 				482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */,
-				48CBDF882519031900742F9B /* AsyncImage.swift in Sources */,
 				48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */,
-				48CBDF91251907DD00742F9B /* ImageCache.swift in Sources */,
 				4884D20C2517C7C20074CA5F /* FrekPlace.swift in Sources */,
+				482E2F35265E6E9B00C60730 /* FrekPlaceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
