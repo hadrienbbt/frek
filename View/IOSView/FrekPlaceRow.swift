@@ -16,7 +16,6 @@ struct FrekPlaceRow: View {
         NavigationLink(destination: frekPlaceDetail) {
             HStack {
                 FrekThumbnail(name: frekPlace.suffix)
-                    .padding(.vertical)
                 FrekDescription(frekPlace: $frekPlace)
                 Spacer()
                 FrekCrowd(crowd: $frekPlace.crowd)

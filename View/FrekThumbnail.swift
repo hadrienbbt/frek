@@ -17,5 +17,6 @@ struct FrekThumbnail: View {
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 2))
             .shadow(radius: 10)
+            .padding(.vertical)
     }
 }

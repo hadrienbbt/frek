@@ -6,20 +6,25 @@
 //
 
 import Foundation
+import MapKit
 
 struct FrekPlace: Identifiable, Decodable, Encodable {
     let id: String
     let name: String
     var suffix: String
     
-    var latitude: Double?
-    var longitude: Double?
+    var latitude: Double
+    var longitude: Double
 
     var crowd: Int
     var spotsAvailable: Int
     var fmi: Int
     var state: Bool
     var favorite: Bool = false
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+    }
     
     init (_ id: String, _ name: String, _ suffix: String, _ crowd: Int, _ spotsAvailable: Int, _ fmi: Int, _ state: Bool, _ latitude: Double, _ longitude: Double) {
         self.id = id
