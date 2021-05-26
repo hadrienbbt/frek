@@ -78,7 +78,7 @@ class CrowdParser {
     
     static func findLatitude(for html: String) -> Double? {
         print("⏳ Searching for latitude...")
-        guard let latitudeStr = CrowdParser.findSubstringBetween("latitude\":\"", "\"", in: html) else {
+        guard let latitudeStr = CrowdParser.findSubstringBetween("latitude&quot;:&quot;", "&quot", in: html) else {
             print("❌ Couldn't find latitude")
             return nil
         }
@@ -88,7 +88,7 @@ class CrowdParser {
     
     static func findLongitude(for html: String) -> Double? {
         print("⏳ Searching for longitude...")
-        guard let longitudeStr = CrowdParser.findSubstringBetween("longitude\":\"", "\"", in: html) else {
+        guard let longitudeStr = CrowdParser.findSubstringBetween("longitude&quot;:&quot;", "&quot", in: html) else {
             print("❌ Couldn't find longitude")
             return nil
         }

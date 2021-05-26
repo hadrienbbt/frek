@@ -15,14 +15,12 @@ struct FrekPlaceDetail: View {
     var body: some View {
         let region = Binding<MKCoordinateRegion>(
             get: {
-                print(self.frekPlace.latitude)
-
                 return
-                    MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.frekPlace.latitude!, longitude: self.frekPlace.longitude!), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                    MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.frekPlace.latitude!, longitude: self.frekPlace.longitude!), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             },
             set: { value in
-                self.frekPlace.latitude = value.center.latitude
-                self.frekPlace.longitude = value.center.longitude
+                // self.frekPlace.latitude = value.center.latitude
+                // self.frekPlace.longitude = value.center.longitude
             }
         )
         
