@@ -33,20 +33,6 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
         self.longitude = longitude
     }
     
-    init(_ id: String, _ name: String, _ gymHTML: String, _ frekHTML: String) {
-        self.id = id
-        self.name = name
-        self.suffix = FrekWebsiteSuffix[name] ?? "placeholder"
-        self.crowd = CrowdParser.findCrowd(from: frekHTML)
-        self.spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
-        self.fmi = crowd + spotsAvailable
-        self.state = CrowdParser.findState(for: frekHTML)
-        self.latitude = CrowdParser.findLatitude(for: gymHTML)
-        self.longitude = CrowdParser.findLongitude(for: gymHTML)
-
-        // CrowdParser.findChart(for: 7, in: frekHTML)
-    }
-    
     static func decode(_ dict: Dict) -> FrekPlace? {
         guard let id = dict["id"] as? String,
             let name = dict["name"] as? String,

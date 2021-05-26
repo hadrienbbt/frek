@@ -20,8 +20,6 @@
 		482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
 		482E2F35265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
-		483A3C3C25181F7C00FB37C5 /* CrowdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */; };
-		483A3C3D25181F7C00FB37C5 /* CrowdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */; };
 		48435FBA2516DED200FFED01 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FB92516DED200FFED01 /* MainView.swift */; };
 		48435FBE2516DED500FFED01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
 		48435FCC2516DED500FFED01 /* FrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FCB2516DED500FFED01 /* FrekTests.swift */; };
@@ -134,7 +132,6 @@
 		482A39F2252221F600A2028A /* FrekPlaceGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceGrid.swift; sourceTree = "<group>"; };
 		482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrekPlaceAssets.xcassets; sourceTree = "<group>"; };
 		482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
-		483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdParser.swift; sourceTree = "<group>"; };
 		48435FB62516DED200FFED01 /* Frek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48435FB92516DED200FFED01 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		48435FBD2516DED500FFED01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -365,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				48435FE72516E0B800FFED01 /* CrowdFetcher.swift */,
-				483A3C3B25181F7C00FB37C5 /* CrowdParser.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -859,7 +855,6 @@
 				48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */,
 				4884D23B2517D6780074CA5F /* extensions.swift in Sources */,
 				482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */,
-				483A3C3C25181F7C00FB37C5 /* CrowdParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +885,6 @@
 				48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */,
 				48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */,
 				4884D1E525177B690074CA5F /* ExtensionDelegate.swift in Sources */,
-				483A3C3D25181F7C00FB37C5 /* CrowdParser.swift in Sources */,
 				4884D1E925177B690074CA5F /* NotificationView.swift in Sources */,
 				4884D2482517D67B0074CA5F /* extensions.swift in Sources */,
 				4884D20425177C310074CA5F /* CrowdFetcher.swift in Sources */,
