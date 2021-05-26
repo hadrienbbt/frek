@@ -32,15 +32,3 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
-
-func decode<T: Decodable>(json: [String: Any]) -> T? {
-    do {
-        let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: jsonData)
-    } catch {
-        print("Couldn't parse \(json) as \(T.self):\n\(error)")
-        return nil
-        
-    }
-}
