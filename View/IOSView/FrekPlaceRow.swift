@@ -10,14 +10,12 @@ import MapKit
 
 struct FrekPlaceRow: View {
     @Binding var frekPlace: FrekPlace
-    
-    let image: AsyncImage<Text>
-    
+        
     var body: some View {
         let frekPlaceDetail = FrekPlaceDetail(frekPlace: $frekPlace)
         NavigationLink(destination: frekPlaceDetail) {
             HStack {
-                FrekThumbnail(image: image)
+                FrekThumbnail(name: frekPlace.suffix)
                     .padding([.top, .bottom], 10)
                 FrekDescription(frekPlace: $frekPlace)
                 Spacer()

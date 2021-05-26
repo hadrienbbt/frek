@@ -9,13 +9,11 @@ import SwiftUI
 
 struct FrekPlaceRow: View {
     @Binding var frekPlace: FrekPlace
-    
-    let image: AsyncImage<Text>
-    
+        
     var body: some View {
         VStack {
             HStack {
-                FrekThumbnail(image: image)
+                FrekThumbnail(name: frekPlace.suffix)
                     .padding()
                 Text("\(frekPlace.crowd)")
                     .font(.title)

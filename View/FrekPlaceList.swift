@@ -9,17 +9,13 @@ import SwiftUI
 
 struct FrekPlaceList: View {
     
-    @Environment(\.imageCache) var cache: ImageCache
     @State var frekPlaces: [FrekPlace]
     @State var refreshing: Bool
     let refresh: () -> Void
     
     func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
         let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
-        return FrekPlaceRow(
-            frekPlace: $frekPlaces[index],
-            image: AsyncImage(url: frekPlace.image, placeholder: Text("⏳"), cache: cache) { $0.resizable() }
-        )
+        return FrekPlaceRow(frekPlace: $frekPlaces[index])
     }
     
     var body: some View {
