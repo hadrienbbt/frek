@@ -46,8 +46,9 @@ class StateFetcher: ObservableObject {
         HTTPHelper.httpRequest(endpoint: "https://fedutia.fr:8003", method: .get, params: nil) { result in
             switch result {
             case .success(let dictFrekPlaces):
-                self.onFrekPlacesFetched(dictFrekPlaces)
-                print("✅ \(self.frekPlaces.count) FrekPlacecs created!")
+                self.onFrekPlacesFetched(dictFrekPlaces) {
+                    print("✅ \(self.frekPlaces.count) FrekPlaces created!")
+                }
             case .failure(let err):
                 print("❌ Error fetching backend: \(err)")
             }
@@ -55,16 +56,26 @@ class StateFetcher: ObservableObject {
         }
     }
     
-    func onFrekPlacesFetched(_ frekPlaces: [Dict]) {
+    func onFrekPlacesFetched(_ frekPlaces: [Dict], _ completion: @escaping () -> Void) {
+        let taskGroup = DispatchGroup()
         frekPlaces.forEach { frekPlaceDict in
-            if let frekPlace = FrekPlace.decode(frekPlaceDict) {
-                DispatchQueue.main.async {
-                    if let index = self.frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) {
-                        self.updateFrekPlace(at: index, frekPlace)
-                    } else {
-                        self.frekPlaces.append(frekPlace)
-                    }
+            taskGroup.enter()
+            processFrekPlaceDict(frekPlaceDict) { taskGroup.leave() }
+        }
+        taskGroup.notify(queue: .main) {
+            completion()
+        }
+    }
+    
+    func processFrekPlaceDict(_ frekPlaceDict: Dict, _ completion: @escaping () -> Void) {
+        if let frekPlace = FrekPlace.decode(frekPlaceDict) {
+            DispatchQueue.main.async {
+                if let index = self.frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) {
+                    self.updateFrekPlace(at: index, frekPlace)
+                } else {
+                    self.frekPlaces.append(frekPlace)
                 }
+                completion()
             }
         }
     }

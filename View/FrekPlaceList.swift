@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FrekPlaceList: View {
     
-    @State var frekPlaces: [FrekPlace]
-    @State var loading: Bool
+    @Binding var frekPlaces: [FrekPlace]
+    @Binding var loading: Bool
     
     func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
         let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!

@@ -33,8 +33,8 @@ struct FrekApp: View {
     
     var list: some View {
         FrekPlaceList(
-            frekPlaces: stateFetcher.frekPlaces,
-            loading: stateFetcher.loading
+            frekPlaces: $stateFetcher.frekPlaces,
+            loading: $stateFetcher.loading
         )
     }
 }

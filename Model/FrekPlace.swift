@@ -34,7 +34,7 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
     }
     
     static func decode(_ dict: Dict) -> FrekPlace? {
-        guard let id = dict["id"] as? String,
+        guard let id = dict["frekId"] as? String,
             let name = dict["name"] as? String,
             let suffix = dict["suffix"] as? String,
             let crowd = dict["crowd"] as? Int,
@@ -43,7 +43,10 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
             let state = dict["state"] as? Bool,
             let latitude = dict["latitude"] as? Double,
             let longitude = dict["longitude"] as? Double
-            else { return nil }
+            else {
+                print("❌ Error parsing frekplace dictionnary")
+                return nil
+        }
         return FrekPlace(id, name, suffix, crowd, spotsAvailable, fmi, state, latitude, longitude)
     }
     
