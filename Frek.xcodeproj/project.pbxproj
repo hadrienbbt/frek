@@ -39,12 +39,6 @@
 		4884D1F025177B6C0074CA5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1EF25177B6C0074CA5F /* Preview Assets.xcassets */; };
 		4884D20425177C310074CA5F /* CrowdFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FE72516E0B800FFED01 /* CrowdFetcher.swift */; };
 		4884D20C2517C7C20074CA5F /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
-		4884D2152517C86E0074CA5F /* frekPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 4884D2142517C86E0074CA5F /* frekPlaces.json */; };
-		4884D21E2517D2020074CA5F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D21D2517D2020074CA5F /* Data.swift */; };
-		4884D2252517D6530074CA5F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D21D2517D2020074CA5F /* Data.swift */; };
-		4884D22C2517D6570074CA5F /* frekPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = 4884D2142517C86E0074CA5F /* frekPlaces.json */; };
-		4884D23B2517D6780074CA5F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D23A2517D6780074CA5F /* extensions.swift */; };
-		4884D2482517D67B0074CA5F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D23A2517D6780074CA5F /* extensions.swift */; };
 		4884D25E2517D97B0074CA5F /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */; };
 		48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */; };
 		48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
@@ -159,9 +153,6 @@
 		4884D1EF25177B6C0074CA5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4884D1F125177B6C0074CA5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4884D1F225177B6C0074CA5F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		4884D2142517C86E0074CA5F /* frekPlaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frekPlaces.json; sourceTree = "<group>"; };
-		4884D21D2517D2020074CA5F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		4884D23A2517D6780074CA5F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeta.swift; sourceTree = "<group>"; };
@@ -351,8 +342,6 @@
 		4884D2132517C81D0074CA5F /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				4884D2142517C86E0074CA5F /* frekPlaces.json */,
-				4884D21D2517D2020074CA5F /* Data.swift */,
 				482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */,
 			);
 			path = Ressources;
@@ -396,7 +385,6 @@
 		48CBDF762519026300742F9B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4884D23A2517D6780074CA5F /* extensions.swift */,
 				48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */,
 				48C6FFE1251A42360051B4B3 /* ValueStore.swift */,
 				480836D9265A8358009C15D9 /* HTTPHelper.swift */,
@@ -617,7 +605,6 @@
 			files = (
 				482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */,
 				4817E80B2657B9A200128396 /* GoogleService-Info.plist in Resources */,
-				4884D2152517C86E0074CA5F /* frekPlaces.json in Resources */,
 				48435FBE2516DED500FFED01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +645,6 @@
 			files = (
 				482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */,
 				4884D1F025177B6C0074CA5F /* Preview Assets.xcassets in Resources */,
-				4884D22C2517D6570074CA5F /* frekPlaces.json in Resources */,
 				4884D1ED25177B6C0074CA5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -847,13 +833,11 @@
 				482A39F3252221F600A2028A /* FrekPlaceGrid.swift in Sources */,
 				4884D25E2517D97B0074CA5F /* FrekPlaceRow.swift in Sources */,
 				482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */,
-				4884D21E2517D2020074CA5F /* Data.swift in Sources */,
 				48435FBA2516DED200FFED01 /* MainView.swift in Sources */,
 				48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */,
 				48435FE82516E0B800FFED01 /* CrowdFetcher.swift in Sources */,
 				48435FED2516E18F00FFED01 /* FrekPlace.swift in Sources */,
 				48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */,
-				4884D23B2517D6780074CA5F /* extensions.swift in Sources */,
 				482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,10 +870,8 @@
 				48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */,
 				4884D1E525177B690074CA5F /* ExtensionDelegate.swift in Sources */,
 				4884D1E925177B690074CA5F /* NotificationView.swift in Sources */,
-				4884D2482517D67B0074CA5F /* extensions.swift in Sources */,
 				4884D20425177C310074CA5F /* CrowdFetcher.swift in Sources */,
 				4884D1EB25177B690074CA5F /* ComplicationController.swift in Sources */,
-				4884D2252517D6530074CA5F /* Data.swift in Sources */,
 				480836DB265A8358009C15D9 /* HTTPHelper.swift in Sources */,
 				482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */,
 				48EB13B5256893F800B01639 /* RefreshButton.swift in Sources */,
