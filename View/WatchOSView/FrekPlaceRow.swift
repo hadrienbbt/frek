@@ -25,7 +25,7 @@ struct FrekPlaceRow: View {
                 HStack {
                     Text(frekPlace.name)
                         .font(.headline)
-                    ToggleFavoriteButton(isFavorite: $frekPlace.favorite)
+                    ToggleFavoriteButton(id: frekPlace.id, isFavorite: $frekPlace.favorite)
                 }
                 /* Text(frekPlace.state ? "Ouvert" : "Fermé")
                     .font(.subheadline) */
