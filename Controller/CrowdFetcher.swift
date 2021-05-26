@@ -157,19 +157,50 @@ class CrowdFetcher: ObservableObject {
         frekPlaces[index].crowd = CrowdParser.findCrowd(from: frekHTML)
         frekPlaces[index].spotsAvailable = CrowdParser.findSpotsAvailable(from: frekHTML)
         frekPlaces[index].fmi = frekPlaces[index].crowd + frekPlaces[index].spotsAvailable
+        frekPlaces[index].state = CrowdParser.findState(for: frekHTML)
     }
-    /*
-    func toggleFavorite(_ frekPlace: FrekPlace) -> Bool {
-        guard let frekIndex = frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) else {
-            print("❌ Couldn't find frekPlace with id: \(frekPlace.id)")
-            fatalError()
+    
+    func saveFrekPlaceImage(_ url: URL, _ name: String) {
+        print("⏳ Saving Image...")
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        URLSession.shared.downloadTask(with: url) { location, response, error in
+            guard let location = location else {
+                print("❌ Download error: ", error ?? "")
+                return
+            }
+            do {
+                let pathComponent = documents.appendingPathComponent(name)
+                let filePath = pathComponent.path
+                if !FileManager.default.fileExists(atPath: filePath) {
+                    try FileManager.default.moveItem(at: location, to: pathComponent)
+                    print("✅ Image Saved: \(filePath)")
+                    return
+                }
+                print("❌ File exists: ")
+            } catch {
+                print("❌ Error moving items: \(error)")
+            }
+        }.resume()
+    }
+    
+    func getFrekPlaceLocaleImageURL(_ frekPlaceWebImageUrl: URL) -> URL? {
+        print("⏳ Get image from storage...")
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            if let url = fileURLs.first(where: { $0 == frekPlaceWebImageUrl }) {
+                print("✅ Image found: \(url)")
+                return url
+            }
+        } catch {
+            print("❌ Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
-        let frekPlaces = valueStore.frekPlaces[frekIndex]
-        frekPlaces.favorite = !frekPlaces.favorite
-        valueStore.frekPlaces[frekIndex] = frekPlaces
-        return frekPlaces.favorite
+        print("❌ Image not found")
+        return nil
     }
-    */
+    
     func fetchGymHTML(with suffix: String, _ completion: @escaping (String?) -> Void) {
         guard let url = URL(string: "https://www.cerclesdelaforme.com/salle-de-sport/\(suffix)/") else {
             print("❌ Unsupported gym suffix: \(suffix)")
