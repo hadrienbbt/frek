@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct FrekPlaceDetail: View {
     @Binding var frekPlace: FrekPlace
@@ -37,28 +36,9 @@ struct FrekPlaceDetail: View {
                     .font(.title2)
                 Text("Description")
             }
-            .padding()
+                .padding()
             Spacer()
         }
-    }
-}
-
-struct MapView: View {
-    var coordinate: CLLocationCoordinate2D
-    @State private var region = MKCoordinateRegion()
-
-    var body: some View {
-        Map(coordinateRegion: $region)
-            .onAppear {
-                setRegion(coordinate)
-            }
-    }
-
-    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-        region = MKCoordinateRegion(
-            center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
-        )
     }
 }
 
