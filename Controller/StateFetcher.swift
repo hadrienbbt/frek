@@ -1,5 +1,5 @@
 //
-//  CrowdFetcher.swift
+//  StateFetcher.swift
 //  Frek
 //
 //  Created by Hadrien Barbat on 2020-09-20.
@@ -11,7 +11,7 @@ import Foundation
 import ClockKit
 #endif
 
-class CrowdFetcher: ObservableObject {
+class StateFetcher: ObservableObject {
         
     @Published var frekPlaces: [FrekPlace] {
         didSet {

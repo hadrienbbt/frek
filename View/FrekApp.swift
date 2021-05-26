@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FrekApp: View {
     @ObservedObject
-    var crowdFetcher = CrowdFetcher()
+    var stateFetcher = StateFetcher()
     
     @ViewBuilder
     var body: some View {
@@ -27,15 +27,15 @@ struct FrekApp: View {
     
     #if os(iOS)
     var grid: some View {
-        FrekPlaceGrid(frekPlaces: crowdFetcher.frekPlaces)
+        FrekPlaceGrid(frekPlaces: stateFetcher.frekPlaces)
     }
     #endif
     
     var list: some View {
         FrekPlaceList(
-            frekPlaces: crowdFetcher.frekPlaces,
-            refreshing: crowdFetcher.refreshing,
-            refresh: crowdFetcher.refresh
+            frekPlaces: stateFetcher.frekPlaces,
+            refreshing: stateFetcher.refreshing,
+            refresh: stateFetcher.refresh
         )
     }
 }
