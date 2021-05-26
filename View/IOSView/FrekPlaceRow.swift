@@ -16,16 +16,10 @@ struct FrekPlaceRow: View {
         NavigationLink(destination: frekPlaceDetail) {
             HStack {
                 FrekThumbnail(name: frekPlace.suffix)
-                    .padding([.top, .bottom], 10)
+                    .padding(.vertical)
                 FrekDescription(frekPlace: $frekPlace)
                 Spacer()
-                VStack {
-                    Text("\(frekPlace.crowd)")
-                        .font(.title)
-                    Text("Personnes\nsur place")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                }
+                FrekCrowd(crowd: $frekPlace.crowd)
             }
         }
     }
@@ -41,11 +35,25 @@ struct FrekDescription: View {
                     .font(.headline)
                 ToggleFavoriteButton(id: frekPlace.id, isFavorite: $frekPlace.favorite)
             }
-            /* Text(frekPlace.state ? "Ouvert" : "Fermé")
-                .font(.subheadline) */
+            Text(frekPlace.state ? "Ouvert" : "Fermé")
+                .font(.subheadline)
             Text("FMI: \(frekPlace.fmi)")
                 .font(.subheadline)
         }
-        .padding()
+        .padding(.horizontal, 5)
+    }
+}
+
+struct FrekCrowd: View {
+    @Binding var crowd: Int
+    
+    var body: some View {
+        VStack {
+            Text(crowd.description)
+                .font(.title)
+            Text("Personnes\nsur place")
+                .font(.caption2)
+                .multilineTextAlignment(.center)
+        }
     }
 }
