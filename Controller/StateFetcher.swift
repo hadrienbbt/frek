@@ -19,15 +19,20 @@ class StateFetcher: ObservableObject {
         }
     }
     
-    @Published var refreshing = false
+    @Published var loading = false
         
     init() {
         frekPlaces = ValueStore().frekPlaces
-        fetchBackend()
+        loadData()
     }
     
-    func refresh() {
-        fetchBackend()
+    func loadData() {
+        loading = true
+        fetchBackend {
+            DispatchQueue.main.async {
+                self.loading = false
+            }
+        }
     }
     
     func updateData() {
@@ -36,8 +41,8 @@ class StateFetcher: ObservableObject {
         #endif
     }
     
-    func fetchBackend() {
-        refreshing = true
+    func fetchBackend(_ completion: @escaping () -> Void) {
+        loading = true
         HTTPHelper.httpRequest(endpoint: "https://fedutia.fr:8003", method: .get, params: nil) { result in
             switch result {
             case .success(let dictFrekPlaces):
@@ -46,6 +51,7 @@ class StateFetcher: ObservableObject {
             case .failure(let err):
                 print("❌ Error fetching backend: \(err)")
             }
+            completion()
         }
     }
     

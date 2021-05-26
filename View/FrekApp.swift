@@ -34,8 +34,7 @@ struct FrekApp: View {
     var list: some View {
         FrekPlaceList(
             frekPlaces: stateFetcher.frekPlaces,
-            refreshing: stateFetcher.refreshing,
-            refresh: stateFetcher.refresh
+            loading: stateFetcher.loading
         )
     }
 }

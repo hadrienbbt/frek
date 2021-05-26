@@ -10,8 +10,7 @@ import SwiftUI
 struct FrekPlaceList: View {
     
     @State var frekPlaces: [FrekPlace]
-    @State var refreshing: Bool
-    let refresh: () -> Void
+    @State var loading: Bool
     
     func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
         let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
@@ -36,16 +35,8 @@ struct FrekPlaceList: View {
                 }
                 .listStyle(InsetGroupedListStyle())
                 .navigationBarTitle(Text("Salles de gym"))
-                .navigationBarItems(
-                    trailing: Button(refreshing ? "🔄 Refreshing" : "🔄 Refresh") { self.refresh() }
-                        .disabled(refreshing)
-                )
             #elseif os(watchOS)
                 List {
-                    RefreshButton(
-                        refreshing: refreshing,
-                        refresh: refresh
-                    )
                     if favorites.count > 0 {
                         Section(header: Text("Favorites")) {
                             ForEach(favorites) { self.createFrekPlaceRow($0) }
