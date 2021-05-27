@@ -56,27 +56,38 @@ class StateFetcher: ObservableObject {
         }
     }
     
-    func onFrekPlacesFetched(_ frekPlaces: [Dict], _ completion: @escaping () -> Void) {
+    func onFrekPlacesFetched(_ frekPlaceDicts: [Dict], _ completion: @escaping () -> Void) {
         let taskGroup = DispatchGroup()
-        frekPlaces.forEach { frekPlaceDict in
+        frekPlaceDicts.forEach { frekPlaceDict in
             taskGroup.enter()
             processFrekPlaceDict(frekPlaceDict) { taskGroup.leave() }
         }
         taskGroup.notify(queue: .main) {
+            if self.frekPlaces.count != frekPlaceDicts.count {
+                self.filterRemovedFrekPlaces(frekPlaceDicts)
+            }
             completion()
         }
     }
     
-    func processFrekPlaceDict(_ frekPlaceDict: Dict, _ completion: @escaping () -> Void) {
-        if let frekPlace = FrekPlace.decode(frekPlaceDict) {
-            DispatchQueue.main.async {
-                if let index = self.frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) {
-                    self.updateFrekPlace(at: index, frekPlace)
-                } else {
-                    self.frekPlaces.append(frekPlace)
-                }
-                completion()
+    func filterRemovedFrekPlaces(_ frekPlaceDicts: [Dict]) {
+        self.frekPlaces = self.frekPlaces.filter { storedFrekPlace in
+            return frekPlaceDicts.contains { dict in
+                guard let frekPlace = FrekPlace.decode(dict) else { return false }
+                return storedFrekPlace.id == frekPlace.id
             }
+        }
+    }
+    
+    func processFrekPlaceDict(_ frekPlaceDict: Dict, _ completion: @escaping () -> Void) {
+        guard let frekPlace = FrekPlace.decode(frekPlaceDict) else { return }
+        DispatchQueue.main.async {
+            if let index = self.frekPlaces.firstIndex(where: { $0.id == frekPlace.id }) {
+                self.updateFrekPlace(at: index, frekPlace)
+            } else {
+                self.frekPlaces.append(frekPlace)
+            }
+            completion()
         }
     }
     
