@@ -104,8 +104,6 @@ class FrekFormatter: Formatter {
     }
     
     func string(from date: Date) -> String {
-        print("Locale")
-        print(Locale.current)
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMMdEEEE")
         return dateFormatter.string(from: date)
     }
