@@ -22,11 +22,13 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
     var state: Bool
     var favorite: Bool = false
     
+    var frekCharts: [FrekChart]
+    
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
     
-    init (_ id: String, _ name: String, _ suffix: String, _ crowd: Int, _ spotsAvailable: Int, _ fmi: Int, _ state: Bool, _ latitude: Double, _ longitude: Double) {
+    init (_ id: String, _ name: String, _ suffix: String, _ crowd: Int, _ spotsAvailable: Int, _ fmi: Int, _ state: Bool, _ latitude: Double, _ longitude: Double, _ charts: [FrekChart]) {
         self.id = id
         self.name = name
         self.suffix = suffix
@@ -36,6 +38,7 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
         self.state = state
         self.latitude = latitude
         self.longitude = longitude
+        self.frekCharts = charts
     }
     
     static func decode(_ dict: Dict) -> FrekPlace? {
@@ -47,12 +50,14 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
             let fmi = dict["fmi"] as? Int,
             let state = dict["state"] as? Bool,
             let latitude = dict["latitude"] as? Double,
-            let longitude = dict["longitude"] as? Double
+            let longitude = dict["longitude"] as? Double,
+            let datasets = dict["datasets"] as? [Dict],
+            let charts = datasets.map ({ FrekChart.decode($0, fmi) }) as? [FrekChart]
             else {
                 print("❌ Error parsing frekplace dictionnary")
                 return nil
         }
-        return FrekPlace(id, name, suffix, crowd, spotsAvailable, fmi, state, latitude, longitude)
+        return FrekPlace(id, name, suffix, crowd, spotsAvailable, fmi, state, latitude, longitude, charts)
     }
     
     var description: String {
