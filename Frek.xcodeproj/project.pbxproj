@@ -51,6 +51,8 @@
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48C925C52665006600770D22 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C925C42665006600770D22 /* SwiftUICharts */; };
+		48C925CC2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
+		48C925CD2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
 		48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
 		48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC8776256DD3E1008E6920 /* ClockKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		556E7ECAA483DE617A302124 /* Pods_FrekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207334EE2546749CD79199F3 /* Pods_FrekTests.framework */; };
@@ -164,6 +166,7 @@
 		48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeta.swift; sourceTree = "<group>"; };
 		48C6FFE1251A42360051B4B3 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteButton.swift; sourceTree = "<group>"; };
+		48C925CB2666382400770D22 /* extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extenstions.swift; sourceTree = "<group>"; };
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
 		48FC8776256DD3E1008E6920 /* ClockKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClockKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/ClockKit.framework; sourceTree = DEVELOPER_DIR; };
 		6033B5E76679DF7F1AD8537A /* Pods-Frek-FrekUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frek-FrekUITests.debug.xcconfig"; path = "Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 				48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */,
 				48C6FFE1251A42360051B4B3 /* ValueStore.swift */,
 				480836D9265A8358009C15D9 /* HTTPHelper.swift */,
+				48C925CB2666382400770D22 /* extenstions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -840,6 +844,7 @@
 			files = (
 				48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */,
 				482A39B52522185C00A2028A /* FrekApp.swift in Sources */,
+				48C925CC2666382400770D22 /* extenstions.swift in Sources */,
 				4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */,
 				48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */,
 				485258EC2663E0E600E68193 /* FrekChart.swift in Sources */,
@@ -879,6 +884,7 @@
 			files = (
 				4884D1E125177B690074CA5F /* HostingController.swift in Sources */,
 				48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */,
+				48C925CD2666382400770D22 /* extenstions.swift in Sources */,
 				482A39B62522185C00A2028A /* FrekApp.swift in Sources */,
 				4884D1E725177B690074CA5F /* NotificationController.swift in Sources */,
 				485258ED2663E0E600E68193 /* FrekChart.swift in Sources */,
