@@ -9,31 +9,22 @@ import SwiftUI
 import ClockKit
 
 struct ToggleFavoriteButton: View {
-    var id: String
-    @Binding var isFavorite: Bool
-    
-    func toggleFavorite() -> Bool {
-        var frekPlaces = ValueStore().frekPlaces
-        guard let frekIndex = frekPlaces.firstIndex(where: { $0.id == id }) else {
-            print("❌ Couldn't find frekPlace with id: \(id)")
-            fatalError()
+    @Binding var frekPlace: FrekPlace
+
+    func toggleFavorite() {
+        withAnimation {
+            frekPlace.favorite = !frekPlace.favorite
+            print(frekPlace.favorite)
         }
-        frekPlaces[frekIndex].favorite = !frekPlaces[frekIndex].favorite
-        ValueStore().frekPlaces = frekPlaces
-        return frekPlaces[frekIndex].favorite
+        #if os(watchOS)
+            CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
+        #endif
     }
     
     var body: some View {
-        Button(action: {
-            withAnimation {
-                isFavorite = toggleFavorite()
-            }
-            #if os(watchOS)
-                CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
-            #endif
-        }, label: {
-            Image(systemName: isFavorite ? "heart.fill" : "heart")
-                .foregroundColor(isFavorite ? .red : .gray)
+        Button(action: toggleFavorite, label: {
+            Image(systemName: frekPlace.favorite ? "heart.fill" : "heart")
+                .foregroundColor(frekPlace.favorite ? .red : .gray)
         })
         .buttonStyle(PlainButtonStyle())
     }

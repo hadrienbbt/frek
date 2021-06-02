@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-struct FrekApp: View {
-    @ObservedObject
-    var stateFetcher = StateFetcher()
-    
+struct FrekApp: View {    
     @ViewBuilder
     var body: some View {
         #if os(iOS)
@@ -27,14 +24,11 @@ struct FrekApp: View {
     
     #if os(iOS)
     var grid: some View {
-        FrekPlaceGrid(frekPlaces: stateFetcher.frekPlaces)
+        FrekPlaceGrid()
     }
     #endif
     
     var list: some View {
-        FrekPlaceList(
-            frekPlaces: $stateFetcher.frekPlaces,
-            loading: $stateFetcher.loading
-        )
+        FrekPlaceList()
     }
 }

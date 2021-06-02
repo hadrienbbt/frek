@@ -6,18 +6,16 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct FrekPlaceRow: View {
     @Binding var frekPlace: FrekPlace
         
     var body: some View {
-        let frekPlaceDetail = FrekPlaceDetail(frekPlace: $frekPlace)
-        NavigationLink(destination: frekPlaceDetail) {
-            HStack {
-                FrekThumbnail(name: frekPlace.suffix)
-                FrekDescription(frekPlace: $frekPlace)
-                Spacer()
+        HStack {
+            FrekThumbnail(name: frekPlace.suffix)
+            FrekDescription(frekPlace: $frekPlace)
+            Spacer()
+            if frekPlace.isOpen {
                 FrekCrowd(crowd: $frekPlace.crowd)
             }
         }
@@ -32,11 +30,11 @@ struct FrekDescription: View {
             HStack {
                 Text(frekPlace.name)
                     .font(.headline)
-                ToggleFavoriteButton(id: frekPlace.id, isFavorite: $frekPlace.favorite)
+                ToggleFavoriteButton(frekPlace: $frekPlace)
             }
-            Text(frekPlace.state ? "Ouvert" : "Fermé")
+            Text(frekPlace.isOpen ? "Ouverte" : "Fermée")
                 .font(.subheadline)
-            Text("FMI: \(frekPlace.fmi)")
+            Text("Max: \(frekPlace.fmi)")
                 .font(.subheadline)
         }
         .padding(.horizontal, 5)

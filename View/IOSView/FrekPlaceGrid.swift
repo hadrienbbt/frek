@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FrekPlaceGrid: View {
-    @State var frekPlaces: [FrekPlace]
-    
+    @ObservedObject var viewModel = FrekPlaceListViewModel()
+
     var columns: [GridItem] {
         var columns = [GridItem(spacing: 50), GridItem(spacing: 50)]
         if !DeviceMeta().isPortrait { columns.append(GridItem(spacing: 50)) }
@@ -17,12 +17,12 @@ struct FrekPlaceGrid: View {
     }
     
     func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
-        let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
-        return FrekPlaceRow(frekPlace: $frekPlaces[index])
+        let index = viewModel.frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
+        return FrekPlaceRow(frekPlace: $viewModel.frekPlaces[index])
     }
     
     var body: some View {
-        let sortedFrekPlaces = frekPlaces.sorted(by: { $0.name < $1.name })
+        let sortedFrekPlaces = viewModel.frekPlaces.sorted(by: { $0.name < $1.name })
         let favorites = sortedFrekPlaces.filter { $0.favorite }
         
         ScrollView {
@@ -38,7 +38,7 @@ struct FrekPlaceGrid: View {
             }
             Section(header: Text("Toutes")) {
                 LazyVGrid(columns: columns, spacing: 50) {
-                    ForEach(frekPlaces) { self.createFrekPlaceRow($0) }
+                    ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
                 }
                 .listStyle(InsetListStyle())
                 .padding()

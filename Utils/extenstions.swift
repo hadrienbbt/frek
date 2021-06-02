@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+typealias Dict = [String: Any]
+
 extension View {
    @ViewBuilder
    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {

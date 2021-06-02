@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>794664320538-0rhlrbni4q5t2ag614rovbdn9pt6pfjf.apps.googleusercontent.com</string>
+	<string>794664320538-h06ngs2uu86lchpqgbchgrea3bkk149v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.794664320538-0rhlrbni4q5t2ag614rovbdn9pt6pfjf</string>
+	<string>com.googleusercontent.apps.794664320538-h06ngs2uu86lchpqgbchgrea3bkk149v</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA-Tt1CEWFfJghknXbORq3MSWk5fXpzTdo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>barbat.hadrien.Frek</string>
+	<string>fr.fedutia.Frek</string>
 	<key>PROJECT_ID</key>
 	<string>frek-bcee6</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:794664320538:ios:f3915d4cbda1c53c79dba3</string>
+	<string>1:794664320538:ios:12b4471908d5d5fc79dba3</string>
 </dict>
 </plist>

@@ -27,7 +27,7 @@ struct FrekPlaceRow: View {
                 }
                 /* Text(frekPlace.state ? "Ouvert" : "Fermé")
                     .font(.subheadline) */
-                Text("FMI: \(frekPlace.fmi)")
+                Text("Max: \(frekPlace.fmi)")
                     .font(.subheadline)
             }
             

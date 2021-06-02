@@ -9,28 +9,30 @@ import SwiftUI
 
 struct FrekPlaceList: View {
     
-    @Binding var frekPlaces: [FrekPlace]
-    @Binding var loading: Bool
+    @ObservedObject var viewModel = FrekPlaceListViewModel()
     
-    func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
-        let index = frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
-        return FrekPlaceRow(frekPlace: $frekPlaces[index])
+    func createFrekPlaceRow(_ id: String) -> NavigationLink<FrekPlaceRow, FrekPlaceDetail> {
+        let index = viewModel.frekPlaces.firstIndex(where: { id == $0.id })!
+        return NavigationLink(destination: FrekPlaceDetail(frekPlace: $viewModel.frekPlaces[index])) {
+            FrekPlaceRow(frekPlace: $viewModel.frekPlaces[index])
+        }
     }
     
     var body: some View {
-        let sortedFrekPlaces = frekPlaces.sorted(by: { $0.name < $1.name })
-        let favorites = sortedFrekPlaces.filter { $0.favorite }
+        let favorites = viewModel.favorites
+        let sortedFrekPlaces = viewModel.sortedFrekPlaces
         
         return NavigationView {
             #if os(iOS)
                 List {
                     if favorites.count > 0 {
                         Section(header: Text("Favorites")) {
-                            ForEach(favorites) { self.createFrekPlaceRow($0) }
+                            ForEach(favorites) { self.createFrekPlaceRow($0.id)
+                            }
                         }
                     }
                     Section(header: Text("Toutes")) {
-                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
+                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0.id) }
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -39,16 +41,18 @@ struct FrekPlaceList: View {
                 List {
                     if favorites.count > 0 {
                         Section(header: Text("Favorites")) {
-                            ForEach(favorites) { self.createFrekPlaceRow($0) }
+                            ForEach(favorites) { self.createFrekPlaceRow($0.id) }
                         }
                     }
                     Section(header: Text("Toutes")) {
-                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
+                        ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0.id) }
                     }
                 }
                 .listStyle(CarouselListStyle())
                 .navigationBarTitle(Text("Salles de gym"))
             #endif
+        }.onAppear {
+            viewModel.fetchFrekPlaces()
         }
     }
 }
