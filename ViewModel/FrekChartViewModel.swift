@@ -55,9 +55,10 @@ class FrekChartViewModel: ObservableObject {
     ]
     
     var smallLineChartData: LineChartData {
-        let datapoints: [LineChartDataPoint] = chart.dataset
+        var datapoints: [LineChartDataPoint] = chart.dataset
             .filter { $0 != 0 }
             .map { LineChartDataPoint(value: $0) }
+        datapoints.insert(LineChartDataPoint(value: 0), at: 0)
         let data = LineDataSet(
             dataPoints: datapoints,
             style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .top), lineType: .curvedLine)

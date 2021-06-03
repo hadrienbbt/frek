@@ -14,6 +14,8 @@ struct FrekChartRow: View {
 
     var info: String { viewModel.chart.isOpen ? "Entre \(viewModel.frekStartTime) et \(viewModel.frekEndTime)\nMax: \(viewModel.max) personnes à \(viewModel.maxTime)" : "Fermée" }
     
+    let animationDuration = 0.2
+    
     var textBlock: some View {
         VStack(alignment: .leading) {
             Text(viewModel.formattedDate)
@@ -49,9 +51,11 @@ struct FrekChartRow: View {
             .if(viewModel.chart.isOpen) { stack in
                 stack
                     .contentShape(Rectangle())
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeInOut(duration: animationDuration))
                     .onTapGesture {
-                    withAnimation(Animation.easeInOut(duration: 0.2)) { self.showDetail.toggle() }
-                }
+                        self.showDetail.toggle()
+                    }
             }
             if viewModel.chart.isOpen, showDetail {
                 DetailedChart(chart: viewModel.chart, data: viewModel.detailedLineChartData)
