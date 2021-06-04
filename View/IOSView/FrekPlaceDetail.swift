@@ -57,7 +57,7 @@ struct FrekPlaceDetail: View {
                 }
             }
         }
-        .edgesIgnoringSafeArea([.top, .bottom])
+        .edgesIgnoringSafeArea([.top])
     }
 }
 
