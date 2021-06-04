@@ -16,9 +16,11 @@ struct FrekPlaceGrid: View {
         return columns
     }
     
-    func createFrekPlaceRow(_ frekPlace: FrekPlace) -> FrekPlaceRow {
-        let index = viewModel.frekPlaces.firstIndex(where: { frekPlace.id == $0.id })!
-        return FrekPlaceRow(frekPlace: $viewModel.frekPlaces[index])
+    func createFrekPlaceRow(_ id: String) -> NavigationLink<FrekPlaceRow, FrekPlaceDetail> {
+        let index = viewModel.frekPlaces.firstIndex(where: { id == $0.id })!
+        return NavigationLink(destination: FrekPlaceDetail(frekPlace: $viewModel.frekPlaces[index])) {
+            FrekPlaceRow(frekPlace: $viewModel.frekPlaces[index])
+        }
     }
     
     var body: some View {
@@ -29,7 +31,7 @@ struct FrekPlaceGrid: View {
             if favorites.count > 0 {
                 Section(header: Text("Favorites")) {
                     LazyVGrid(columns: columns, spacing: 50) {
-                        ForEach(favorites) { self.createFrekPlaceRow($0) }
+                        ForEach(favorites) { self.createFrekPlaceRow($0.id) }
                     }
                     .listStyle(InsetGroupedListStyle())
                     .padding()
@@ -38,7 +40,7 @@ struct FrekPlaceGrid: View {
             }
             Section(header: Text("Toutes")) {
                 LazyVGrid(columns: columns, spacing: 50) {
-                    ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0) }
+                    ForEach(sortedFrekPlaces) { self.createFrekPlaceRow($0.id) }
                 }
                 .listStyle(InsetListStyle())
                 .padding()

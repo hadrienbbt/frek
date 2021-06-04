@@ -29,10 +29,11 @@ class FrekFormatter: Formatter {
     
     func string(fromFrekTimeIndex index: Int) -> String {
         componentFormatter.unitsStyle = .abbreviated
-        let components = DateComponents(
-            hour: index / 2,
-            minute: (index % 2) * 30
-        )
+        var components = DateComponents(hour: index / 2)
+        let minutes = (index % 2) * 30
+        if minutes > 0 {
+            components.minute = minutes
+        }
         return componentFormatter.string(from: components)!
     }
     

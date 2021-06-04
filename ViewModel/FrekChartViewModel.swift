@@ -117,6 +117,12 @@ class FrekChartViewModel: ObservableObject {
     }
     
     var xAxisLabels: [String] {
+        (0...chart.dataset.count)
+            .filter { $0 % 6 == 0 }
+            .map { $0 != 0 && $0 != 48 ? formatter.string(fromFrekTimeIndex: $0) : " " }
+    }
+    
+    var xAxisLabels2: [String] {
         var period = 2
         var labels = chart.dataset
             .enumerated()
@@ -126,7 +132,7 @@ class FrekChartViewModel: ObservableObject {
                 .enumerated()
                 .filter { $0.offset % period == (period / 2) }
                 .map { $0.offset }
-            period *= 2
+            period += 1
         }
         return labels.map { formatter.string(fromFrekTimeIndex: $0) }
     }
