@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817E80C2657BA9400128396 /* AppDelegate.swift */; };
-		481F7DAC2668C30100BE818E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 481F7DAB2668C30100BE818E /* SwiftUICharts */; };
+		4818A558266AD06A001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A557266AD06A001F26C6 /* SwiftUICharts */; };
+		4818A55A266ADED6001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A559266ADED6001F26C6 /* SwiftUICharts */; };
+		4818A55C266AE5F9001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A55B266AE5F9001F26C6 /* SwiftUICharts */; };
 		481F7DAD2668C37700BE818E /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
 		481F7DAE2668C38000BE818E /* FrekChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CE266779D700770D22 /* FrekChartRow.swift */; };
 		482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
@@ -47,7 +49,6 @@
 		48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
-		48C925C52665006600770D22 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C925C42665006600770D22 /* SwiftUICharts */; };
 		48C925CC2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
 		48C925CD2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
 		48C925CF266779D700770D22 /* FrekChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CE266779D700770D22 /* FrekChartRow.swift */; };
@@ -209,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60DA19BC8E3F549C8EE28CEC /* Pods_Frek.framework in Frameworks */,
-				48C925C52665006600770D22 /* SwiftUICharts in Frameworks */,
+				4818A558266AD06A001F26C6 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				481F7DAC2668C30100BE818E /* SwiftUICharts in Frameworks */,
+				4818A55C266AE5F9001F26C6 /* SwiftUICharts in Frameworks */,
 				48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */,
 				97DC16A820579D06C11B5AF2 /* Pods_FrekWatch_WatchKit_Extension.framework in Frameworks */,
 			);
@@ -244,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16E8BD6BEF13C0A478E157E /* Pods_FrekWatch_WatchKit_App.framework in Frameworks */,
+				4818A55A266ADED6001F26C6 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +301,6 @@
 				4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */,
 				482A39F2252221F600A2028A /* FrekPlaceGrid.swift */,
 				48435FBD2516DED500FFED01 /* Assets.xcassets */,
-				48D1244826226527007E1805 /* FrekPlaceDetail.swift */,
-				48C925CE266779D700770D22 /* FrekChartRow.swift */,
 			);
 			path = IOSView;
 			sourceTree = "<group>";
@@ -388,6 +388,8 @@
 				482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */,
 				482A399E2522126900A2028A /* FrekThumbnail.swift */,
 				48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */,
+				48D1244826226527007E1805 /* FrekPlaceDetail.swift */,
+				48C925CE266779D700770D22 /* FrekChartRow.swift */,
 				48435FB82516DED200FFED01 /* IOSView */,
 				4884D1DF25177B690074CA5F /* WatchOSView */,
 				48548A24265EFF5300272ADB /* MapView.swift */,
@@ -468,7 +470,7 @@
 			);
 			name = Frek;
 			packageProductDependencies = (
-				48C925C42665006600770D22 /* SwiftUICharts */,
+				4818A557266AD06A001F26C6 /* SwiftUICharts */,
 			);
 			productName = Frek;
 			productReference = 48435FB62516DED200FFED01 /* Frek.app */;
@@ -547,6 +549,9 @@
 				4884D1DE25177B690074CA5F /* PBXTargetDependency */,
 			);
 			name = "FrekWatch WatchKit App";
+			packageProductDependencies = (
+				4818A559266ADED6001F26C6 /* SwiftUICharts */,
+			);
 			productName = "FrekWatch WatchKit App";
 			productReference = 4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
@@ -566,7 +571,7 @@
 			);
 			name = "FrekWatch WatchKit Extension";
 			packageProductDependencies = (
-				481F7DAB2668C30100BE818E /* SwiftUICharts */,
+				4818A55B266AE5F9001F26C6 /* SwiftUICharts */,
 			);
 			productName = "FrekWatch WatchKit Extension";
 			productReference = 4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */;
@@ -616,7 +621,7 @@
 			);
 			mainGroup = 48435FAD2516DED200FFED01;
 			packageReferences = (
-				48C925C32664EF8700770D22 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 48435FB72516DED200FFED01 /* Products */;
 			projectDirPath = "";
@@ -1417,7 +1422,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		48C925C32664EF8700770D22 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+		4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/willdale/SwiftUICharts";
 			requirement = {
@@ -1428,14 +1433,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		481F7DAB2668C30100BE818E /* SwiftUICharts */ = {
+		4818A557266AD06A001F26C6 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 48C925C32664EF8700770D22 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
-		48C925C42665006600770D22 /* SwiftUICharts */ = {
+		4818A559266ADED6001F26C6 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 48C925C32664EF8700770D22 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+		4818A55B266AE5F9001F26C6 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
