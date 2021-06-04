@@ -73,17 +73,9 @@ struct DetailedChart: View {
     var viewModel: FrekChartViewModel
     
     var body: some View {
-        LineChart(chartData: viewModel.detailedLineChartData)
-            .frame(height: 250)
-            /*.extraLine(
-                chartData: viewModel.detailedLineChartData,
-                legendTitle: "Max")
-                { viewModel.fmiExtraLineDataPoints }
-                style: { viewModel.fmiExtraLineStyle }*/
-            .xAxisGrid(chartData: viewModel.detailedLineChartData)
-            .yAxisGrid(chartData: viewModel.detailedLineChartData)
-            .xAxisLabels(chartData: viewModel.detailedLineChartData)
-            .yAxisLabels(chartData: viewModel.detailedLineChartData)
+        MultiLineChart(chartData: viewModel.detailedLineChartData)
+            .frekDetailedChart(chartData: viewModel.detailedLineChartData)
+            .frame(height: 350)
             .padding(.leading, -7)
             .padding(.bottom, 5)
     }

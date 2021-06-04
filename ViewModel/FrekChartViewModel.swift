@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import SwiftUI
 import SwiftUICharts
 
@@ -13,6 +14,7 @@ class FrekChartViewModel: ObservableObject {
     
     @Published var chart: FrekChart
     let formatter = FrekFormatter()
+    let governmentGauge = 0.5
     
     init(chart: FrekChart) {
         self.chart = chart
@@ -51,9 +53,9 @@ class FrekChartViewModel: ObservableObject {
     
     let gradient = [
         GradientStop(color: .green, location: 0),
-        GradientStop(color: .yellow, location: 0.25),
-        GradientStop(color: .orange, location: 0.5),
-        GradientStop(color: .red, location: 0.75)
+        GradientStop(color: .yellow, location: 0.33),
+        GradientStop(color: .orange, location: 0.66),
+        GradientStop(color: .red, location: 1)
     ]
     
     var smallLineChartData: LineChartData {
@@ -63,7 +65,7 @@ class FrekChartViewModel: ObservableObject {
         datapoints.insert(LineChartDataPoint(value: 0), at: 0)
         let data = LineDataSet(
             dataPoints: datapoints,
-            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .top), lineType: .curvedLine)
+            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center /*UnitPoint(x: 0, y: CGFloat(chart.fmi) * CGFloat(governmentGauge))*/), lineType: .curvedLine)
         )
         let chartStyle = LineChartStyle(
             topLine: .maximum(of: Double(chart.fmi)),
@@ -72,17 +74,23 @@ class FrekChartViewModel: ObservableObject {
         return LineChartData(dataSets: data, chartStyle: chartStyle)
     }
     
-    var detailedLineChartData: LineChartData {
-        let datapoints: [LineChartDataPoint] = chart.dataset
+    var detailedLineChartData: MultiLineChartData {
+        let frekDataPoints: [LineChartDataPoint] = chart.dataset
             .enumerated()
             .map { LineChartDataPoint(
                 value: $0.element,
                 xAxisLabel: formatter.string(fromFrekTimeIndex: $0.offset)
             )}
-        let data = LineDataSet(
-            dataPoints: datapoints,
-            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .top), lineType: .curvedLine)
-        )
+        let frekLineStyle = LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center/*UnitPoint(x: 24, y: CGFloat(chart.fmi) * CGFloat(governmentGauge))*/), lineType: .curvedLine)
+        let fmiDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0) }
+        let fmiLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line)
+        let gaugeDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0 * governmentGauge) }
+        let gaugeLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line, strokeStyle: Stroke(lineWidth: 1, dash: [8], dashPhase: 0))
+        let data = MultiLineDataSet(dataSets: [
+            LineDataSet(dataPoints: fmiDataPoints, legendTitle: "Max: \(chart.fmi)", style: fmiLineStyle),
+            LineDataSet(dataPoints: frekDataPoints, legendTitle: "Fréquentation", style: frekLineStyle),
+            LineDataSet(dataPoints: gaugeDataPoints, legendTitle: "Jauge réduite à \(Int(governmentGauge * 100))%", style: gaugeLineStyle),
+        ])
         let gridStyle = GridStyle(
             numberOfLines: yAxisLabels.count,
             lineColour: Color(.systemGray5).opacity(0.5),
@@ -97,12 +105,10 @@ class FrekChartViewModel: ObservableObject {
             yAxisGridStyle: gridStyle,
             yAxisLabelColour: .secondary,
             yAxisNumberOfLabels: yAxisLabels.count,
-            yAxisTitle: "Fréquentation",
-            yAxisTitleColour: .secondary,
             topLine: .maximum(of: Double(yAxisLabels.last!)!),
             globalAnimation: .easeOut(duration: 0.5)
         )
-        return LineChartData(
+        return MultiLineChartData(
             dataSets: data,
             xAxisLabels: xAxisLabels,
             yAxisLabels: yAxisLabels,
@@ -126,27 +132,40 @@ class FrekChartViewModel: ObservableObject {
     }
     
     var yAxisLabels: [String] {
-        var period = 1
+        let max = round((Double(chart.fmi) / 10)) * 10
+        var period = 0.0
         var labels = [String]()
         repeat {
             labels.removeAll()
-            var start = 0
-            while start < chart.fmi{
+            var start = 0.0
+            period += 10
+            repeat {
                 labels.append(start.description)
-                start += period * 10
-            }
-            period += 1
-        } while labels.count > 7
+                start += period
+            } while start <= max
+        } while labels.count > 10
+        if let last = labels.last,
+           let lastDouble = Double(last),
+           lastDouble < max {
+            let extraLabel = (lastDouble + period).description
+            labels.append(extraLabel)
+        }
         return labels
     }
-    
-    let fmiExtraLineStyle = ExtraLineStyle(
-        lineColour: ColourStyle(colour: .red),
-        lineType: .line,
-        yAxisTitle: "Max"
-    )
-        
-    var fmiExtraLineDataPoints: [ExtraLineDataPoint] {
-        chart.fmiDataset.map { ExtraLineDataPoint(value: $0) }
+}
+
+extension View {
+    public func frekDetailedChart<T>(chartData: T) -> some View where T : CTLineBarChartDataProtocol {
+        self
+            .xAxisGrid(chartData: chartData)
+            .yAxisGrid(chartData: chartData)
+            .xAxisLabels(chartData: chartData)
+            .yAxisLabels(chartData: chartData)
+            .legends(
+                chartData: chartData,
+                columns: [GridItem(.flexible()), GridItem(.flexible())],
+                iconWidth: 30, font: .subheadline,
+                textColor: .secondary
+            )
     }
 }
