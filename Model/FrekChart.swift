@@ -16,5 +16,5 @@ struct FrekChart: Identifiable, Decodable, Encodable {
     let fmi: Int
     
     var isOpen: Bool { dataset.contains { $0 != 0 } }
-    
+    var fmiDataset: [Double] { dataset.map { _ in Double(fmi) }}
 }

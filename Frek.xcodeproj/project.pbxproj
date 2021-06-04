@@ -30,7 +30,6 @@
 		48548A25265EFF5300272ADB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48548A24265EFF5300272ADB /* MapView.swift */; };
 		48548A26265EFF5300272ADB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48548A24265EFF5300272ADB /* MapView.swift */; };
 		4884D1CD25177B640074CA5F /* FrekWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4884D1D325177B640074CA5F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1D125177B640074CA5F /* Interface.storyboard */; };
 		4884D1D525177B680074CA5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1D425177B680074CA5F /* Assets.xcassets */; };
 		4884D1DC25177B690074CA5F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4884D1E125177B690074CA5F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1E025177B690074CA5F /* HostingController.swift */; };
@@ -154,7 +153,6 @@
 		48548A24265EFF5300272ADB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		4884D1C925177B640074CA5F /* FrekWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrekWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FrekWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4884D1D225177B640074CA5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4884D1D425177B680074CA5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4884D1D625177B680074CA5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,7 +326,6 @@
 		4884D1D025177B640074CA5F /* FrekWatch WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				4884D1D125177B640074CA5F /* Interface.storyboard */,
 				4884D1D425177B680074CA5F /* Assets.xcassets */,
 				4884D1D625177B680074CA5F /* Info.plist */,
 			);
@@ -615,6 +612,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 48435FAD2516DED200FFED01;
 			packageReferences = (
@@ -671,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4884D1D525177B680074CA5F /* Assets.xcassets in Resources */,
-				4884D1D325177B640074CA5F /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,22 +951,12 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		4884D1D125177B640074CA5F /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4884D1D225177B640074CA5F /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		48435FD92516DED500FFED01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1031,6 +1018,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

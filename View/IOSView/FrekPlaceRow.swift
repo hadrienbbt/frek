@@ -34,8 +34,10 @@ struct FrekDescription: View {
             }
             Text(frekPlace.isOpen ? "Ouverte" : "Fermée")
                 .font(.subheadline)
+                .foregroundColor(.secondary)
             Text("Max: \(frekPlace.fmi)")
                 .font(.subheadline)
+                .foregroundColor(.secondary)
         }
         .padding(.horizontal, 5)
     }
@@ -49,7 +51,8 @@ struct FrekCrowd: View {
             Text(crowd.description)
                 .font(.title)
             Text("Personnes\nsur place")
-                .font(.caption2)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }
     }

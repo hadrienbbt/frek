@@ -13,8 +13,7 @@ struct ToggleFavoriteButton: View {
 
     func toggleFavorite() {
         withAnimation {
-            frekPlace.favorite = !frekPlace.favorite
-            print(frekPlace.favorite)
+            frekPlace.favorite.toggle()
         }
         #if os(watchOS)
             CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()

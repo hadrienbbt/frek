@@ -17,6 +17,7 @@ class FrekChartViewModel: ObservableObject {
     init(chart: FrekChart) {
         self.chart = chart
     }
+    
     var formattedDate: String {
         return formatter.string(fromChartDate: chart.date)
     }
@@ -49,9 +50,10 @@ class FrekChartViewModel: ObservableObject {
     }
     
     let gradient = [
-        GradientStop(color: Color.green, location: 0),
-        GradientStop(color: Color.yellow, location: 0.5),
-        GradientStop(color: Color.red, location: 1)
+        GradientStop(color: .green, location: 0),
+        GradientStop(color: .yellow, location: 0.25),
+        GradientStop(color: .orange, location: 0.5),
+        GradientStop(color: .red, location: 0.75)
     ]
     
     var smallLineChartData: LineChartData {
@@ -63,7 +65,10 @@ class FrekChartViewModel: ObservableObject {
             dataPoints: datapoints,
             style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .top), lineType: .curvedLine)
         )
-        let chartStyle = LineChartStyle(globalAnimation: .easeOut(duration: 0.2))
+        let chartStyle = LineChartStyle(
+            topLine: .maximum(of: Double(chart.fmi)),
+            globalAnimation: .easeOut(duration: 0.2)
+        )
         return LineChartData(dataSets: data, chartStyle: chartStyle)
     }
     
@@ -79,80 +84,69 @@ class FrekChartViewModel: ObservableObject {
             style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .top), lineType: .curvedLine)
         )
         let gridStyle = GridStyle(
-            numberOfLines: 7,
-            lineColour: Color(.lightGray).opacity(0.5),
+            numberOfLines: yAxisLabels.count,
+            lineColour: Color(.systemGray5).opacity(0.5),
             lineWidth: 1,
             dash: [8],
             dashPhase: 0
         )
         let chartStyle = LineChartStyle(
             xAxisGridStyle: gridStyle,
+            xAxisLabelColour: .secondary,
+            xAxisLabelsFrom: .chartData(rotation: Angle(degrees: 0.0)),
             yAxisGridStyle: gridStyle,
+            yAxisLabelColour: .secondary,
+            yAxisNumberOfLabels: yAxisLabels.count,
+            yAxisTitle: "Fréquentation",
+            yAxisTitleColour: .secondary,
+            topLine: .maximum(of: Double(yAxisLabels.last!)!),
             globalAnimation: .easeOut(duration: 0.5)
         )
-        return LineChartData(dataSets: data, chartStyle: chartStyle)
-            
-    }
-    /*
-    func getLineChart() -> LineChart<LineChartData> {
-        let formatter = FrekFormatter()
-        
-        let frekData: [LineChartDataPoint] = self.starts
-            .enumerated()
-            .reduce([]) { acc, val in
-                let (index, element) = val
-                var newAcc = acc
-                newAcc.append(Double(element))
-                if ends.count > index {
-                    newAcc.append(Double(ends[index]))
-                }
-                return newAcc
-            }
-            .map {
-                LineChartDataPoint(value: $0)
-            }
-        // let fmiData = frekData.map { _ in Double(self.fmi) }
-        
-        let data = LineDataSet(
-            dataPoints: frekData,
-            legendTitle: "Steps",
-            pointStyle: PointStyle(),
-            style: LineStyle(lineColour: ColourStyle(colour: .red), lineType: .curvedLine)
-        )
-        
-        let metadata = ChartMetadata(title: formatter.string(from: date), subtitle: "Subtitle")
-        
-        let gridStyle  = GridStyle(
-            numberOfLines: 7,
-            lineColour: Color(.lightGray).opacity(0.5),
-            lineWidth: 1,
-            dash: [8],
-            dashPhase: 0
-        )
-        
-        let chartStyle = LineChartStyle(
-            infoBoxPlacement: .infoBox(isStatic: false),
-            markerType: .vertical(attachment: .line(dot: .style(DotStyle()))),
-            xAxisGridStyle: gridStyle,
-            xAxisLabelPosition: .bottom,
-            xAxisLabelColour: Color.primary,
-            xAxisLabelsFrom: .dataPoint(rotation: .degrees(0)),
-            yAxisGridStyle: gridStyle,
-            yAxisLabelPosition: .leading,
-            yAxisLabelColour: Color.primary,
-            yAxisNumberOfLabels: 7,
-            baseline: .minimumValue,
-            topLine: .maximumValue,
-            globalAnimation: .easeOut(duration: 1)
-        )
-        
-        let chartData = LineChartData(
+        return LineChartData(
             dataSets: data,
-            metadata: metadata,
+            xAxisLabels: xAxisLabels,
+            yAxisLabels: yAxisLabels,
             chartStyle: chartStyle
         )
-        
-        return LineChart(chartData: chartData)
     }
- */
+    
+    var xAxisLabels: [String] {
+        var period = 2
+        var labels = chart.dataset
+            .enumerated()
+            .map { $0.offset }
+        while labels.count > 7 {
+            labels = chart.dataset
+                .enumerated()
+                .filter { $0.offset % period == (period / 2) }
+                .map { $0.offset }
+            period *= 2
+        }
+        return labels.map { formatter.string(fromFrekTimeIndex: $0) }
+    }
+    
+    var yAxisLabels: [String] {
+        var period = 1
+        var labels = [String]()
+        repeat {
+            labels.removeAll()
+            var start = 0
+            while start < chart.fmi{
+                labels.append(start.description)
+                start += period * 10
+            }
+            period += 1
+        } while labels.count > 7
+        return labels
+    }
+    
+    let fmiExtraLineStyle = ExtraLineStyle(
+        lineColour: ColourStyle(colour: .red),
+        lineType: .line,
+        yAxisTitle: "Max"
+    )
+        
+    var fmiExtraLineDataPoints: [ExtraLineDataPoint] {
+        chart.fmiDataset.map { ExtraLineDataPoint(value: $0) }
+    }
 }

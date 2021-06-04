@@ -58,26 +58,29 @@ struct FrekChartRow: View {
                     }
             }
             if viewModel.chart.isOpen, showDetail {
-                DetailedChart(chart: viewModel.chart, data: viewModel.detailedLineChartData)
+                DetailedChart(viewModel: viewModel)
             }
         }
     }
 }
 
 struct DetailedChart: View {
-    var chart: FrekChart
-    var data: LineChartData
+    var viewModel: FrekChartViewModel
     
     var body: some View {
-        LineChart(chartData: data)
-            .extraLine(
-                chartData: data,
-                legendTitle: "Max",
-                datapoints: { [ExtraLineDataPoint(value: Double(chart.fmi))] },
-                style: { ExtraLineStyle() }
-            )
-            .frame(height: 200)
-            .padding()
+        LineChart(chartData: viewModel.detailedLineChartData)
+            .frame(height: 250)
+            /*.extraLine(
+                chartData: viewModel.detailedLineChartData,
+                legendTitle: "Max")
+                { viewModel.fmiExtraLineDataPoints }
+                style: { viewModel.fmiExtraLineStyle }*/
+            .xAxisGrid(chartData: viewModel.detailedLineChartData)
+            .yAxisGrid(chartData: viewModel.detailedLineChartData)
+            .xAxisLabels(chartData: viewModel.detailedLineChartData)
+            .yAxisLabels(chartData: viewModel.detailedLineChartData)
+            .padding(.leading, -7)
+            .padding(.bottom, 5)
     }
 }
 

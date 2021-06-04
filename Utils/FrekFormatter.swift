@@ -24,7 +24,7 @@ class FrekFormatter: Formatter {
     
     func string(fromChartDate date: Date) -> String {
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMMdEEEE")
-        return dateFormatter.string(from: date)
+        return dateFormatter.string(from: date).capitalizingFirstLetter()
     }
     
     func string(fromFrekTimeIndex index: Int) -> String {
