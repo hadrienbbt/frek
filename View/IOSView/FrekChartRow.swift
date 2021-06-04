@@ -10,8 +10,13 @@ import SwiftUICharts
 
 struct FrekChartRow: View {
     @ObservedObject var viewModel: FrekChartViewModel
-    @State private var showDetail = false
+    @State private var showDetail: Bool
 
+    init(_ viewModel: FrekChartViewModel, _ showDetail: Bool) {
+        self.viewModel = viewModel
+        self._showDetail = State(initialValue: showDetail)
+    }
+    
     var info: String { viewModel.chart.isOpen ? "Entre \(viewModel.frekStartTime) et \(viewModel.frekEndTime)\nMax: \(viewModel.max) personnes à \(viewModel.maxTime)" : "Fermée" }
     
     let animationDuration = 0.2

@@ -18,7 +18,7 @@ struct FrekPlaceDetail: View {
     func createFrekChartRow(_ frekChart: FrekChart) -> FrekChartRow {
         let index = frekPlace.frekCharts.firstIndex(where: { frekChart.id == $0.id })!
         let viewModel = FrekChartViewModel(chart: frekPlace.frekCharts[index])
-        return FrekChartRow(viewModel: viewModel)
+        return FrekChartRow(viewModel, index == 0)
     }
     
     private var axes: Axis.Set {
