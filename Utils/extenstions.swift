@@ -31,3 +31,6 @@ extension String {
     }
 }
 
+extension UIColor {
+    static var chartGrid = UIColor(red: 150, green: 150, blue: 150, alpha: 0.5)
+}

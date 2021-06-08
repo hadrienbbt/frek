@@ -7,28 +7,8 @@
 
 import SwiftUI
 
-struct FrekApp: View {    
-    @ViewBuilder
+struct FrekApp: View {
     var body: some View {
-        #if os(iOS)
-        if DeviceMeta().idiom != .phone {
-            grid
-        } else {
-            list
-        }
-        #elseif os(watchOS)
-            list
-        #endif
-        
-    }
-    
-    #if os(iOS)
-    var grid: some View {
-        FrekPlaceGrid()
-    }
-    #endif
-    
-    var list: some View {
         FrekPlaceList()
     }
 }

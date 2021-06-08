@@ -15,7 +15,7 @@ struct FrekPlaceRow: View {
             FrekThumbnail(name: frekPlace.suffix)
             FrekDescription(frekPlace: $frekPlace)
             Spacer()
-            if frekPlace.isOpen {
+            if frekPlace.isOpen, DeviceMeta().idiom == .phone {
                 FrekCrowd(crowd: $frekPlace.crowd)
             }
         }
@@ -25,6 +25,18 @@ struct FrekPlaceRow: View {
 struct FrekDescription: View {
     @Binding var frekPlace: FrekPlace
 
+    var description: String {
+        if frekPlace.isOpen {
+            if DeviceMeta().idiom == .phone {
+                return "Ouverte"
+            } else {
+                return "\(frekPlace.crowd) personnes sur place"
+            }
+        } else {
+            return "Fermée"
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -32,7 +44,7 @@ struct FrekDescription: View {
                     .font(.headline)
                 ToggleFavoriteButton(frekPlace: $frekPlace)
             }
-            Text(frekPlace.isOpen ? "Ouverte" : "Fermée")
+            Text(description)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             Text("Max: \(frekPlace.fmi)")

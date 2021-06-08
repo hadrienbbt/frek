@@ -51,8 +51,7 @@ struct FrekPlaceList: View {
                 .listStyle(CarouselListStyle())
                 .navigationBarTitle(Text("Salles de gym"))
             #endif
-        }.onAppear {
-            viewModel.fetchFrekPlaces()
         }
+        .onAppear { viewModel.fetchFrekPlaces() }
     }
 }

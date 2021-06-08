@@ -93,7 +93,7 @@ class FrekChartViewModel: ObservableObject {
         ])
         let gridStyle = GridStyle(
             numberOfLines: yAxisLabels.count,
-            lineColour: Color(UIColor(red: 40, green: 40, blue: 40, alpha: 1)).opacity(0.5),
+            lineColour: Color(.systemGray5).opacity(0.5),
             lineWidth: 1,
             dash: [8],
             dashPhase: 0
