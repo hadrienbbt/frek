@@ -20,7 +20,7 @@ class FrekPlaceListViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    let url: URL! = URL(string: "https://fedutia.fr:8003")
+    let url: URL! = URL(string: "https://fedutia.fr/frek")
     
     var sortedFrekPlaces: [FrekPlace] {
         frekPlaces
