@@ -32,15 +32,19 @@ class FrekPlaceListViewModel: ObservableObject {
             .filter { $0.favorite }
     }
     
-    func fetchFrekPlaces() {
+    func fetchFrekPlaces(_ callback: (([FrekPlace]) -> Void)? = nil)  {
         loading = true
+        let reveiveValue: ([FrekPlace]) -> Void = {
+            callback?($0)
+            self.receiveFrekPlaces($0)
+        }
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: [FrekPlace].self, decoder: FrekDecoder())
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: self.receiveCompletion,
-                receiveValue: self.receiveFrekPlaces
+                receiveValue: reveiveValue
             )
     }
     

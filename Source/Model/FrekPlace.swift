@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import Intents
 
 struct FrekPlace: Identifiable, Decodable, Encodable {
     let id: String
@@ -34,5 +35,18 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
         
     var description: String {
         return "\(crowd) personne à la salle \(name)."
+    }
+    
+    func encode() -> Gym {
+        let gym = Gym(
+            identifier: id,
+            display: name,
+            subtitle: nil,
+            image: INImage(named: suffix)
+        )
+        gym.suffix = suffix
+        gym.fmi = fmi as NSNumber
+        gym.crowd = crowd as NSNumber
+        return gym
     }
 }
