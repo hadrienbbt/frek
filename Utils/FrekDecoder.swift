@@ -37,13 +37,12 @@ class FrekDecoder: TopLevelDecoder {
             let state = dict["state"] as? Bool,
             let latitude = dict["latitude"] as? Double,
             let longitude = dict["longitude"] as? Double,
-            let datasets = dict["datasets"] as? [Dict],
-            let frekCharts = datasets.map ({ decode($0, fmi) }) as? [FrekChart]
+            let datasets = dict["datasets"] as? [Dict]
             else {
                 print("❌ Error parsing frekplace dictionnary")
                 return nil
         }
-        
+        let frekCharts = datasets.compactMap ({ decode($0, fmi) })
         return FrekPlace(id: id, name: name, suffix: suffix, latitude: latitude, longitude: longitude, crowd: crowd, spotsAvailable: spotsAvailable, fmi: fmi, state: state, frekCharts: frekCharts)
     }
     

@@ -57,7 +57,7 @@ struct FrekChartRow: View {
                 stack
                     .contentShape(Rectangle())
                     .transition(.move(edge: .bottom))
-                    .animation(.easeInOut(duration: animationDuration))
+                    .animation(.easeInOut(duration: animationDuration), value: viewModel.chart.isOpen)
                     .onTapGesture {
                         self.showDetail.toggle()
                     }

@@ -31,9 +31,9 @@ struct FrekPlaceDetail: View {
         ScrollView(axes) {
             VStack {
                 MapView(isExpanded: $isExpanded, coordinate: frekPlace.coordinate)
-                    .animation(.easeInOut(duration: animationDuration))
+                    .animation(.easeInOut(duration: animationDuration), value: isExpanded)
                 CircleImage(isMapExpanded: $isExpanded, frekImage: Image(frekPlace.suffix))
-                    .animation(.easeInOut(duration: animationDuration))
+                    .animation(.easeInOut(duration: animationDuration), value: isExpanded)
                 if !isExpanded {
                     VStack(alignment: .leading) {
                         HStack {
@@ -53,7 +53,6 @@ struct FrekPlaceDetail: View {
                     }
                     .padding()
                     .transition(.move(edge: .bottom))
-                    .animation(.easeInOut(duration: animationDuration))
                 }
             }
         }
@@ -99,7 +98,7 @@ struct PreventableScrollView<Content>: View where Content: View {
             content()
         } else {
             ScrollView(.vertical, showsIndicators: false, content: content)
-                .animation(.easeInOut)
+                .animation(.easeInOut, value: preventScroll)
         }
     }
 }
