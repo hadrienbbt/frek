@@ -9,69 +9,71 @@
 /* Begin PBXBuildFile section */
 		4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817E80C2657BA9400128396 /* AppDelegate.swift */; };
 		4818A558266AD06A001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A557266AD06A001F26C6 /* SwiftUICharts */; };
-		4818A55A266ADED6001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A559266ADED6001F26C6 /* SwiftUICharts */; };
-		4818A55C266AE5F9001F26C6 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4818A55B266AE5F9001F26C6 /* SwiftUICharts */; };
-		481F7DAD2668C37700BE818E /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
-		481F7DAE2668C38000BE818E /* FrekChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CE266779D700770D22 /* FrekChartRow.swift */; };
 		482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
-		482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		482A39B52522185C00A2028A /* FrekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A39B42522185C00A2028A /* FrekApp.swift */; };
-		482A39B62522185C00A2028A /* FrekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A39B42522185C00A2028A /* FrekApp.swift */; };
 		482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
-		482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
-		482E2F35265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
+		483055E1272398AE00B9891F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055E0272398AE00B9891F /* Assets.xcassets */; };
+		483055E7272398AF00B9891F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		483055EC272398AF00B9891F /* FrekWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055EB272398AF00B9891F /* FrekWatchApp.swift */; };
+		483055F0272398AF00B9891F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055EF272398AF00B9891F /* NotificationController.swift */; };
+		483055F2272398AF00B9891F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F1272398AF00B9891F /* NotificationView.swift */; };
+		483055F4272398AF00B9891F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F3272398AF00B9891F /* ComplicationController.swift */; };
+		483055F6272398B200B9891F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055F5272398B200B9891F /* Assets.xcassets */; };
+		483055F9272398B200B9891F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055F8272398B200B9891F /* Preview Assets.xcassets */; };
+		483055FE272398B200B9891F /* FrekWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 483055DE272398AB00B9891F /* FrekWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48435FBA2516DED200FFED01 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FB92516DED200FFED01 /* MainView.swift */; };
 		48435FBE2516DED500FFED01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
 		48435FCC2516DED500FFED01 /* FrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FCB2516DED500FFED01 /* FrekTests.swift */; };
 		48435FD72516DED500FFED01 /* FrekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FD62516DED500FFED01 /* FrekUITests.swift */; };
 		48435FED2516E18F00FFED01 /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
 		485258EC2663E0E600E68193 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
-		485258ED2663E0E600E68193 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
 		48548A25265EFF5300272ADB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48548A24265EFF5300272ADB /* MapView.swift */; };
-		48548A26265EFF5300272ADB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48548A24265EFF5300272ADB /* MapView.swift */; };
-		4884D1CD25177B640074CA5F /* FrekWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4884D1D525177B680074CA5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1D425177B680074CA5F /* Assets.xcassets */; };
-		4884D1DC25177B690074CA5F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4884D1E125177B690074CA5F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1E025177B690074CA5F /* HostingController.swift */; };
-		4884D1E525177B690074CA5F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1E425177B690074CA5F /* ExtensionDelegate.swift */; };
-		4884D1E725177B690074CA5F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1E625177B690074CA5F /* NotificationController.swift */; };
-		4884D1E925177B690074CA5F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1E825177B690074CA5F /* NotificationView.swift */; };
-		4884D1EB25177B690074CA5F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D1EA25177B690074CA5F /* ComplicationController.swift */; };
-		4884D1ED25177B6C0074CA5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1EC25177B6C0074CA5F /* Assets.xcassets */; };
-		4884D1F025177B6C0074CA5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884D1EF25177B6C0074CA5F /* Preview Assets.xcassets */; };
-		4884D20C2517C7C20074CA5F /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
 		4884D25E2517D97B0074CA5F /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */; };
-		48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */; };
 		48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
 		48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
-		48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
-		48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48C925CC2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
-		48C925CD2666382400770D22 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
 		48C925CF266779D700770D22 /* FrekChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CE266779D700770D22 /* FrekChartRow.swift */; };
 		48C925D22667B7EA00770D22 /* FrekPlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D12667B7EA00770D22 /* FrekPlaceListViewModel.swift */; };
-		48C925D32667B7EA00770D22 /* FrekPlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D12667B7EA00770D22 /* FrekPlaceListViewModel.swift */; };
-		48C925D52667C67C00770D22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C925D42667C67C00770D22 /* GoogleService-Info.plist */; };
-		48C925D62667C67C00770D22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C925D42667C67C00770D22 /* GoogleService-Info.plist */; };
+		48C925D52667C67C00770D22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C925D42667C67C00770D22 /* GoogleService-Info.plist */; platformFilter = ios; };
 		48C925D82667D04100770D22 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
-		48C925D92667D04100770D22 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
 		48C925DB2667D04E00770D22 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
-		48C925DC2667D04E00770D22 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
 		48C925E4266801B600770D22 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
-		48C925E5266801B600770D22 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
 		48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
-		48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC8776256DD3E1008E6920 /* ClockKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		556E7ECAA483DE617A302124 /* Pods_FrekTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207334EE2546749CD79199F3 /* Pods_FrekTests.framework */; };
-		60DA19BC8E3F549C8EE28CEC /* Pods_Frek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4412E8B98ABE42BDEDD148 /* Pods_Frek.framework */; };
-		97DC16A820579D06C11B5AF2 /* Pods_FrekWatch_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610D5E0FA3E09ECE53D00CF5 /* Pods_FrekWatch_WatchKit_Extension.framework */; };
-		A16E8BD6BEF13C0A478E157E /* Pods_FrekWatch_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCE1B296110B3FC3E00FA47 /* Pods_FrekWatch_WatchKit_App.framework */; };
-		AB5B073908C3BE7A0816B41C /* Pods_Frek_FrekUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5DF36102A3797F6F8E4CE3 /* Pods_Frek_FrekUITests.framework */; };
-		ADFB8AF654C79D502AA0EB72 /* Pods_FrekWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B45679E65851EF17455A179 /* Pods_FrekWatch.framework */; };
+		48E24CDF27239939003CDCB8 /* FrekPlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */; };
+		48E24CE027239939003CDCB8 /* FrekPlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D12667B7EA00770D22 /* FrekPlaceListViewModel.swift */; };
+		48E24CE127239939003CDCB8 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
+		48E24CE227239939003CDCB8 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
+		48E24CE327239939003CDCB8 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
+		48E24CE427239939003CDCB8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48548A24265EFF5300272ADB /* MapView.swift */; };
+		48E24CE527239939003CDCB8 /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
+		48E24CE727239939003CDCB8 /* FrekPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1244826226527007E1805 /* FrekPlaceDetail.swift */; };
+		48E24CE827239939003CDCB8 /* FrekChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CE266779D700770D22 /* FrekChartRow.swift */; };
+		48E24CEB27239939003CDCB8 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
+		48E24CEC27239939003CDCB8 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
+		48E24CED27239939003CDCB8 /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
+		48E24CEF27239939003CDCB8 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
+		48E24CF027239939003CDCB8 /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
+		48E24CF227239AC1003CDCB8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48E24CF127239AC1003CDCB8 /* SwiftUICharts */; };
+		48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		483055E8272398AF00B9891F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 483055E5272398AF00B9891F;
+			remoteInfo = "FrekWatch WatchKit Extension";
+		};
+		483055FC272398B200B9891F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 483055DD272398AB00B9891F;
+			remoteInfo = FrekWatch;
+		};
 		48435FC82516DED500FFED01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
@@ -86,41 +88,27 @@
 			remoteGlobalIDString = 48435FB52516DED200FFED01;
 			remoteInfo = Frek;
 		};
-		4884D1CE25177B640074CA5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4884D1CB25177B640074CA5F;
-			remoteInfo = "FrekWatch WatchKit App";
-		};
-		4884D1DD25177B690074CA5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4884D1DA25177B680074CA5F;
-			remoteInfo = "FrekWatch WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4884D1F625177B6C0074CA5F /* Embed App Extensions */ = {
+		48305602272398B200B9891F /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4884D1DC25177B690074CA5F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */,
+				483055E7272398AF00B9891F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4884D1FA25177B6C0074CA5F /* Embed Watch Content */ = {
+		48305606272398B200B9891F /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				4884D1CD25177B640074CA5F /* FrekWatch WatchKit App.app in Embed Watch Content */,
+				483055FE272398B200B9891F /* FrekWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,15 +116,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06E5EE7683E28152CF3FE1E7 /* Pods-FrekWatch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-FrekWatch WatchKit Extension/Pods-FrekWatch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		1B45679E65851EF17455A179 /* Pods_FrekWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		207334EE2546749CD79199F3 /* Pods_FrekTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26E4B0C2AA57853466E3674D /* Pods-FrekWatch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-FrekWatch WatchKit App/Pods-FrekWatch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		480669FD2673452900B77032 /* Frek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frek.entitlements; sourceTree = "<group>"; };
 		4817E80C2657BA9400128396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		482A399E2522126900A2028A /* FrekThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekThumbnail.swift; sourceTree = "<group>"; };
 		482A39B42522185C00A2028A /* FrekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekApp.swift; sourceTree = "<group>"; };
 		482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrekPlaceAssets.xcassets; sourceTree = "<group>"; };
 		482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
+		483055DE272398AB00B9891F /* FrekWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrekWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		483055E0272398AE00B9891F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		483055EB272398AF00B9891F /* FrekWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekWatchApp.swift; sourceTree = "<group>"; };
+		483055EF272398AF00B9891F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		483055F1272398AF00B9891F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		483055F3272398AF00B9891F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		483055F5272398B200B9891F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		483055F8272398B200B9891F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		483055FA272398B200B9891F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483055FB272398B200B9891F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		48435FB62516DED200FFED01 /* Frek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48435FB92516DED200FFED01 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		48435FBD2516DED500FFED01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,20 +146,7 @@
 		48435FEC2516E18F00FFED01 /* FrekPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlace.swift; sourceTree = "<group>"; };
 		485258EB2663E0E600E68193 /* FrekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekChart.swift; sourceTree = "<group>"; };
 		48548A24265EFF5300272ADB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		4884D1C925177B640074CA5F /* FrekWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrekWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FrekWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4884D1D425177B680074CA5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4884D1D625177B680074CA5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4884D1E025177B690074CA5F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		4884D1E425177B690074CA5F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		4884D1E625177B690074CA5F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		4884D1E825177B690074CA5F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		4884D1EA25177B690074CA5F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		4884D1EC25177B6C0074CA5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4884D1EF25177B6C0074CA5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4884D1F125177B6C0074CA5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4884D1F225177B6C0074CA5F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMeta.swift; sourceTree = "<group>"; };
@@ -178,28 +161,14 @@
 		48C925E3266801B600770D22 /* FrekChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekChartViewModel.swift; sourceTree = "<group>"; };
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
 		48FC8776256DD3E1008E6920 /* ClockKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClockKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/ClockKit.framework; sourceTree = DEVELOPER_DIR; };
-		6033B5E76679DF7F1AD8537A /* Pods-Frek-FrekUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frek-FrekUITests.debug.xcconfig"; path = "Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		610D5E0FA3E09ECE53D00CF5 /* Pods_FrekWatch_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekWatch_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EF94837C35D1F0F7FBCBF2A /* Pods-Frek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frek.debug.xcconfig"; path = "Target Support Files/Pods-Frek/Pods-Frek.debug.xcconfig"; sourceTree = "<group>"; };
-		94659A440A215792792574CE /* Pods-FrekWatch WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-FrekWatch WatchKit App/Pods-FrekWatch WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		A68E8659BF72C3716F2FBF84 /* Pods-FrekTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekTests.release.xcconfig"; path = "Target Support Files/Pods-FrekTests/Pods-FrekTests.release.xcconfig"; sourceTree = "<group>"; };
-		ACCE1B296110B3FC3E00FA47 /* Pods_FrekWatch_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrekWatch_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AED417161D5EBDDA4B856536 /* Pods-Frek-FrekUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frek-FrekUITests.release.xcconfig"; path = "Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CF0B32A1E1A23D18D7EF920F /* Pods-FrekWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch.debug.xcconfig"; path = "Target Support Files/Pods-FrekWatch/Pods-FrekWatch.debug.xcconfig"; sourceTree = "<group>"; };
-		D141B550942A26E48BBD1B9A /* Pods-Frek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frek.release.xcconfig"; path = "Target Support Files/Pods-Frek/Pods-Frek.release.xcconfig"; sourceTree = "<group>"; };
-		D1D65DFBEDF059601E00DC7B /* Pods-FrekWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch.release.xcconfig"; path = "Target Support Files/Pods-FrekWatch/Pods-FrekWatch.release.xcconfig"; sourceTree = "<group>"; };
-		D820E35CE4571DA1AD1F23E7 /* Pods-FrekWatch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekWatch WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-FrekWatch WatchKit Extension/Pods-FrekWatch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		E6FD04A71AE23A7C1A40B503 /* Pods-FrekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrekTests.debug.xcconfig"; path = "Target Support Files/Pods-FrekTests/Pods-FrekTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC5DF36102A3797F6F8E4CE3 /* Pods_Frek_FrekUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frek_FrekUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF4412E8B98ABE42BDEDD148 /* Pods_Frek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42999509E4C94ABDF083788A /* Frameworks */ = {
+		483055E3272398AF00B9891F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADFB8AF654C79D502AA0EB72 /* Pods_FrekWatch.framework in Frameworks */,
+				48E24CF227239AC1003CDCB8 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +176,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60DA19BC8E3F549C8EE28CEC /* Pods_Frek.framework in Frameworks */,
 				4818A558266AD06A001F26C6 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +184,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556E7ECAA483DE617A302124 /* Pods_FrekTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,35 +191,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB5B073908C3BE7A0816B41C /* Pods_Frek_FrekUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4884D1D825177B680074CA5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4818A55C266AE5F9001F26C6 /* SwiftUICharts in Frameworks */,
-				48FC8777256DD3E1008E6920 /* ClockKit.framework in Frameworks */,
-				97DC16A820579D06C11B5AF2 /* Pods_FrekWatch_WatchKit_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1E122EAF2CCEF63315643B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A16E8BD6BEF13C0A478E157E /* Pods_FrekWatch_WatchKit_App.framework in Frameworks */,
-				4818A55A266ADED6001F26C6 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		483055DF272398AB00B9891F /* FrekWatch */ = {
+			isa = PBXGroup;
+			children = (
+				483055E0272398AE00B9891F /* Assets.xcassets */,
+			);
+			path = FrekWatch;
+			sourceTree = "<group>";
+		};
+		483055EA272398AF00B9891F /* FrekWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				483055EF272398AF00B9891F /* NotificationController.swift */,
+				483055F1272398AF00B9891F /* NotificationView.swift */,
+				483055F3272398AF00B9891F /* ComplicationController.swift */,
+				483055F5272398B200B9891F /* Assets.xcassets */,
+				483055FA272398B200B9891F /* Info.plist */,
+				483055FB272398B200B9891F /* PushNotificationPayload.apns */,
+				483055F7272398B200B9891F /* Preview Content */,
+			);
+			path = "FrekWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		483055F7272398B200B9891F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				483055F8272398B200B9891F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		483A3C5C2518316000FB37C5 /* Frek */ = {
 			isa = PBXGroup;
 			children = (
+				480669FD2673452900B77032 /* Frek.entitlements */,
 				48C925D42667C67C00770D22 /* GoogleService-Info.plist */,
 				48435FC22516DED500FFED01 /* Info.plist */,
 				4817E80C2657BA9400128396 /* AppDelegate.swift */,
@@ -269,13 +247,12 @@
 				48C8A4D6251A5C0E00C29AAD /* View */,
 				48CBDF762519026300742F9B /* Utils */,
 				4884D2132517C81D0074CA5F /* Ressources */,
-				48C6FE9B25192E700051B4B3 /* FrekWatch WatchKit Extension */,
-				4884D1D025177B640074CA5F /* FrekWatch WatchKit App */,
 				48435FCA2516DED500FFED01 /* FrekTests */,
 				48435FD52516DED500FFED01 /* FrekUITests */,
+				483055DF272398AB00B9891F /* FrekWatch */,
+				483055EA272398AF00B9891F /* FrekWatch WatchKit Extension */,
 				48435FB72516DED200FFED01 /* Products */,
 				48FC8775256DD3E1008E6920 /* Frameworks */,
-				68F78F5CFAF43A065E2E74E1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,9 +262,8 @@
 				48435FB62516DED200FFED01 /* Frek.app */,
 				48435FC72516DED500FFED01 /* FrekTests.xctest */,
 				48435FD22516DED500FFED01 /* FrekUITests.xctest */,
-				4884D1C925177B640074CA5F /* FrekWatch.app */,
-				4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */,
-				4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */,
+				483055DE272398AB00B9891F /* FrekWatch.app */,
+				483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				48435FB92516DED200FFED01 /* MainView.swift */,
+				482A39B42522185C00A2028A /* FrekApp.swift */,
 				4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */,
 				48435FBD2516DED500FFED01 /* Assets.xcassets */,
 			);
@@ -320,31 +297,14 @@
 			path = FrekUITests;
 			sourceTree = "<group>";
 		};
-		4884D1D025177B640074CA5F /* FrekWatch WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				4884D1D425177B680074CA5F /* Assets.xcassets */,
-				4884D1D625177B680074CA5F /* Info.plist */,
-			);
-			path = "FrekWatch WatchKit App";
-			sourceTree = "<group>";
-		};
 		4884D1DF25177B690074CA5F /* WatchOSView */ = {
 			isa = PBXGroup;
 			children = (
-				4884D1E025177B690074CA5F /* HostingController.swift */,
+				483055EB272398AF00B9891F /* FrekWatchApp.swift */,
 				48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */,
 				4884D1EC25177B6C0074CA5F /* Assets.xcassets */,
 			);
 			path = WatchOSView;
-			sourceTree = "<group>";
-		};
-		4884D1EE25177B6C0074CA5F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4884D1EF25177B6C0074CA5F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		4884D20B2517C7B70074CA5F /* Model */ = {
@@ -364,24 +324,9 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
-		48C6FE9B25192E700051B4B3 /* FrekWatch WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				4884D1EA25177B690074CA5F /* ComplicationController.swift */,
-				4884D1E825177B690074CA5F /* NotificationView.swift */,
-				4884D1E625177B690074CA5F /* NotificationController.swift */,
-				4884D1E425177B690074CA5F /* ExtensionDelegate.swift */,
-				4884D1F225177B6C0074CA5F /* PushNotificationPayload.apns */,
-				4884D1EE25177B6C0074CA5F /* Preview Content */,
-				4884D1F125177B6C0074CA5F /* Info.plist */,
-			);
-			path = "FrekWatch WatchKit Extension";
-			sourceTree = "<group>";
-		};
 		48C8A4D6251A5C0E00C29AAD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				482A39B42522185C00A2028A /* FrekApp.swift */,
 				482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */,
 				482A399E2522126900A2028A /* FrekThumbnail.swift */,
 				48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */,
@@ -419,51 +364,63 @@
 			isa = PBXGroup;
 			children = (
 				48FC8776256DD3E1008E6920 /* ClockKit.framework */,
-				EF4412E8B98ABE42BDEDD148 /* Pods_Frek.framework */,
-				EC5DF36102A3797F6F8E4CE3 /* Pods_Frek_FrekUITests.framework */,
-				207334EE2546749CD79199F3 /* Pods_FrekTests.framework */,
-				1B45679E65851EF17455A179 /* Pods_FrekWatch.framework */,
-				ACCE1B296110B3FC3E00FA47 /* Pods_FrekWatch_WatchKit_App.framework */,
-				610D5E0FA3E09ECE53D00CF5 /* Pods_FrekWatch_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		68F78F5CFAF43A065E2E74E1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8EF94837C35D1F0F7FBCBF2A /* Pods-Frek.debug.xcconfig */,
-				D141B550942A26E48BBD1B9A /* Pods-Frek.release.xcconfig */,
-				6033B5E76679DF7F1AD8537A /* Pods-Frek-FrekUITests.debug.xcconfig */,
-				AED417161D5EBDDA4B856536 /* Pods-Frek-FrekUITests.release.xcconfig */,
-				E6FD04A71AE23A7C1A40B503 /* Pods-FrekTests.debug.xcconfig */,
-				A68E8659BF72C3716F2FBF84 /* Pods-FrekTests.release.xcconfig */,
-				CF0B32A1E1A23D18D7EF920F /* Pods-FrekWatch.debug.xcconfig */,
-				D1D65DFBEDF059601E00DC7B /* Pods-FrekWatch.release.xcconfig */,
-				94659A440A215792792574CE /* Pods-FrekWatch WatchKit App.debug.xcconfig */,
-				26E4B0C2AA57853466E3674D /* Pods-FrekWatch WatchKit App.release.xcconfig */,
-				D820E35CE4571DA1AD1F23E7 /* Pods-FrekWatch WatchKit Extension.debug.xcconfig */,
-				06E5EE7683E28152CF3FE1E7 /* Pods-FrekWatch WatchKit Extension.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48435FB52516DED200FFED01 /* Frek */ = {
+		483055DD272398AB00B9891F /* FrekWatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48435FDB2516DED500FFED01 /* Build configuration list for PBXNativeTarget "Frek" */;
+			buildConfigurationList = 48305603272398B200B9891F /* Build configuration list for PBXNativeTarget "FrekWatch" */;
 			buildPhases = (
-				833234C9882446B6CD52CE6E /* [CP] Check Pods Manifest.lock */,
-				48435FB22516DED200FFED01 /* Sources */,
-				48435FB32516DED200FFED01 /* Frameworks */,
-				48435FB42516DED200FFED01 /* Resources */,
-				5F4444C60E7B3816644C3E42 /* [CP] Embed Pods Frameworks */,
+				483055DC272398AB00B9891F /* Resources */,
+				48305602272398B200B9891F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				483055E9272398AF00B9891F /* PBXTargetDependency */,
+			);
+			name = FrekWatch;
+			productName = FrekWatch;
+			productReference = 483055DE272398AB00B9891F /* FrekWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		483055E5272398AF00B9891F /* FrekWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 483055FF272398B200B9891F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit Extension" */;
+			buildPhases = (
+				483055E2272398AF00B9891F /* Sources */,
+				483055E3272398AF00B9891F /* Frameworks */,
+				483055E4272398AF00B9891F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FrekWatch WatchKit Extension";
+			packageProductDependencies = (
+				48E24CF127239AC1003CDCB8 /* SwiftUICharts */,
+			);
+			productName = "FrekWatch WatchKit Extension";
+			productReference = 483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		48435FB52516DED200FFED01 /* Frek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48435FDB2516DED500FFED01 /* Build configuration list for PBXNativeTarget "Frek" */;
+			buildPhases = (
+				48435FB22516DED200FFED01 /* Sources */,
+				48435FB32516DED200FFED01 /* Frameworks */,
+				48435FB42516DED200FFED01 /* Resources */,
+				48305606272398B200B9891F /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				483055FD272398B200B9891F /* PBXTargetDependency */,
 			);
 			name = Frek;
 			packageProductDependencies = (
@@ -477,7 +434,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48435FDE2516DED500FFED01 /* Build configuration list for PBXNativeTarget "FrekTests" */;
 			buildPhases = (
-				8A1F1A89685136B9D16E461E /* [CP] Check Pods Manifest.lock */,
 				48435FC32516DED500FFED01 /* Sources */,
 				48435FC42516DED500FFED01 /* Frameworks */,
 				48435FC52516DED500FFED01 /* Resources */,
@@ -496,11 +452,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48435FE12516DED500FFED01 /* Build configuration list for PBXNativeTarget "FrekUITests" */;
 			buildPhases = (
-				0D257E7BE93F812E7CDCD1FA /* [CP] Check Pods Manifest.lock */,
 				48435FCE2516DED500FFED01 /* Sources */,
 				48435FCF2516DED500FFED01 /* Frameworks */,
 				48435FD02516DED500FFED01 /* Resources */,
-				A511F2427AFADB9E2B0214DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -512,77 +466,21 @@
 			productReference = 48435FD22516DED500FFED01 /* FrekUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		4884D1C825177B640074CA5F /* FrekWatch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4884D1FB25177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch" */;
-			buildPhases = (
-				9DB71C24D0B13D4F30DCD12D /* [CP] Check Pods Manifest.lock */,
-				4884D1C725177B640074CA5F /* Resources */,
-				4884D1FA25177B6C0074CA5F /* Embed Watch Content */,
-				42999509E4C94ABDF083788A /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4884D1CF25177B640074CA5F /* PBXTargetDependency */,
-			);
-			name = FrekWatch;
-			productName = FrekWatch;
-			productReference = 4884D1C925177B640074CA5F /* FrekWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2-container";
-		};
-		4884D1CB25177B640074CA5F /* FrekWatch WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4884D1F725177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit App" */;
-			buildPhases = (
-				08F9B7031BB88666F88568F3 /* [CP] Check Pods Manifest.lock */,
-				4884D1CA25177B640074CA5F /* Resources */,
-				4884D1F625177B6C0074CA5F /* Embed App Extensions */,
-				A1E122EAF2CCEF63315643B1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4884D1DE25177B690074CA5F /* PBXTargetDependency */,
-			);
-			name = "FrekWatch WatchKit App";
-			packageProductDependencies = (
-				4818A559266ADED6001F26C6 /* SwiftUICharts */,
-			);
-			productName = "FrekWatch WatchKit App";
-			productReference = 4884D1CC25177B640074CA5F /* FrekWatch WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		4884D1DA25177B680074CA5F /* FrekWatch WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4884D1F325177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit Extension" */;
-			buildPhases = (
-				C39924DCE944D7D9EE4336B7 /* [CP] Check Pods Manifest.lock */,
-				4884D1D725177B680074CA5F /* Sources */,
-				4884D1D825177B680074CA5F /* Frameworks */,
-				4884D1D925177B680074CA5F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FrekWatch WatchKit Extension";
-			packageProductDependencies = (
-				4818A55B266AE5F9001F26C6 /* SwiftUICharts */,
-			);
-			productName = "FrekWatch WatchKit Extension";
-			productReference = 4884D1DB25177B680074CA5F /* FrekWatch WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		48435FAE2516DED200FFED01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					483055DD272398AB00B9891F = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					483055E5272398AF00B9891F = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					48435FB52516DED200FFED01 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -593,17 +491,6 @@
 					48435FD12516DED500FFED01 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 48435FB52516DED200FFED01;
-					};
-					4884D1C825177B640074CA5F = {
-						CreatedOnToolsVersion = 12.0;
-						LastSwiftMigration = 1200;
-					};
-					4884D1CB25177B640074CA5F = {
-						CreatedOnToolsVersion = 12.0;
-						LastSwiftMigration = 1200;
-					};
-					4884D1DA25177B680074CA5F = {
-						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -627,14 +514,30 @@
 				48435FB52516DED200FFED01 /* Frek */,
 				48435FC62516DED500FFED01 /* FrekTests */,
 				48435FD12516DED500FFED01 /* FrekUITests */,
-				4884D1C825177B640074CA5F /* FrekWatch */,
-				4884D1CB25177B640074CA5F /* FrekWatch WatchKit App */,
-				4884D1DA25177B680074CA5F /* FrekWatch WatchKit Extension */,
+				483055DD272398AB00B9891F /* FrekWatch */,
+				483055E5272398AF00B9891F /* FrekWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		483055DC272398AB00B9891F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483055E1272398AE00B9891F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483055E4272398AF00B9891F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483055F9272398B200B9891F /* Preview Assets.xcassets in Resources */,
+				483055F6272398B200B9891F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48435FB42516DED200FFED01 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,204 +562,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4884D1C725177B640074CA5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4884D1CA25177B640074CA5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4884D1D525177B680074CA5F /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4884D1D925177B680074CA5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				482E2F32265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */,
-				4884D1F025177B6C0074CA5F /* Preview Assets.xcassets in Resources */,
-				4884D1ED25177B6C0074CA5F /* Assets.xcassets in Resources */,
-				48C925D62667C67C00770D22 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		08F9B7031BB88666F88568F3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FrekWatch WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0D257E7BE93F812E7CDCD1FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Frek-FrekUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F4444C60E7B3816644C3E42 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frek/Pods-Frek-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frek/Pods-Frek-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frek/Pods-Frek-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		833234C9882446B6CD52CE6E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Frek-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A1F1A89685136B9D16E461E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FrekTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DB71C24D0B13D4F30DCD12D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FrekWatch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A511F2427AFADB9E2B0214DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frek-FrekUITests/Pods-Frek-FrekUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C39924DCE944D7D9EE4336B7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FrekWatch WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
+		483055E2272398AF00B9891F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E24CE227239939003CDCB8 /* FrekDecoder.swift in Sources */,
+				48E24CE027239939003CDCB8 /* FrekPlaceListViewModel.swift in Sources */,
+				48E24CED27239939003CDCB8 /* FrekPlace.swift in Sources */,
+				48E24CE527239939003CDCB8 /* FrekThumbnail.swift in Sources */,
+				48E24CEF27239939003CDCB8 /* FrekPlaceList.swift in Sources */,
+				483055F0272398AF00B9891F /* NotificationController.swift in Sources */,
+				48E24CE827239939003CDCB8 /* FrekChartRow.swift in Sources */,
+				48E24CE427239939003CDCB8 /* MapView.swift in Sources */,
+				48E24CE127239939003CDCB8 /* FrekFormatter.swift in Sources */,
+				48E24CF027239939003CDCB8 /* ToggleFavoriteButton.swift in Sources */,
+				48E24CE727239939003CDCB8 /* FrekPlaceDetail.swift in Sources */,
+				48E24CE327239939003CDCB8 /* FrekChartViewModel.swift in Sources */,
+				48E24CEB27239939003CDCB8 /* ValueStore.swift in Sources */,
+				48E24CDF27239939003CDCB8 /* FrekPlaceRow.swift in Sources */,
+				483055F4272398AF00B9891F /* ComplicationController.swift in Sources */,
+				48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */,
+				483055EC272398AF00B9891F /* FrekWatchApp.swift in Sources */,
+				483055F2272398AF00B9891F /* NotificationView.swift in Sources */,
+				48E24CEC27239939003CDCB8 /* extenstions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48435FB22516DED200FFED01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -899,37 +633,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4884D1D725177B680074CA5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4884D1E125177B690074CA5F /* HostingController.swift in Sources */,
-				48C6FEA3251938E60051B4B3 /* FrekPlaceRow.swift in Sources */,
-				48C925DC2667D04E00770D22 /* FrekDecoder.swift in Sources */,
-				48C925CD2666382400770D22 /* extenstions.swift in Sources */,
-				482A39B62522185C00A2028A /* FrekApp.swift in Sources */,
-				4884D1E725177B690074CA5F /* NotificationController.swift in Sources */,
-				485258ED2663E0E600E68193 /* FrekChart.swift in Sources */,
-				48C8A4DF251A5C8000C29AAD /* ToggleFavoriteButton.swift in Sources */,
-				48C6FFE3251A42370051B4B3 /* ValueStore.swift in Sources */,
-				48C925E5266801B600770D22 /* FrekChartViewModel.swift in Sources */,
-				4884D1E525177B690074CA5F /* ExtensionDelegate.swift in Sources */,
-				481F7DAE2668C38000BE818E /* FrekChartRow.swift in Sources */,
-				48C925D92667D04100770D22 /* FrekFormatter.swift in Sources */,
-				48548A26265EFF5300272ADB /* MapView.swift in Sources */,
-				4884D1E925177B690074CA5F /* NotificationView.swift in Sources */,
-				4884D1EB25177B690074CA5F /* ComplicationController.swift in Sources */,
-				482A39A02522126900A2028A /* FrekThumbnail.swift in Sources */,
-				481F7DAD2668C37700BE818E /* FrekPlaceDetail.swift in Sources */,
-				4884D20C2517C7C20074CA5F /* FrekPlace.swift in Sources */,
-				48C925D32667B7EA00770D22 /* FrekPlaceListViewModel.swift in Sources */,
-				482E2F35265E6E9B00C60730 /* FrekPlaceList.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		483055E9272398AF00B9891F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 483055E5272398AF00B9891F /* FrekWatch WatchKit Extension */;
+			targetProxy = 483055E8272398AF00B9891F /* PBXContainerItemProxy */;
+		};
+		483055FD272398B200B9891F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 483055DD272398AB00B9891F /* FrekWatch */;
+			targetProxy = 483055FC272398B200B9891F /* PBXContainerItemProxy */;
+		};
 		48435FC92516DED500FFED01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48435FB52516DED200FFED01 /* Frek */;
@@ -940,19 +656,129 @@
 			target = 48435FB52516DED200FFED01 /* Frek */;
 			targetProxy = 48435FD32516DED500FFED01 /* PBXContainerItemProxy */;
 		};
-		4884D1CF25177B640074CA5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4884D1CB25177B640074CA5F /* FrekWatch WatchKit App */;
-			targetProxy = 4884D1CE25177B640074CA5F /* PBXContainerItemProxy */;
-		};
-		4884D1DE25177B690074CA5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4884D1DA25177B680074CA5F /* FrekWatch WatchKit Extension */;
-			targetProxy = 4884D1DD25177B690074CA5F /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		48305600272398B200B9891F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T7562M4U35;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FrekWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = FrekWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		48305601272398B200B9891F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T7562M4U35;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FrekWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = FrekWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		48305604272398B200B9891F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = FrekWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = FrekWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.Frek;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		48305605272398B200B9891F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = FrekWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = FrekWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.Frek;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		48435FD92516DED500FFED01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1073,11 +899,12 @@
 		};
 		48435FDC2516DED500FFED01 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EF94837C35D1F0F7FBCBF2A /* Pods-Frek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Frek/Frek.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
@@ -1086,20 +913,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
 		48435FDD2516DED500FFED01 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D141B550942A26E48BBD1B9A /* Pods-Frek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Frek/Frek.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
@@ -1108,16 +939,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
 		48435FDF2516DED500FFED01 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6FD04A71AE23A7C1A40B503 /* Pods-FrekTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1140,7 +973,6 @@
 		};
 		48435FE02516DED500FFED01 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A68E8659BF72C3716F2FBF84 /* Pods-FrekTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1163,7 +995,6 @@
 		};
 		48435FE22516DED500FFED01 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6033B5E76679DF7F1AD8537A /* Pods-Frek-FrekUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1184,7 +1015,6 @@
 		};
 		48435FE32516DED500FFED01 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AED417161D5EBDDA4B856536 /* Pods-Frek-FrekUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1203,159 +1033,27 @@
 			};
 			name = Release;
 		};
-		4884D1F425177B6C0074CA5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D820E35CE4571DA1AD1F23E7 /* Pods-FrekWatch WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = T7562M4U35;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Debug;
-		};
-		4884D1F525177B6C0074CA5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06E5EE7683E28152CF3FE1E7 /* Pods-FrekWatch WatchKit Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = T7562M4U35;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Release;
-		};
-		4884D1F825177B6C0074CA5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94659A440A215792792574CE /* Pods-FrekWatch WatchKit App.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7562M4U35;
-				IBSC_MODULE = FrekWatch_WatchKit_Extension;
-				INFOPLIST_FILE = "FrekWatch WatchKit App/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Debug;
-		};
-		4884D1F925177B6C0074CA5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26E4B0C2AA57853466E3674D /* Pods-FrekWatch WatchKit App.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7562M4U35;
-				IBSC_MODULE = FrekWatch_WatchKit_Extension;
-				INFOPLIST_FILE = "FrekWatch WatchKit App/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Release;
-		};
-		4884D1FC25177B6C0074CA5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF0B32A1E1A23D18D7EF920F /* Pods-FrekWatch.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T7562M4U35;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		4884D1FD25177B6C0074CA5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1D65DFBEDF059601E00DC7B /* Pods-FrekWatch.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T7562M4U35;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.FrekWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		483055FF272398B200B9891F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48305600272398B200B9891F /* Debug */,
+				48305601272398B200B9891F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48305603272398B200B9891F /* Build configuration list for PBXNativeTarget "FrekWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48305604272398B200B9891F /* Debug */,
+				48305605272398B200B9891F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		48435FB12516DED200FFED01 /* Build configuration list for PBXProject "Frek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1392,33 +1090,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4884D1F325177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4884D1F425177B6C0074CA5F /* Debug */,
-				4884D1F525177B6C0074CA5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4884D1F725177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4884D1F825177B6C0074CA5F /* Debug */,
-				4884D1F925177B6C0074CA5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4884D1FB25177B6C0074CA5F /* Build configuration list for PBXNativeTarget "FrekWatch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4884D1FC25177B6C0074CA5F /* Debug */,
-				4884D1FD25177B6C0074CA5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1438,12 +1109,7 @@
 			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
-		4818A559266ADED6001F26C6 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
-			productName = SwiftUICharts;
-		};
-		4818A55B266AE5F9001F26C6 /* SwiftUICharts */ = {
+		48E24CF127239AC1003CDCB8 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;

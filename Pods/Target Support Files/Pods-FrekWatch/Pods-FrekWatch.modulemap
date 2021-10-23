@@ -1,6 +1,0 @@
-framework module Pods_FrekWatch {
-  umbrella header "Pods-FrekWatch-umbrella.h"
-
-  export *
-  module * { export * }
-}

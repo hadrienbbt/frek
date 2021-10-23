@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
-import Firebase
+#if os(iOS)
+// import Firebase
+#endif
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    FirebaseApp.configure()
+    #if os(iOS)
+        // FirebaseApp.configure()
+    #endif
     return true
   }
 }

@@ -2,7 +2,7 @@
 //  NotificationController.swift
 //  FrekWatch WatchKit Extension
 //
-//  Created by Hadrien Barbat on 2020-09-20.
+//  Created by Hadrien Barbat on 23/10/2021.
 //
 
 import WatchKit

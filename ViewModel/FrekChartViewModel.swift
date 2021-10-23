@@ -91,9 +91,14 @@ class FrekChartViewModel: ObservableObject {
             LineDataSet(dataPoints: frekDataPoints, legendTitle: "Fréquentation", style: frekLineStyle),
             LineDataSet(dataPoints: gaugeDataPoints, legendTitle: "Jauge réduite à \(Int(governmentGauge * 100))%", style: gaugeLineStyle),
         ])
+        #if os(watchOS)
+        let lineColour = Color(.gray).opacity(0.5)
+        #else
+        let lineColour = Color(.systemGray5).opacity(0.5)
+        #endif
         let gridStyle = GridStyle(
             numberOfLines: yAxisLabels.count,
-            lineColour: Color(.systemGray5).opacity(0.5),
+            lineColour: lineColour,
             lineWidth: 1,
             dash: [8],
             dashPhase: 0

@@ -57,7 +57,7 @@ class FrekPlaceListViewModel: ObservableObject {
         case .failure(let error): print("❌ Error fetching backend: \(error)")
         case .finished:
             #if os(watchOS)
-            ComplicationController.reloadAllComplicationsData()
+            // ComplicationController.reloadAllComplicationsData()
             #endif
             self.loading = false
             print("✅ Fetching finished with \(self.frekPlaces.count) FrekPlaces created!")
