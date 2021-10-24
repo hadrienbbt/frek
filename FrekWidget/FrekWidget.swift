@@ -7,79 +7,82 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
 
-struct Provider: IntentTimelineProvider {
+@main
+struct FrekBundle: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        SimpleFrekPlaceWidget()
+    }
+}
+
+struct SimpleFrekPlaceWidget: Widget {
+    let kind: String = "FrekWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: SimpleFrekPlaceProvider()) { entry in
+            SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
+        }
+        .configurationDisplayName("Salle de gym")
+        .description("Affiche la fréquentation d'une salle de gym")
+        .supportedFamilies([.systemSmall])
+        .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
+            print("Widget sessionIdentifier: \(sessionIdentifier)")
+        }
+    }
+}
+
+struct SimpleFrekPlaceProvider: TimelineProvider {
     let frekPlaceListViewModel = FrekPlaceListViewModel()
     
-    func placeholder(in context: Context) -> FrekEntry {
-        return FrekEntry(date: Date(), frekPlace: frekPlaceListViewModel.frekPlaces.first?.encode())
+    func placeholder(in context: Context) -> SimpleFrekPlaceEntry {
+        return SimpleFrekPlaceEntry(date: Date(), frekPlace: FrekPlace.sample)
     }
 
-    func getSnapshot(for configuration: SelectGymIntent, in context: Context, completion: @escaping (FrekEntry) -> ()) {
-        let entry = FrekEntry(date: Date(), frekPlace: frekPlaceListViewModel.frekPlaces.first?.encode())
+    func getSnapshot(in context: Context, completion: @escaping (SimpleFrekPlaceEntry) -> ()) {
+        let entry = SimpleFrekPlaceEntry(date: Date(), frekPlace: FrekPlace.sample)
         completion(entry)
     }
 
-    func getTimeline(for configuration: SelectGymIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleFrekPlaceEntry>) -> ()) {
         frekPlaceListViewModel.fetchFrekPlaces { frekPlaces in
             let currentDate = Date()
             let refreshDate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)!
-            let entries = frekPlaces.map { FrekEntry(date: currentDate, frekPlace: $0.encode()) }
+            let entries = frekPlaces.map { SimpleFrekPlaceEntry(date: currentDate, frekPlace: $0) }
             let timeline = Timeline(entries: entries, policy: .after(refreshDate))
             completion(timeline)
         }
     }
 }
 
-struct FrekEntry: TimelineEntry {
+struct SimpleFrekPlaceEntry: TimelineEntry {
     var date: Date
-    let frekPlace: Gym?
+    let frekPlace: FrekPlace
 }
 
-struct FrekWidgetEntryView : View {
-    var entry: Provider.Entry
+struct SimpleFrekPlaceEntryView: View {
+    var frekPlace: FrekPlace
     
     var body: some View {
-        if let frekPlace = entry.frekPlace,
-              let suffix = frekPlace.suffix,
-              let crowd = frekPlace.crowd,
-              let fmi = frekPlace.fmi {
-            ZStack {
-                GeometryReader { geo in
-                    Image(suffix)
-                        .resizable()
-                        .frame(width: geo.size.width)
-                }
-                VStack(alignment: .leading, spacing: 4) {
-                    Spacer()
-                    Text(frekPlace.displayString)
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .bold()
-                    Text("\(crowd.description)/\(fmi)")
-                        .font(.system(size: 17))
-                        .foregroundColor(.white)
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-                .padding()
-                .foregroundColor(.clear)
-                .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+        ZStack {
+            GeometryReader { geo in
+                Image(self.frekPlace.suffix)
+                    .resizable()
+                    .frame(width: geo.size.width)
             }
-        } else {
-            Text("No Frekplace")
+            VStack(alignment: .leading, spacing: 4) {
+                Spacer()
+                Text(self.frekPlace.name)
+                    .font(.system(size: 20))
+                    .foregroundColor(.white)
+                    .bold()
+                Text("\(self.frekPlace.crowd.description)/\(self.frekPlace.fmi)")
+                    .font(.system(size: 17))
+                    .foregroundColor(.white)
+            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+            .padding()
+            .foregroundColor(.clear)
+            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
         }
-    }
-}
-
-@main
-struct FrekWidget: Widget {
-    let kind: String = "FrekWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: Provider()) { entry in
-            FrekWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("Salles de gym")
-        .description("Fréquentation des salles de gym en temps réel")
     }
 }

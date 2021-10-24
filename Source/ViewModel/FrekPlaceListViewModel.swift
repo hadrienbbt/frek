@@ -35,8 +35,8 @@ class FrekPlaceListViewModel: ObservableObject {
     func fetchFrekPlaces(_ callback: (([FrekPlace]) -> Void)? = nil)  {
         loading = true
         let reveiveValue: ([FrekPlace]) -> Void = {
-            callback?($0)
             self.receiveFrekPlaces($0)
+            callback?($0)
         }
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }

@@ -49,4 +49,20 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
         gym.crowd = crowd as NSNumber
         return gym
     }
+    
+    static var sample: FrekPlace {
+        return FrekPlace(
+            id: "0",
+            name: "Bastille",
+            suffix: "bastille-12eme",
+            latitude: 0.0,
+            longitude: 0.0,
+            crowd: 32,
+            spotsAvailable: 128,
+            fmi: 160,
+            state: true,
+            favorite: true,
+            frekCharts: []
+        )
+    }
 }
