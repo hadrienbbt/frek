@@ -45,13 +45,25 @@ struct FrekWidgetEntryView : View {
               let suffix = frekPlace.suffix,
               let crowd = frekPlace.crowd,
               let fmi = frekPlace.fmi {
-            VStack {
-                FrekThumbnail(name: suffix)
-                Text(frekPlace.displayString)
-                    .font(.headline)
-                Text("\(crowd.description)/\(fmi)")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+            ZStack {
+                GeometryReader { geo in
+                    Image(suffix)
+                        .resizable()
+                        .frame(width: geo.size.width)
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Spacer()
+                    Text(frekPlace.displayString)
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .bold()
+                    Text("\(crowd.description)/\(fmi)")
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+                .padding()
+                .foregroundColor(.clear)
+                .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
             }
         } else {
             Text("No Frekplace")
