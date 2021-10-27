@@ -1,10 +1,3 @@
-//
-//  FrekPlaceRow.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2020-09-21.
-//
-
 import SwiftUI
 
 struct FrekPlaceRow: View {
