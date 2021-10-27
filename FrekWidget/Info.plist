@@ -4,8 +4,6 @@
 <dict>
 	<key>NSExtension</key>
 	<dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.widgetkit-extension</string>
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>IntentsSupported</key>
@@ -13,6 +11,8 @@
 				<string>SelectGymIntent</string>
 			</array>
 		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.widgetkit-extension</string>
 	</dict>
 </dict>
 </plist>

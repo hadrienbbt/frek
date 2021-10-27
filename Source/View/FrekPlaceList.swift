@@ -56,6 +56,13 @@ struct FrekPlaceList: View {
                 .navigationBarTitle(Text("Salles de gym"))
             #endif
         }
-        .onAppear { viewModel.fetchFrekPlaces() }
+        .onAppear {
+            viewModel.fetchFrekPlaces()
+            #if !os(watchOS)
+            if DeviceMeta().idiom != .phone {
+                selectedId = favorites.first?.id ?? other.first?.id
+            }
+            #endif
+        }
     }
 }
