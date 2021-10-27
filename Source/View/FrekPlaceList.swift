@@ -1,10 +1,3 @@
-//
-//  FrekPlaceList.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2020-09-20.
-//
-
 import SwiftUI
 
 struct FrekPlaceList: View {

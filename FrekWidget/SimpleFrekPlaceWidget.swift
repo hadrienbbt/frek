@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  FrekWidgetExtension
-//
-//  Created by Hadrien Barbat on 27/10/2021.
-//
-
 import WidgetKit
 import SwiftUI
 import SwiftUICharts

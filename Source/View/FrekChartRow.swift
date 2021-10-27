@@ -1,10 +1,3 @@
-//
-//  FrekChartRow.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2021-06-02.
-//
-
 import SwiftUI
 import SwiftUICharts
 

@@ -1,10 +1,3 @@
-//
-//  FrekFormatter.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2021-06-02.
-//
-
 import Foundation
 
 class FrekFormatter: Formatter {

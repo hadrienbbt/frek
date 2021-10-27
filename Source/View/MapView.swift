@@ -1,10 +1,3 @@
-//
-//  MapView.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2021-05-27.
-//
-
 import SwiftUI
 import MapKit
 

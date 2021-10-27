@@ -1,10 +1,3 @@
-//
-//  ToggleFavoriteButton.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2020-09-22.
-//
-
 import SwiftUI
 #if os(watchOS)
 import ClockKit

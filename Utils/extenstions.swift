@@ -1,10 +1,3 @@
-//
-//  extenstions.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2021-06-01.
-//
-
 import Foundation
 import SwiftUI
 

@@ -1,10 +1,3 @@
-//
-//  ComplicationController.swift
-//  FrekWatch WatchKit Extension
-//
-//  Created by Hadrien Barbat on 2020-09-20.
-//
-
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {

@@ -1,10 +1,3 @@
-//
-//  FrekPlace.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2020-09-20.
-//
-
 import Foundation
 import MapKit
 import Intents

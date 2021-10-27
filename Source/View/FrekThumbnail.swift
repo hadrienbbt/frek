@@ -1,10 +1,3 @@
-//
-//  FrekThumbnail.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 2020-09-28.
-//
-
 import SwiftUI
 
 struct FrekThumbnail: View {

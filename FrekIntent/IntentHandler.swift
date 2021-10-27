@@ -1,10 +1,3 @@
-//
-//  IntentHandler.swift
-//  Frek
-//
-//  Created by Hadrien Barbat on 23/10/2021.
-//
-
 import Foundation
 import Intents
 
