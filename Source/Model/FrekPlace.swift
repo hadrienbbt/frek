@@ -32,6 +32,10 @@ struct FrekPlace: Identifiable, Decodable, Encodable {
     var isOpen: Bool {
         return state // && (frekCharts.first?.isOpen ?? false)
     }
+    
+    var url: URL {
+        return URL(string: "frek://\(id)")!
+    }
         
     var description: String {
         return "\(crowd) personne à la salle \(name)."

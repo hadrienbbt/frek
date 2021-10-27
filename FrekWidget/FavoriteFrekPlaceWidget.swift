@@ -70,7 +70,11 @@ struct FavoriteFrekPlaceEntryView: View {
     var frekPlaces: [FrekPlace]
     
     var body: some View {
-        ForEach(frekPlaces) { FrekPlaceRow(frekPlace: $0) }
+        ForEach(frekPlaces) { frekPlace in
+            Link(destination: frekPlace.url) {
+                FrekPlaceRow(frekPlace: frekPlace)
+            }
+        }
     }
 }
 

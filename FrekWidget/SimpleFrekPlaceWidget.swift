@@ -67,8 +67,10 @@ struct SimpleFrekPlaceEntryView: View {
     var body: some View {
         if widgetFamily == .systemLarge, let chart = frekPlace.frekCharts.first {
             DetailedFrekPlaceEntryView(frekPlace: frekPlace, frekChart: chart)
+                .widgetURL(frekPlace.url)
         } else {
             SmallFrekPlaceEntryView(frekPlace: frekPlace)
+                .widgetURL(frekPlace.url)
         }
     }
 }
