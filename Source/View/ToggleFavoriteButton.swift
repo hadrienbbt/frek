@@ -22,7 +22,7 @@ struct ToggleFavoriteButton: View {
 #if os(watchOS)
             CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
 #elseif os(iOS)
-            WidgetCenter.shared.reloadAllTimelines()
+            WidgetCenter.shared.reloadTimelines(ofKind: "FrekWidget.favorite")
 #endif
     }
     

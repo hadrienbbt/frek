@@ -21,7 +21,7 @@ struct SimpleFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.simple"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: SimpleFrekPlaceProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
             SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
         }
         .configurationDisplayName("Salle de gym")
@@ -33,24 +33,27 @@ struct SimpleFrekPlaceWidget: Widget {
     }
 }
 
-struct SimpleFrekPlaceProvider: TimelineProvider {
-    
+struct SimpleFrekPlaceProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleFrekPlaceEntry {
-        return getEntry()
+        let viewModel = FrekPlaceListViewModel()
+        let frekPlace = viewModel.favorites.randomElement() ?? FrekPlace.sample1
+        return SimpleFrekPlaceEntry(date: Date(), frekPlace: frekPlace)
     }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleFrekPlaceEntry) -> ()) {
-        let entry = getEntry()
-        completion(entry)
+    
+    func getSnapshot(for configuration: SelectGymIntent, in context: Context, completion: @escaping (SimpleFrekPlaceEntry) -> Void) {
+        let viewModel = FrekPlaceListViewModel()
+        let frekPlace = viewModel.frekPlaces.first(where: { $0.id == configuration.frekPlace?.identifier }) ?? viewModel.frekPlaces.randomElement() ?? FrekPlace.sample1
+        completion(SimpleFrekPlaceEntry(date: Date(), frekPlace: frekPlace))
     }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleFrekPlaceEntry>) -> ()) {
+    
+    func getTimeline(for configuration: SelectGymIntent, in context: Context, completion: @escaping (Timeline<SimpleFrekPlaceEntry>) -> Void) {
         let viewModel = FrekPlaceListViewModel()
         viewModel.fetchFrekPlaces {
             let currentDate = Date()
             let refreshDate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)!
-            let entries = viewModel.sortedFrekPlaces.map { SimpleFrekPlaceEntry(date: currentDate, frekPlace: $0) }
-            let timeline = Timeline(entries: entries, policy: .after(refreshDate))
+            let frekPlace = viewModel.frekPlaces.first(where: { $0.id == configuration.frekPlace?.identifier }) ?? viewModel.frekPlaces.randomElement() ?? FrekPlace.sample1
+            let entry = SimpleFrekPlaceEntry(date: Date(), frekPlace: frekPlace)
+            let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
             completion(timeline)
         }
     }
