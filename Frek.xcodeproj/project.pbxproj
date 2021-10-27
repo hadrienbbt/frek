@@ -35,13 +35,11 @@
 		482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
-		483055E1272398AE00B9891F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055E0272398AE00B9891F /* Assets.xcassets */; };
 		483055E7272398AF00B9891F /* FrekWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		483055EC272398AF00B9891F /* FrekWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055EB272398AF00B9891F /* FrekWatchApp.swift */; };
 		483055F0272398AF00B9891F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055EF272398AF00B9891F /* NotificationController.swift */; };
 		483055F2272398AF00B9891F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F1272398AF00B9891F /* NotificationView.swift */; };
 		483055F4272398AF00B9891F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F3272398AF00B9891F /* ComplicationController.swift */; };
-		483055F6272398B200B9891F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055F5272398B200B9891F /* Assets.xcassets */; };
 		483055F9272398B200B9891F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483055F8272398B200B9891F /* Preview Assets.xcassets */; };
 		483055FE272398B200B9891F /* FrekWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 483055DE272398AB00B9891F /* FrekWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48435FBA2516DED200FFED01 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FB92516DED200FFED01 /* MainView.swift */; };
@@ -64,6 +62,11 @@
 		48AF63F62729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F52729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift */; };
 		48AF63FA2729B1CD009A77C9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48AF63F92729B1CD009A77C9 /* SwiftUICharts */; };
 		48AF63FB2729B1F7009A77C9 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
+		48AF63FD2729EBA1009A77C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
+		48AF63FE2729EBA3009A77C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
+		48AF63FF2729EBA3009A77C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
+		48AF64002729EBA5009A77C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
+		48AF64012729EBAA009A77C9 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
 		48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
@@ -176,13 +179,11 @@
 		482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrekPlaceAssets.xcassets; sourceTree = "<group>"; };
 		482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
 		483055DE272398AB00B9891F /* FrekWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrekWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		483055E0272398AE00B9891F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		483055EB272398AF00B9891F /* FrekWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekWatchApp.swift; sourceTree = "<group>"; };
 		483055EF272398AF00B9891F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		483055F1272398AF00B9891F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		483055F3272398AF00B9891F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		483055F5272398B200B9891F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483055F8272398B200B9891F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		483055FA272398B200B9891F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		483055FB272398B200B9891F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -193,7 +194,6 @@
 		48435FEC2516E18F00FFED01 /* FrekPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlace.swift; sourceTree = "<group>"; };
 		485258EB2663E0E600E68193 /* FrekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekChart.swift; sourceTree = "<group>"; };
 		48548A24265EFF5300272ADB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		4884D1EC25177B6C0074CA5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceRow.swift; sourceTree = "<group>"; };
 		48952D422724437600A548CD /* FrekWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FrekWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48952D432724437600A548CD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -272,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				480545552725FF300046F225 /* FrekWatch.entitlements */,
-				483055E0272398AE00B9891F /* Assets.xcassets */,
 			);
 			path = FrekWatch;
 			sourceTree = "<group>";
@@ -284,7 +283,6 @@
 				483055EF272398AF00B9891F /* NotificationController.swift */,
 				483055F1272398AF00B9891F /* NotificationView.swift */,
 				483055F3272398AF00B9891F /* ComplicationController.swift */,
-				483055F5272398B200B9891F /* Assets.xcassets */,
 				483055FA272398B200B9891F /* Info.plist */,
 				483055FB272398B200B9891F /* PushNotificationPayload.apns */,
 				483055F7272398B200B9891F /* Preview Content */,
@@ -345,7 +343,6 @@
 			children = (
 				48435FB92516DED200FFED01 /* MainView.swift */,
 				4884D25D2517D97B0074CA5F /* FrekPlaceRow.swift */,
-				48435FBD2516DED500FFED01 /* Assets.xcassets */,
 			);
 			path = IOSView;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 			children = (
 				483055EB272398AF00B9891F /* FrekWatchApp.swift */,
 				48C6FEA2251938E60051B4B3 /* FrekPlaceRow.swift */,
-				4884D1EC25177B6C0074CA5F /* Assets.xcassets */,
 			);
 			path = WatchOSView;
 			sourceTree = "<group>";
@@ -372,6 +368,7 @@
 		4884D2132517C81D0074CA5F /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				48435FBD2516DED500FFED01 /* Assets.xcassets */,
 				482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */,
 			);
 			path = Ressources;
@@ -605,6 +602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AF63FF2729EBA3009A77C9 /* Assets.xcassets in Resources */,
 				4805454827246D760046F225 /* FrekPlaceAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,7 +611,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483055E1272398AE00B9891F /* Assets.xcassets in Resources */,
+				48AF64012729EBAA009A77C9 /* FrekPlaceAssets.xcassets in Resources */,
+				48AF64002729EBA5009A77C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +622,7 @@
 			files = (
 				48952D3D2724422000A548CD /* FrekPlaceAssets.xcassets in Resources */,
 				483055F9272398B200B9891F /* Preview Assets.xcassets in Resources */,
-				483055F6272398B200B9891F /* Assets.xcassets in Resources */,
+				48AF63FD2729EBA1009A77C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48952D5A272445C600A548CD /* FrekPlaceAssets.xcassets in Resources */,
+				48AF63FE2729EBA3009A77C9 /* Assets.xcassets in Resources */,
 				48952D4C2724437B00A548CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,7 +773,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = FrekIntent/FrekIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekIntent/Info.plist;
@@ -802,7 +802,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = FrekIntent/FrekIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekIntent/Info.plist;
@@ -832,14 +832,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "FrekWatch WatchKit Extension/FrekWatch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FrekWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = FrekWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -866,14 +866,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "FrekWatch WatchKit Extension/FrekWatch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FrekWatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = FrekWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -902,7 +902,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = FrekWatch/FrekWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = FrekWatch_WatchKit_Extension;
@@ -930,7 +930,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = FrekWatch/FrekWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = FrekWatch_WatchKit_Extension;
@@ -1075,7 +1075,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Frek/Frek.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
@@ -1102,7 +1102,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Frek/Frek.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
@@ -1130,7 +1130,7 @@
 				CODE_SIGN_ENTITLEMENTS = FrekWidgetExtension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekWidget/Info.plist;
@@ -1162,7 +1162,7 @@
 				CODE_SIGN_ENTITLEMENTS = FrekWidgetExtension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekWidget/Info.plist;
