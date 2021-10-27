@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import SwiftUICharts
 
 struct SimpleFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.simple"
@@ -17,7 +18,7 @@ struct SimpleFrekPlaceWidget: Widget {
         }
         .configurationDisplayName("Salle de gym")
         .description("Affiche la fréquentation d'une salle de gym")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemLarge])
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }
@@ -25,6 +26,9 @@ struct SimpleFrekPlaceWidget: Widget {
 }
 
 struct SimpleFrekPlaceProvider: IntentTimelineProvider {
+    typealias Entry = SimpleFrekPlaceEntry
+    typealias Intent = SelectGymIntent
+    
     func placeholder(in context: Context) -> SimpleFrekPlaceEntry {
         let viewModel = FrekPlaceListViewModel()
         let frekPlace = viewModel.favorites.randomElement() ?? FrekPlace.sample1
@@ -56,6 +60,20 @@ struct SimpleFrekPlaceEntry: TimelineEntry {
 }
 
 struct SimpleFrekPlaceEntryView: View {
+    @Environment(\.widgetFamily) private var widgetFamily
+
+    var frekPlace: FrekPlace
+    
+    var body: some View {
+        if widgetFamily == .systemLarge, let chart = frekPlace.frekCharts.first {
+            DetailedFrekPlaceEntryView(frekPlace: frekPlace, frekChart: chart)
+        } else {
+            SmallFrekPlaceEntryView(frekPlace: frekPlace)
+        }
+    }
+}
+
+struct SmallFrekPlaceEntryView: View {
     var frekPlace: FrekPlace
     
     var body: some View {
@@ -79,5 +97,20 @@ struct SimpleFrekPlaceEntryView: View {
             .foregroundColor(.clear)
             .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
         }
+    }
+}
+
+struct DetailedFrekPlaceEntryView: View {
+    var frekPlace: FrekPlace
+    var frekChart: FrekChart
+        
+    var body: some View {
+        let viewModel = FrekChartViewModel(chart: frekChart)
+        VStack {
+            FrekPlaceRow(frekPlace: frekPlace)
+            MultiLineChart(chartData: viewModel.detailedLineChartData)
+                .frekDetailedChart(chartData: viewModel.detailedLineChartData, withLegend: false)
+        }
+        .padding()
     }
 }

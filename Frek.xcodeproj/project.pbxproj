@@ -63,6 +63,8 @@
 		48952D5A272445C600A548CD /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		48AF63F42729AC83009A77C9 /* SimpleFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F32729AC83009A77C9 /* SimpleFrekPlaceWidget.swift */; };
 		48AF63F62729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F52729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift */; };
+		48AF63FA2729B1CD009A77C9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48AF63F92729B1CD009A77C9 /* SwiftUICharts */; };
+		48AF63FB2729B1F7009A77C9 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
 		48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
 		48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
@@ -248,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AF63FA2729B1CD009A77C9 /* SwiftUICharts in Frameworks */,
 				48952D462724437600A548CD /* SwiftUI.framework in Frameworks */,
 				48952D442724437600A548CD /* WidgetKit.framework in Frameworks */,
 			);
@@ -541,6 +544,9 @@
 			dependencies = (
 			);
 			name = FrekWidgetExtension;
+			packageProductDependencies = (
+				48AF63F92729B1CD009A77C9 /* SwiftUICharts */,
+			);
 			productName = FrekWidgetExtension;
 			productReference = 48952D422724437600A548CD /* FrekWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -727,6 +733,7 @@
 				480544F12724485B0046F225 /* FrekThumbnail.swift in Sources */,
 				480544F227244A9F0046F225 /* ValueStore.swift in Sources */,
 				4805455027247BA30046F225 /* FrekFormatter.swift in Sources */,
+				48AF63FB2729B1F7009A77C9 /* FrekChartViewModel.swift in Sources */,
 				48952D59272444E200A548CD /* FrekChart.swift in Sources */,
 				48952D58272444DE00A548CD /* FrekPlace.swift in Sources */,
 				4805454A272478CF0046F225 /* FrekPlaceListViewModel.swift in Sources */,
@@ -1254,6 +1261,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		4818A557266AD06A001F26C6 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+		48AF63F92729B1CD009A77C9 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;

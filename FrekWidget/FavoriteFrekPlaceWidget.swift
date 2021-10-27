@@ -70,33 +70,39 @@ struct FavoriteFrekPlaceEntryView: View {
     var frekPlaces: [FrekPlace]
     
     var body: some View {
-        ForEach(frekPlaces) { frekPlace in
-            HStack {
-                FrekThumbnail(name: frekPlace.suffix)
-                    .padding([.leading], 20)
-                VStack(alignment: .leading) {
-                    Text(frekPlace.name)
-                        .font(.headline)
-                    Text(frekPlace.isOpen ? "Ouverte" : "Fermée")
+        ForEach(frekPlaces) { FrekPlaceRow(frekPlace: $0) }
+    }
+}
+
+struct FrekPlaceRow: View {
+    var frekPlace: FrekPlace
+    
+    var body: some View {
+        HStack {
+            FrekThumbnail(name: frekPlace.suffix)
+                .padding([.leading], 20)
+            VStack(alignment: .leading) {
+                Text(frekPlace.name)
+                    .font(.headline)
+                Text(frekPlace.isOpen ? "Ouverte" : "Fermée")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Text("Max: \(frekPlace.fmi)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 5)
+            Spacer()
+            if frekPlace.isOpen {
+                VStack {
+                    Text(frekPlace.crowd.description)
+                        .font(.title)
+                    Text("Personnes\nsur place")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
-                    Text("Max: \(frekPlace.fmi)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
-                .padding(.horizontal, 5)
-                Spacer()
-                if frekPlace.isOpen {
-                    VStack {
-                        Text(frekPlace.crowd.description)
-                            .font(.title)
-                        Text("Personnes\nsur place")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding([.trailing], 20)
-                }
+                .padding([.trailing], 20)
             }
         }
     }

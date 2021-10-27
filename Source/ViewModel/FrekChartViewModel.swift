@@ -166,17 +166,19 @@ class FrekChartViewModel: ObservableObject {
 }
 
 extension View {
-    public func frekDetailedChart<T>(chartData: T) -> some View where T : CTLineBarChartDataProtocol {
+    public func frekDetailedChart<T>(chartData: T, withLegend: Bool = true) -> some View where T: CTLineBarChartDataProtocol {
         self
             .xAxisGrid(chartData: chartData)
             .yAxisGrid(chartData: chartData)
             .xAxisLabels(chartData: chartData)
             .yAxisLabels(chartData: chartData)
-            .legends(
-                chartData: chartData,
-                columns: [GridItem(.flexible()), GridItem(.flexible())],
-                iconWidth: 30, font: .subheadline,
-                textColor: .secondary
-            )
+            .if(withLegend) { chart in
+                chart.legends(
+                    chartData: chartData,
+                    columns: [GridItem(.flexible()), GridItem(.flexible())],
+                    iconWidth: 30, font: .subheadline,
+                    textColor: .secondary
+                )
+            }
     }
 }
