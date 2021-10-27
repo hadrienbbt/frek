@@ -6,7 +6,11 @@
 //
 
 import SwiftUI
+#if os(watchOS)
 import ClockKit
+#elseif os(iOS)
+import WidgetKit
+#endif
 
 struct ToggleFavoriteButton: View {
     @Binding var frekPlace: FrekPlace
@@ -15,9 +19,11 @@ struct ToggleFavoriteButton: View {
         withAnimation {
             frekPlace.favorite.toggle()
         }
-        #if os(watchOS)
+#if os(watchOS)
             CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
-        #endif
+#elseif os(iOS)
+            WidgetCenter.shared.reloadAllTimelines()
+#endif
     }
     
     var body: some View {

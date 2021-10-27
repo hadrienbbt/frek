@@ -43,7 +43,7 @@ class FrekDecoder: TopLevelDecoder {
                 return nil
         }
         let frekCharts = datasets.compactMap ({ decode($0, fmi) })
-        return FrekPlace(id: id, name: name, suffix: suffix, latitude: latitude, longitude: longitude, crowd: crowd, spotsAvailable: spotsAvailable, fmi: fmi, state: state, frekCharts: frekCharts)
+        return FrekPlace(id: id, name: name, suffix: suffix, latitude: latitude, longitude: longitude, crowd: crowd, spotsAvailable: spotsAvailable, fmi: fmi, state: state, favorite: false, frekCharts: frekCharts)
     }
     
     func decode(_ dict: Dict, _ fmi: Int) -> FrekChart? {

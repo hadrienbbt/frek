@@ -19,6 +19,7 @@ class FrekPlaceListViewModel: ObservableObject {
     @Published var loading = false
     
     private var cancellable: AnyCancellable?
+    private var backgroundQueue = DispatchQueue(label: "FrekPlaceListViewModel")
     
     let url: URL! = URL(string: "https://fedutia.fr/frek")
     
@@ -32,19 +33,22 @@ class FrekPlaceListViewModel: ObservableObject {
             .filter { $0.favorite }
     }
     
-    func fetchFrekPlaces(_ callback: (([FrekPlace]) -> Void)? = nil)  {
+    func fetchFrekPlaces(_ callback: (() -> Void)? = nil)  {
         loading = true
-        let reveiveValue: ([FrekPlace]) -> Void = {
-            self.receiveFrekPlaces($0)
-            callback?($0)
+        
+        let receiveCompletion: (Subscribers.Completion<Error>) -> Void = {
+            self.receiveCompletion($0)
+            callback?()
         }
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .timeout(10, scheduler: backgroundQueue)
+            .retry(3)
             .map { $0.data }
             .decode(type: [FrekPlace].self, decoder: FrekDecoder())
             .receive(on: DispatchQueue.main)
             .sink(
-                receiveCompletion: self.receiveCompletion,
-                receiveValue: reveiveValue
+                receiveCompletion: receiveCompletion,
+                receiveValue: self.receiveFrekPlaces
             )
     }
     
@@ -56,15 +60,15 @@ class FrekPlaceListViewModel: ObservableObject {
         }
     }
     
-    func receiveCompletion(completion: Subscribers.Completion<Error>) -> Void {
+    func receiveCompletion(_ completion: Subscribers.Completion<Error>) -> Void {
         switch completion {
         case .failure(let error): print("❌ Error fetching backend: \(error)")
         case .finished:
             #if os(watchOS)
             // ComplicationController.reloadAllComplicationsData()
             #endif
-            self.loading = false
             print("✅ Fetching finished with \(self.frekPlaces.count) FrekPlaces created!")
         }
+        self.loading = false
     }
 }

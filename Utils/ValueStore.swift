@@ -9,6 +9,8 @@ import Foundation
 
 class ValueStore {
     
+    let suiteName = "group.fr.fedutia.Frek"
+    
     var frekPlaces: [FrekPlace] {
         get {
             if let data = read("frekPlaces") as? Data,
@@ -23,13 +25,20 @@ class ValueStore {
             }
         }
     }
-    
+
     private func read(_ key: String) -> Any? {
-        return UserDefaults.standard.value(forKey: key)
+        guard let userDefaults = UserDefaults(suiteName: suiteName) else {
+            print("❌ App group not configured for target")
+            return UserDefaults.standard.object(forKey: key)
+        }
+        return userDefaults.object(forKey: key)
     }
     
     private func write(_ key: String, _ newValue: Any?) {
-        UserDefaults.standard.set(newValue, forKey: key)
+        guard let userDefaults = UserDefaults(suiteName: suiteName) else {
+            print("❌ App group not configured for target")
+            return UserDefaults.standard.set(newValue, forKey: key)
+        }
+        userDefaults.set(newValue, forKey: key)
     }
-    
 }
