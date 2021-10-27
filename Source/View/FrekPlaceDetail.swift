@@ -18,7 +18,7 @@ struct FrekPlaceDetail: View {
         return isExpanded ? [] : .vertical
     }
     
-    let animationDuration: Double = 0.2
+    let animationDuration: Double = 0.4
     
     var body: some View {
         ScrollView(axes) {

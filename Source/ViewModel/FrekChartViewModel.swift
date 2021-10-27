@@ -51,7 +51,7 @@ class FrekChartViewModel: ObservableObject {
         GradientStop(color: .red, location: 1)
     ]
     
-    var smallLineChartData: LineChartData {
+    lazy var smallLineChartData: LineChartData = {
         var datapoints: [LineChartDataPoint] = chart.dataset
             .filter { $0 != 0 }
             .map { LineChartDataPoint(value: $0) }
@@ -65,9 +65,9 @@ class FrekChartViewModel: ObservableObject {
             globalAnimation: .easeOut(duration: 0.2)
         )
         return LineChartData(dataSets: data, chartStyle: chartStyle)
-    }
+    }()
     
-    var detailedLineChartData: MultiLineChartData {
+    lazy var detailedLineChartData: MultiLineChartData = {
         let frekDataPoints: [LineChartDataPoint] = chart.dataset
             .enumerated()
             .map { LineChartDataPoint(
@@ -112,15 +112,15 @@ class FrekChartViewModel: ObservableObject {
             yAxisLabels: yAxisLabels,
             chartStyle: chartStyle
         )
-    }
+    }()
     
-    var xAxisLabels: [String] {
+    lazy var xAxisLabels: [String] = {
         (0...chart.dataset.count)
             .filter { $0 % 6 == 0 }
             .map { $0 != 0 && $0 != 48 ? formatter.string(fromFrekTimeIndex: $0) : " " }
-    }
+    }()
     
-    var xAxisLabels2: [String] {
+    lazy var xAxisLabels2: [String] = {
         var period = 2
         var labels = chart.dataset
             .enumerated()
@@ -133,9 +133,9 @@ class FrekChartViewModel: ObservableObject {
             period += 1
         }
         return labels.map { formatter.string(fromFrekTimeIndex: $0) }
-    }
+    }()
     
-    var yAxisLabels: [String] {
+    lazy var yAxisLabels: [String] = {
         let max = round((Double(chart.fmi) / 10)) * 10
         var period = 0.0
         var labels = [String]()
@@ -155,7 +155,7 @@ class FrekChartViewModel: ObservableObject {
             labels.append(extraLabel)
         }
         return labels
-    }
+    }()
 }
 
 extension View {
