@@ -4,9 +4,7 @@ import SwiftUI
 struct FrekWatchApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            NavigationView {
-                FrekPlaceList()
-            }
+            FrekPlaceList()
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
