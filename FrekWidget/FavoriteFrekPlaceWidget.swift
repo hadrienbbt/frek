@@ -63,9 +63,15 @@ struct FavoriteFrekPlaceEntryView: View {
     var frekPlaces: [FrekPlace]
     
     var body: some View {
-        ForEach(frekPlaces) { frekPlace in
-            Link(destination: frekPlace.url) {
-                FrekPlaceRow(frekPlace: frekPlace)
+        if frekPlaces.count == 1,
+           let frekPlace = frekPlaces.first,
+           let chart = frekPlace.frekCharts.first {
+            DetailedFrekPlaceEntryView(frekPlace: frekPlace, frekChart: chart)
+        } else {
+            ForEach(frekPlaces) { frekPlace in
+                Link(destination: frekPlace.url) {
+                    FrekPlaceRow(frekPlace: frekPlace)
+                }
             }
         }
     }
