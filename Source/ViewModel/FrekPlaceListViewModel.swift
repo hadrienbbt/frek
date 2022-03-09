@@ -14,7 +14,7 @@ class FrekPlaceListViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     private var backgroundQueue = DispatchQueue(label: "FrekPlaceListViewModel")
     
-    let url: URL! = URL(string: "https://fedutia.fr/frek")
+    let url: URL! = URL(string: "https://frek.fedutia.fr/")
     
     var sortedFrekPlaces: [FrekPlace] {
         frekPlaces
