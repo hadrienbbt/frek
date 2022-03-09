@@ -51,6 +51,7 @@ class FrekPlaceListViewModel: ObservableObject {
             frekPlace.favorite = self.frekPlaces.first { $0.id == frekPlace.id }?.favorite ?? false
             return frekPlace
         }
+        .filter { $0.crowd < 2000 } // Weird API, filter weird values
     }
     
     func receiveCompletion(_ completion: Subscribers.Completion<Error>) -> Void {
