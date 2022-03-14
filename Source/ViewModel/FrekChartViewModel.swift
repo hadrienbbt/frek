@@ -7,10 +7,11 @@ class FrekChartViewModel: ObservableObject {
     
     @Published var chart: FrekChart
     let formatter = FrekFormatter()
-    let governmentGauge = 0.5
+    let governmentGauge: Double?
     
     init(chart: FrekChart) {
         self.chart = chart
+        self.governmentGauge = nil // 0.5
     }
     
     var formattedDate: String {
@@ -58,7 +59,7 @@ class FrekChartViewModel: ObservableObject {
         datapoints.insert(LineChartDataPoint(value: 0), at: 0)
         let data = LineDataSet(
             dataPoints: datapoints,
-            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center /*UnitPoint(x: 0, y: CGFloat(chart.fmi) * CGFloat(governmentGauge))*/), lineType: .curvedLine)
+            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center), lineType: .curvedLine)
         )
         let chartStyle = LineChartStyle(
             topLine: .maximum(of: Double(chart.fmi)),
@@ -74,16 +75,19 @@ class FrekChartViewModel: ObservableObject {
                 value: $0.element,
                 xAxisLabel: formatter.string(fromFrekTimeIndex: $0.offset)
             )}
-        let frekLineStyle = LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center/*UnitPoint(x: 24, y: CGFloat(chart.fmi) * CGFloat(governmentGauge))*/), lineType: .curvedLine)
+        let frekLineStyle = LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center), lineType: .curvedLine)
         let fmiDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0) }
         let fmiLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line)
-        let gaugeDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0 * governmentGauge) }
         let gaugeLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line, strokeStyle: Stroke(lineWidth: 1, dash: [8], dashPhase: 0))
-        let data = MultiLineDataSet(dataSets: [
+        var datasets = [
             LineDataSet(dataPoints: fmiDataPoints, legendTitle: "Max: \(chart.fmi)", style: fmiLineStyle),
-            LineDataSet(dataPoints: frekDataPoints, legendTitle: "Fréquentation", style: frekLineStyle),
-            LineDataSet(dataPoints: gaugeDataPoints, legendTitle: "Jauge réduite à \(Int(governmentGauge * 100))%", style: gaugeLineStyle),
-        ])
+            LineDataSet(dataPoints: frekDataPoints, legendTitle: "Fréquentation", style: frekLineStyle)
+        ]
+        if let governmentGauge = governmentGauge {
+            let gaugeDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0 * governmentGauge) }
+            datasets.append(LineDataSet(dataPoints: gaugeDataPoints, legendTitle: "Jauge réduite à \(Int(governmentGauge * 100))%", style: gaugeLineStyle))
+        }
+        let data = MultiLineDataSet(dataSets: datasets)
         #if os(watchOS)
         let lineColour = Color(.gray).opacity(0.5)
         #else
