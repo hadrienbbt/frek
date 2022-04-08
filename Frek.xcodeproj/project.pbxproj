@@ -103,6 +103,10 @@
 		A2CDB2FB2800E1FA0036AE8E /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */; };
 		A2CDB2FC2800E1FA0036AE8E /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */; };
 		A2CDB2FD2800E1FA0036AE8E /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */; };
+		A2CDB2FF2800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
+		A2CDB3002800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
+		A2CDB3012800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
+		A2CDB3022800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +232,7 @@
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
 		A2CDB2ED2800D9E90036AE8E /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
+		A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */,
+				A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */,
 			);
 			path = FrekProvider;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				4805454727246D690046F225 /* FrekChart.swift in Sources */,
 				4805454927246D990046F225 /* ValueStore.swift in Sources */,
 				4805454627246D660046F225 /* FrekPlace.swift in Sources */,
+				A2CDB3022800EB6A0036AE8E /* LocalStore.swift in Sources */,
 				48054545272459C00046F225 /* Intents.intentdefinition in Sources */,
 				A2CDB2FD2800E1FA0036AE8E /* WebFetcher.swift in Sources */,
 				4805454D27247B8E0046F225 /* FrekDecoder.swift in Sources */,
@@ -712,6 +719,7 @@
 				48E24CE327239939003CDCB8 /* FrekChartViewModel.swift in Sources */,
 				48E24CEB27239939003CDCB8 /* ValueStore.swift in Sources */,
 				48E24CDF27239939003CDCB8 /* FrekPlaceRow.swift in Sources */,
+				A2CDB3002800EB6A0036AE8E /* LocalStore.swift in Sources */,
 				A2CDB2FB2800E1FA0036AE8E /* WebFetcher.swift in Sources */,
 				483055F4272398AF00B9891F /* ComplicationController.swift in Sources */,
 				48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */,
@@ -742,6 +750,7 @@
 				48435FBA2516DED200FFED01 /* MainView.swift in Sources */,
 				48C8A4D8251A5C4800C29AAD /* ToggleFavoriteButton.swift in Sources */,
 				48435FED2516E18F00FFED01 /* FrekPlace.swift in Sources */,
+				A2CDB2FF2800EB6A0036AE8E /* LocalStore.swift in Sources */,
 				A2CDB2FA2800E1FA0036AE8E /* WebFetcher.swift in Sources */,
 				48C925E4266801B600770D22 /* FrekChartViewModel.swift in Sources */,
 				48C6FEF1251A02BC0051B4B3 /* DeviceMeta.swift in Sources */,
@@ -756,6 +765,7 @@
 				4805454C27247B8D0046F225 /* FrekDecoder.swift in Sources */,
 				48AF63F42729AC83009A77C9 /* SimpleFrekPlaceWidget.swift in Sources */,
 				480544F12724485B0046F225 /* FrekThumbnail.swift in Sources */,
+				A2CDB3012800EB6A0036AE8E /* LocalStore.swift in Sources */,
 				480544F227244A9F0046F225 /* ValueStore.swift in Sources */,
 				4805455027247BA30046F225 /* FrekFormatter.swift in Sources */,
 				48AF63FB2729B1F7009A77C9 /* FrekChartViewModel.swift in Sources */,

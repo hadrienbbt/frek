@@ -1,11 +1,8 @@
 import Foundation
-import Combine
 import ClockKit
 
 class WebFetcher: FrekplaceProvider {
     private let url: URL! = URL(string: "https://frek.fedutia.fr/")
-    private var cancellable: AnyCancellable?
-    private var backgroundQueue = DispatchQueue(label: "FrekPlaceListViewModel")
     
     func getFrekplaces() async -> [FrekPlace] {
         do {

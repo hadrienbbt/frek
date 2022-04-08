@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 protocol FrekplaceProvider {
     func getFrekplaces() async -> [FrekPlace]
@@ -18,7 +17,7 @@ extension FrekplaceProvider {
 
 class FrekPlaceListViewModel: ObservableObject {
     
-    var dataProvider: FrekplaceProvider = WebFetcher()
+    var dataProvider: FrekplaceProvider = LocalStore()
     
     @Published var frekPlaces = ValueStore().frekPlaces {
         didSet {
@@ -41,7 +40,7 @@ class FrekPlaceListViewModel: ObservableObject {
         Task {
             let frekplaces = await dataProvider.getFrekplaces()
             DispatchQueue.main.async {
-                self.frekPlaces = frekplaces
+                self.frekPlaces = frekplaces.filter { $0.crowd < 2000 }
                 self.loading = false
                 callback?()
             }
