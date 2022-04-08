@@ -2,7 +2,7 @@ import Foundation
 import ClockKit
 
 class WebFetcher: FrekplaceProvider {
-    private let url: URL! = URL(string: "https://frek.fedutia.fr/frekplaces")
+    private let url: URL! = URL(string: "https://frek.fedutia.fr/gym")
     
     func getFrekplaces() async -> [FrekPlace] {
         do {
