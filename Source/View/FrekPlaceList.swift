@@ -4,6 +4,7 @@ struct FrekPlaceList: View {
     
     @ObservedObject var viewModel = FrekPlaceListViewModel()
     @State private var selectedId: String? = nil
+    @State private var isLocal: Bool = true
     
     func createFrekPlaceRow(_ id: String) -> NavigationLink<FrekPlaceRow, FrekPlaceDetail> {
         let index = viewModel.frekPlaces.firstIndex(where: { id == $0.id })!
@@ -40,6 +41,22 @@ struct FrekPlaceList: View {
                 }
                 .listStyle(InsetGroupedListStyle())
                 .navigationBarTitle(Text("Salles de gym"))
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Menu {
+                            Picker("Data Provider", selection: $isLocal) {
+                                Label("Server Data", systemImage: "icloud").tag(false)
+                                Label("Local Data", systemImage: "iphone").tag(true)
+                            }
+                            .onChange(of: isLocal) { setLocal in
+                                self.viewModel.dataProvider = setLocal ? LocalStore() : WebFetcher()
+                                self.viewModel.fetchFrekPlaces()
+                            }
+                        } label: {
+                            Label("Options", systemImage: "ellipsis.circle")
+                        }
+                    }
+                }
                 .onOpenURL(perform: onOpenURL)
             #elseif os(watchOS)
                 List {
