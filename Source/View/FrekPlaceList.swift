@@ -54,7 +54,7 @@ struct FrekPlaceList: View {
                             }
                         } label: {
                             Label("Options", systemImage: "ellipsis.circle")
-                        }
+                        }.opacity(DeviceMeta().isTest ? 1 : 0)
                     }
                 }
                 .onOpenURL(perform: onOpenURL)
