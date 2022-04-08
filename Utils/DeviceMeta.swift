@@ -2,8 +2,10 @@ import Foundation
 import SwiftUI
 
 class DeviceMeta {
-    var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-    var isPortrait: Bool { UIDevice.current.orientation.isPortrait }
+    #if os(iOS)
+        var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+        var isPortrait: Bool { UIDevice.current.orientation.isPortrait }
+    #endif
     
     var isDebug: Bool {
         #if DEBUG

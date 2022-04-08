@@ -107,6 +107,9 @@
 		A2CDB3002800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
 		A2CDB3012800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
 		A2CDB3022800EB6A0036AE8E /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
+		A2CDB3032800FEC90036AE8E /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
+		A2CDB3042800FED60036AE8E /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
+		A2CDB3052800FED70036AE8E /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -687,6 +690,7 @@
 			files = (
 				4805454F27247B990046F225 /* extenstions.swift in Sources */,
 				4805455127247BA40046F225 /* FrekFormatter.swift in Sources */,
+				A2CDB3052800FED70036AE8E /* DeviceMeta.swift in Sources */,
 				4805454B272478D00046F225 /* FrekPlaceListViewModel.swift in Sources */,
 				4805454727246D690046F225 /* FrekChart.swift in Sources */,
 				4805454927246D990046F225 /* ValueStore.swift in Sources */,
@@ -705,6 +709,7 @@
 			files = (
 				480544F727244D910046F225 /* Intents.intentdefinition in Sources */,
 				48E24CE227239939003CDCB8 /* FrekDecoder.swift in Sources */,
+				A2CDB3032800FEC90036AE8E /* DeviceMeta.swift in Sources */,
 				48E24CE027239939003CDCB8 /* FrekPlaceListViewModel.swift in Sources */,
 				48E24CED27239939003CDCB8 /* FrekPlace.swift in Sources */,
 				480545312724547B0046F225 /* IntentHandler.swift in Sources */,
@@ -778,6 +783,7 @@
 				48AF63F62729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift in Sources */,
 				48952D4E2724437B00A548CD /* Intents.intentdefinition in Sources */,
 				48952D492724437600A548CD /* FrekWidget.swift in Sources */,
+				A2CDB3042800FED60036AE8E /* DeviceMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
