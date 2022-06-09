@@ -6,19 +6,52 @@ struct SimpleFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.simple"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
+        if #available(iOSApplicationExtension 16.0, *) {
+            return IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
+                SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
+            }
+            .configurationDisplayName("Salle de gym")
+            .description("Affiche la fréquentation d'une salle de gym")
+#if os(watchOS)
+            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular])
+#else
+            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular, .systemSmall, .systemLarge])
+#endif
+            .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
+                print("Widget sessionIdentifier: \(sessionIdentifier)")
+            }
+        }
+        
+        return IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
             SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
         }
         .configurationDisplayName("Salle de gym")
         .description("Affiche la fréquentation d'une salle de gym")
+#if os(watchOS)
+        .supportedFamilies([])
+#else
         .supportedFamilies([.systemSmall, .systemLarge])
+#endif
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }
+        
     }
 }
 
 struct SimpleFrekPlaceProvider: IntentTimelineProvider {
+    @available(iOSApplicationExtension 16.0, *)
+    func recommendations() -> [IntentRecommendation<SelectGymIntent>] {
+        let viewModel = FrekPlaceListViewModel()
+        return viewModel.frekPlaces
+            .filter { $0.favorite }
+            .map {
+                let intent = SelectGymIntent()
+                intent.frekPlace = $0.toGym()
+                return IntentRecommendation(intent: intent, description: $0.name)
+            }
+    }
+    
     typealias Entry = SimpleFrekPlaceEntry
     typealias Intent = SelectGymIntent
     
@@ -58,6 +91,10 @@ struct SimpleFrekPlaceEntryView: View {
     var frekPlace: FrekPlace
     
     var body: some View {
+#if os(watchOS)
+        SmallFrekPlaceEntryView(frekPlace: frekPlace)
+            .widgetURL(frekPlace.url)
+#else
         if widgetFamily == .systemLarge, let chart = frekPlace.frekCharts.first {
             DetailedFrekPlaceEntryView(frekPlace: frekPlace, frekChart: chart)
                 .widgetURL(frekPlace.url)
@@ -65,6 +102,7 @@ struct SimpleFrekPlaceEntryView: View {
             SmallFrekPlaceEntryView(frekPlace: frekPlace)
                 .widgetURL(frekPlace.url)
         }
+#endif
     }
 }
 

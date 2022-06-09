@@ -15,7 +15,7 @@ struct FrekPlaceList: View {
     
     func onOpenURL(_ url: URL) {
         guard let host = url.host,
-              let frekPlace = viewModel.frekPlaces.first(where: { $0.id == host })
+              let frekPlace = viewModel.frekPlaces.first(where: { host == $0.id || host == "frek://\($0.id)" })
         else {
             print("❌ Unsupported deep link: \(url)")
             return

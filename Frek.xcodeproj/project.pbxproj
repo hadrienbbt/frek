@@ -94,6 +94,32 @@
 		48E24CF027239939003CDCB8 /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48E24CF227239AC1003CDCB8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 48E24CF127239AC1003CDCB8 /* SwiftUICharts */; };
 		48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
+		A21E796528527FD1003E28F9 /* FrekWidgetExtension WatchKit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A21E79692852895D003E28F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F3272398AF00B9891F /* ComplicationController.swift */; };
+		A2675B0328527E4E00AA1BE0 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
+		A2675B0428527E4E00AA1BE0 /* SimpleFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F32729AC83009A77C9 /* SimpleFrekPlaceWidget.swift */; };
+		A2675B0528527E4E00AA1BE0 /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
+		A2675B0628527E4E00AA1BE0 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */; };
+		A2675B0728527E4E00AA1BE0 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
+		A2675B0828527E4E00AA1BE0 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
+		A2675B0928527E4E00AA1BE0 /* FrekChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925E3266801B600770D22 /* FrekChartViewModel.swift */; };
+		A2675B0A28527E4E00AA1BE0 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
+		A2675B0B28527E4E00AA1BE0 /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
+		A2675B0C28527E4E00AA1BE0 /* FrekPlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D12667B7EA00770D22 /* FrekPlaceListViewModel.swift */; };
+		A2675B0D28527E4E00AA1BE0 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extenstions.swift */; };
+		A2675B0E28527E4E00AA1BE0 /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */; };
+		A2675B0F28527E4E00AA1BE0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805452F2724547B0046F225 /* IntentHandler.swift */; };
+		A2675B1028527E4E00AA1BE0 /* FavoriteFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F52729ACCF009A77C9 /* FavoriteFrekPlaceWidget.swift */; };
+		A2675B1128527E4E00AA1BE0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48952D4A2724437600A548CD /* Intents.intentdefinition */; };
+		A2675B1228527E4E00AA1BE0 /* FrekWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48952D482724437600A548CD /* FrekWidget.swift */; };
+		A2675B1328527E4E00AA1BE0 /* DeviceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FEF0251A02BC0051B4B3 /* DeviceMeta.swift */; };
+		A2675B1528527E4E00AA1BE0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = A2675B0028527E4E00AA1BE0 /* SwiftUICharts */; };
+		A2675B1628527E4E00AA1BE0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48952D452724437600A548CD /* SwiftUI.framework */; };
+		A2675B1728527E4E00AA1BE0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48952D432724437600A548CD /* WidgetKit.framework */; };
+		A2675B1928527E4E00AA1BE0 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
+		A2675B1A28527E4E00AA1BE0 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = A2CDB2ED2800D9E90036AE8E /* db.json */; };
+		A2675B1B28527E4E00AA1BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48435FBD2516DED500FFED01 /* Assets.xcassets */; };
+		A2675B1C28527E4E00AA1BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48952D4B2724437B00A548CD /* Assets.xcassets */; };
 		A2CDB2EE2800D9EA0036AE8E /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = A2CDB2ED2800D9E90036AE8E /* db.json */; };
 		A2CDB2EF2800D9EA0036AE8E /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = A2CDB2ED2800D9E90036AE8E /* db.json */; };
 		A2CDB2F02800D9EA0036AE8E /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = A2CDB2ED2800D9E90036AE8E /* db.json */; };
@@ -141,6 +167,13 @@
 			remoteGlobalIDString = 483055DD272398AB00B9891F;
 			remoteInfo = FrekWatch;
 		};
+		A21E796628527FD1003E28F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48435FAE2516DED200FFED01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2675AFF28527E4E00AA1BE0;
+			remoteInfo = "FrekWidgetExtension WatchKit";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -176,6 +209,17 @@
 				483055FE272398B200B9891F /* FrekWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21E796828527FD1003E28F9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A21E796528527FD1003E28F9 /* FrekWidgetExtension WatchKit.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -233,6 +277,8 @@
 		48C925DA2667D04E00770D22 /* FrekDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekDecoder.swift; sourceTree = "<group>"; };
 		48C925E3266801B600770D22 /* FrekChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekChartViewModel.swift; sourceTree = "<group>"; };
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
+		A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWidgetExtension WatchKit.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FrekWidgetExtension copy-Info.plist"; path = "/Users/equilab/Documents/Frek/FrekWidgetExtension copy-Info.plist"; sourceTree = "<absolute>"; };
 		A2CDB2ED2800D9E90036AE8E /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
 		A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
@@ -270,6 +316,16 @@
 				48AF63FA2729B1CD009A77C9 /* SwiftUICharts in Frameworks */,
 				48952D462724437600A548CD /* SwiftUI.framework in Frameworks */,
 				48952D442724437600A548CD /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2675B1428527E4E00AA1BE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2675B1528527E4E00AA1BE0 /* SwiftUICharts in Frameworks */,
+				A2675B1628527E4E00AA1BE0 /* SwiftUI.framework in Frameworks */,
+				A2675B1728527E4E00AA1BE0 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +398,7 @@
 				48054539272459990046F225 /* FrekIntent */,
 				48435FB72516DED200FFED01 /* Products */,
 				48952D3A2724394400A548CD /* Frameworks */,
+				A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,6 +410,7 @@
 				483055E6272398AF00B9891F /* FrekWatch WatchKit Extension.appex */,
 				48952D422724437600A548CD /* FrekWidgetExtension.appex */,
 				48054537272459990046F225 /* FrekIntent.appex */,
+				A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -517,10 +575,12 @@
 				483055E2272398AF00B9891F /* Sources */,
 				483055E3272398AF00B9891F /* Frameworks */,
 				483055E4272398AF00B9891F /* Resources */,
+				A21E796828527FD1003E28F9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A21E796728527FD1003E28F9 /* PBXTargetDependency */,
 			);
 			name = "FrekWatch WatchKit Extension";
 			packageProductDependencies = (
@@ -575,6 +635,26 @@
 			productReference = 48952D422724437600A548CD /* FrekWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		A2675AFF28527E4E00AA1BE0 /* FrekWidgetExtension WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2675B1D28527E4E00AA1BE0 /* Build configuration list for PBXNativeTarget "FrekWidgetExtension WatchKit" */;
+			buildPhases = (
+				A2675B0228527E4E00AA1BE0 /* Sources */,
+				A2675B1428527E4E00AA1BE0 /* Frameworks */,
+				A2675B1828527E4E00AA1BE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FrekWidgetExtension WatchKit";
+			packageProductDependencies = (
+				A2675B0028527E4E00AA1BE0 /* SwiftUICharts */,
+			);
+			productName = FrekWidgetExtension;
+			productReference = A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -623,6 +703,7 @@
 				483055E5272398AF00B9891F /* FrekWatch WatchKit Extension */,
 				48952D412724437600A548CD /* FrekWidgetExtension */,
 				48054536272459990046F225 /* FrekIntent */,
+				A2675AFF28527E4E00AA1BE0 /* FrekWidgetExtension WatchKit */,
 			);
 		};
 /* End PBXProject section */
@@ -678,6 +759,17 @@
 				A2CDB2F12800D9EA0036AE8E /* db.json in Resources */,
 				48AF63FE2729EBA3009A77C9 /* Assets.xcassets in Resources */,
 				48952D4C2724437B00A548CD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2675B1828527E4E00AA1BE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2675B1928527E4E00AA1BE0 /* FrekPlaceAssets.xcassets in Resources */,
+				A2675B1A28527E4E00AA1BE0 /* db.json in Resources */,
+				A2675B1B28527E4E00AA1BE0 /* Assets.xcassets in Resources */,
+				A2675B1C28527E4E00AA1BE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +879,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2675B0228527E4E00AA1BE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2675B0328527E4E00AA1BE0 /* FrekDecoder.swift in Sources */,
+				A2675B0428527E4E00AA1BE0 /* SimpleFrekPlaceWidget.swift in Sources */,
+				A2675B0528527E4E00AA1BE0 /* FrekThumbnail.swift in Sources */,
+				A2675B0628527E4E00AA1BE0 /* LocalStore.swift in Sources */,
+				A2675B0728527E4E00AA1BE0 /* ValueStore.swift in Sources */,
+				A2675B0828527E4E00AA1BE0 /* FrekFormatter.swift in Sources */,
+				A2675B0928527E4E00AA1BE0 /* FrekChartViewModel.swift in Sources */,
+				A2675B0A28527E4E00AA1BE0 /* FrekChart.swift in Sources */,
+				A2675B0B28527E4E00AA1BE0 /* FrekPlace.swift in Sources */,
+				A2675B0C28527E4E00AA1BE0 /* FrekPlaceListViewModel.swift in Sources */,
+				A2675B0D28527E4E00AA1BE0 /* extenstions.swift in Sources */,
+				A21E79692852895D003E28F9 /* ComplicationController.swift in Sources */,
+				A2675B0E28527E4E00AA1BE0 /* WebFetcher.swift in Sources */,
+				A2675B0F28527E4E00AA1BE0 /* IntentHandler.swift in Sources */,
+				A2675B1028527E4E00AA1BE0 /* FavoriteFrekPlaceWidget.swift in Sources */,
+				A2675B1128527E4E00AA1BE0 /* Intents.intentdefinition in Sources */,
+				A2675B1228527E4E00AA1BE0 /* FrekWidget.swift in Sources */,
+				A2675B1328527E4E00AA1BE0 /* DeviceMeta.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -809,6 +926,11 @@
 			isa = PBXTargetDependency;
 			target = 483055DD272398AB00B9891F /* FrekWatch */;
 			targetProxy = 48952D3B2724394700A548CD /* PBXContainerItemProxy */;
+		};
+		A21E796728527FD1003E28F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2675AFF28527E4E00AA1BE0 /* FrekWidgetExtension WatchKit */;
+			targetProxy = A21E796628527FD1003E28F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1231,6 +1353,72 @@
 			};
 			name = Release;
 		};
+		A2675B1E28527E4E00AA1BE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = FrekWidgetExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FrekWidgetExtension copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension.FrekWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2675B1F28527E4E00AA1BE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = FrekWidgetExtension.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FrekWidgetExtension copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension.FrekWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1288,10 +1476,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A2675B1D28527E4E00AA1BE0 /* Build configuration list for PBXNativeTarget "FrekWidgetExtension WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2675B1E28527E4E00AA1BE0 /* Debug */,
+				A2675B1F28527E4E00AA1BE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.4;
+			};
+		};
+		A2675B0128527E4E00AA1BE0 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/willdale/SwiftUICharts";
 			requirement = {
@@ -1315,6 +1520,11 @@
 		48E24CF127239AC1003CDCB8 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4818A556266AD069001F26C6 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+		A2675B0028527E4E00AA1BE0 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2675B0128527E4E00AA1BE0 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
