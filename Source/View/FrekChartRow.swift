@@ -82,3 +82,12 @@ struct SmallChart: View {
             .frame(width: 50, height: 30)
     }
 }
+
+struct FrekChartRow_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = FrekPlaceListViewModel()
+        let frekplace = viewModel.frekPlaces.last!
+        let chartViewModel = FrekChartViewModel(chart: frekplace.frekCharts.last!)
+        FrekChartRow(chartViewModel, true)
+    }
+}
