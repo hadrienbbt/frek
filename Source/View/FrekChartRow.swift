@@ -34,7 +34,7 @@ struct FrekChartRow: View {
         VStack(alignment: .leading) {
             HStack {
                 if viewModel.chart.isOpen, !showDetail {
-                    SmallChart(data: viewModel.smallLineChartData)
+                    SmallChartData(data: viewModel.smallLineChartData)
                 }
                 textBlock
                 if viewModel.chart.isOpen {
@@ -74,7 +74,7 @@ struct DetailedChart: View {
     }
 }
 
-struct SmallChart: View {
+struct SmallChartData: View {
     var data: LineChartData
     
     var body: some View {
