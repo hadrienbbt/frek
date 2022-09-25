@@ -57,6 +57,7 @@ struct FrekChartRow: View {
             }
             if viewModel.chart.isOpen, showDetail {
                 LargeChart(viewModel: viewModel)
+                    .animation(.easeInOut(duration: animationDuration), value: showDetail)
             }
         }
     }
