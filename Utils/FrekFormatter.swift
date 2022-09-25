@@ -30,6 +30,13 @@ class FrekFormatter: Formatter {
         return componentFormatter.string(from: components)!
     }
     
+    func date(fromFrekTimeIndex index: Int, for day: Date) -> Date {
+        var components = Calendar.current.dateComponents([.year, .month, .day, .timeZone], from: day)
+        components.hour = index / 2
+        components.minute = (index % 2) * 30
+        return Calendar.current.date(from: components)!
+    }
+    
     func string(fromNumber number: NSNumber) -> String {
         return numberFormatter.string(from: number)!
     }
