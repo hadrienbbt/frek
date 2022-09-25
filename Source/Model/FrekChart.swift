@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct FrekChart: Identifiable, Decodable, Encodable {
+struct FrekChart: Identifiable, Decodable, Encodable, Hashable {
     var id = UUID()
     let dataset: [Double]
     let date: Date

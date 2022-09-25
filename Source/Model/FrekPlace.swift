@@ -2,7 +2,7 @@ import Foundation
 import MapKit
 import Intents
 
-struct FrekPlace: Identifiable, Decodable, Encodable {
+struct FrekPlace: Identifiable, Decodable, Encodable, Hashable {
     let id: String
     let name: String
     var suffix: String
