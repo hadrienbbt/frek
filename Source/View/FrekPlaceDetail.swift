@@ -95,3 +95,11 @@ struct PreventableScrollView<Content>: View where Content: View {
         }
     }
 }
+
+struct FrekPlaceDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = FrekPlaceListViewModel()
+        let frekplace = viewModel.frekPlaces.first!
+        FrekPlaceDetail(frekPlace: .constant(frekplace))
+    }
+}
