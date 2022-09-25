@@ -23,6 +23,14 @@ class DeviceMeta {
         #endif
     }
     
+    var isWatchOS: Bool {
+        #if os(watchOS)
+            return true
+        #else
+            return false
+        #endif
+    }
+    
     var isTestFlight: Bool {
         guard let path = Bundle.main.appStoreReceiptURL?.path else { return false }
         return path.contains("sandboxReceipt")
