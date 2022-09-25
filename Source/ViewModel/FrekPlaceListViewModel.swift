@@ -17,7 +17,7 @@ extension FrekplaceProvider {
 
 class FrekPlaceListViewModel: ObservableObject {
     
-    var dataProvider: FrekplaceProvider = DeviceMeta().isTest ? WebFetcher() : LocalStore()
+    var dataProvider: FrekplaceProvider = LocalStore()
     
     @Published var frekPlaces = ValueStore().frekPlaces {
         didSet {
