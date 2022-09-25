@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUICharts
 
 struct FrekChartRow: View {
     @ObservedObject var viewModel: FrekChartViewModel
@@ -34,7 +33,8 @@ struct FrekChartRow: View {
         VStack(alignment: .leading) {
             HStack {
                 if viewModel.chart.isOpen, !showDetail {
-                    SmallChartData(data: viewModel.smallLineChartData)
+                    SmallChart(viewModel: viewModel)
+                        .frame(width: 50, height: 30)
                 }
                 textBlock
                 if viewModel.chart.isOpen {
@@ -56,30 +56,9 @@ struct FrekChartRow: View {
                     }
             }
             if viewModel.chart.isOpen, showDetail {
-                DetailedChart(viewModel: viewModel)
+                LargeChart(viewModel: viewModel)
             }
         }
-    }
-}
-
-struct DetailedChart: View {
-    var viewModel: FrekChartViewModel
-    
-    var body: some View {
-        MultiLineChart(chartData: viewModel.detailedLineChartData)
-            .frekDetailedChart(chartData: viewModel.detailedLineChartData)
-            .frame(height: 350)
-            .padding(.leading, -7)
-            .padding(.bottom, 5)
-    }
-}
-
-struct SmallChartData: View {
-    var data: LineChartData
-    
-    var body: some View {
-        LineChart(chartData: data)
-            .frame(width: 50, height: 30)
     }
 }
 

@@ -1,17 +1,14 @@
 import Foundation
 import UIKit
 import SwiftUI
-import SwiftUICharts
 
 class FrekChartViewModel: ObservableObject {
     
     @Published var chart: FrekChart
     let formatter = FrekFormatter()
-    let governmentGauge: Double?
     
     init(chart: FrekChart) {
         self.chart = chart
-        self.governmentGauge = nil // 0.5
     }
     
     var formattedDate: String {
@@ -44,145 +41,10 @@ class FrekChartViewModel: ObservableObject {
         }
         return formatter.string(fromFrekTimeIndex: closeIndex)
     }
-    
-    let gradient = [
-        GradientStop(color: .green, location: 0),
-        GradientStop(color: .yellow, location: 0.33),
-        GradientStop(color: .orange, location: 0.66),
-        GradientStop(color: .red, location: 1)
-    ]
-    
     let gradientStops: [Gradient.Stop] = [
         Gradient.Stop(color: .green, location: 0),
         Gradient.Stop(color: .yellow, location: 0.33),
         Gradient.Stop(color: .orange, location: 0.66),
         Gradient.Stop(color: .red, location: 1),
     ]
-    
-    lazy var smallLineChartData: LineChartData = {
-        var datapoints: [LineChartDataPoint] = chart.dataset
-            .filter { $0 != 0 }
-            .map { LineChartDataPoint(value: $0) }
-        datapoints.insert(LineChartDataPoint(value: 0), at: 0)
-        let data = LineDataSet(
-            dataPoints: datapoints,
-            style: LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center), lineType: .curvedLine)
-        )
-        let chartStyle = LineChartStyle(
-            topLine: .maximum(of: Double(chart.fmi)),
-            globalAnimation: .easeOut(duration: 0.2)
-        )
-        return LineChartData(dataSets: data, chartStyle: chartStyle)
-    }()
-    
-    lazy var detailedLineChartData: MultiLineChartData = {
-        let frekDataPoints: [LineChartDataPoint] = chart.dataset
-            .enumerated()
-            .map { LineChartDataPoint(
-                value: $0.element,
-                xAxisLabel: formatter.string(fromFrekTimeIndex: $0.offset)
-            )}
-        let frekLineStyle = LineStyle(lineColour: ColourStyle(stops: gradient, startPoint: .bottom, endPoint: .center), lineType: .curvedLine)
-        let fmiDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0) }
-        let fmiLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line)
-        let gaugeLineStyle = LineStyle(lineColour: ColourStyle(colour: .red), lineType: .line, strokeStyle: Stroke(lineWidth: 1, dash: [8], dashPhase: 0))
-        var datasets = [
-            LineDataSet(dataPoints: fmiDataPoints, legendTitle: "Max: \(chart.fmi)", style: fmiLineStyle),
-            LineDataSet(dataPoints: frekDataPoints, legendTitle: "Fréquentation", style: frekLineStyle)
-        ]
-        if let governmentGauge = governmentGauge {
-            let gaugeDataPoints: [LineChartDataPoint] = chart.fmiDataset.map { LineChartDataPoint(value: $0 * governmentGauge) }
-            datasets.append(LineDataSet(dataPoints: gaugeDataPoints, legendTitle: "Jauge réduite à \(Int(governmentGauge * 100))%", style: gaugeLineStyle))
-        }
-        let data = MultiLineDataSet(dataSets: datasets)
-        #if os(watchOS)
-        let lineColour = Color(.gray).opacity(0.5)
-        #else
-        let lineColour = Color(.systemGray5).opacity(0.5)
-        #endif
-        let gridStyle = GridStyle(
-            numberOfLines: yAxisLabels.count,
-            lineColour: lineColour,
-            lineWidth: 1,
-            dash: [8],
-            dashPhase: 0
-        )
-        let chartStyle = LineChartStyle(
-            xAxisGridStyle: gridStyle,
-            xAxisLabelColour: .secondary,
-            xAxisLabelsFrom: .chartData(rotation: Angle(degrees: 0.0)),
-            yAxisGridStyle: gridStyle,
-            yAxisLabelColour: .secondary,
-            yAxisNumberOfLabels: yAxisLabels.count,
-            topLine: .maximum(of: Double(yAxisLabels.last!)!),
-            globalAnimation: .easeOut(duration: 0.5)
-        )
-        return MultiLineChartData(
-            dataSets: data,
-            xAxisLabels: xAxisLabels,
-            yAxisLabels: yAxisLabels,
-            chartStyle: chartStyle
-        )
-    }()
-    
-    lazy var xAxisLabels: [String] = {
-        (0...chart.dataset.count)
-            .filter { $0 % 6 == 0 }
-            .map { $0 != 0 && $0 != 48 ? formatter.string(fromFrekTimeIndex: $0) : " " }
-    }()
-    
-    lazy var xAxisLabels2: [String] = {
-        var period = 2
-        var labels = chart.dataset
-            .enumerated()
-            .map { $0.offset }
-        while labels.count > 7 {
-            labels = chart.dataset
-                .enumerated()
-                .filter { $0.offset % period == (period / 2) }
-                .map { $0.offset }
-            period += 1
-        }
-        return labels.map { formatter.string(fromFrekTimeIndex: $0) }
-    }()
-    
-    lazy var yAxisLabels: [String] = {
-        let max = round((Double(chart.fmi) / 10)) * 10
-        var period = 0.0
-        var labels = [String]()
-        repeat {
-            labels.removeAll()
-            var start = 0.0
-            period += 10
-            repeat {
-                labels.append(start.description)
-                start += period
-            } while start <= max
-        } while labels.count > 10
-        if let last = labels.last,
-           let lastDouble = Double(last),
-           lastDouble < max {
-            let extraLabel = (lastDouble + period).description
-            labels.append(extraLabel)
-        }
-        return labels
-    }()
-}
-
-extension View {
-    public func frekDetailedChart<T>(chartData: T, withLegend: Bool = true) -> some View where T: CTLineBarChartDataProtocol {
-        self
-            .xAxisGrid(chartData: chartData)
-            .yAxisGrid(chartData: chartData)
-            .xAxisLabels(chartData: chartData)
-            .yAxisLabels(chartData: chartData)
-            .if(withLegend) { chart in
-                chart.legends(
-                    chartData: chartData,
-                    columns: [GridItem(.flexible()), GridItem(.flexible())],
-                    iconWidth: 30, font: .subheadline,
-                    textColor: .secondary
-                )
-            }
-    }
 }

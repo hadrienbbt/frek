@@ -1,6 +1,5 @@
 import WidgetKit
 import SwiftUI
-import SwiftUICharts
 
 struct SimpleFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.simple"
@@ -210,8 +209,7 @@ struct DetailedFrekPlaceEntryView: View {
         let viewModel = FrekChartViewModel(chart: frekChart)
         VStack {
             FrekPlaceRow(frekPlace: frekPlace)
-            MultiLineChart(chartData: viewModel.detailedLineChartData)
-                .frekDetailedChart(chartData: viewModel.detailedLineChartData, withLegend: false)
+            LargeChart(viewModel: viewModel)
         }
         .padding()
     }

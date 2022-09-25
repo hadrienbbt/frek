@@ -100,6 +100,8 @@
 		A21EE33628E1011900220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
 		A21EE33B28E1044800220E2D /* SmallChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33A28E1044800220E2D /* SmallChart.swift */; };
 		A21EE33C28E1044800220E2D /* SmallChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33A28E1044800220E2D /* SmallChart.swift */; };
+		A21EE33D28E10AE700220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
+		A21EE33E28E10B0700220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
 		A2675B0328527E4E00AA1BE0 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
 		A2675B0428527E4E00AA1BE0 /* SimpleFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F32729AC83009A77C9 /* SimpleFrekPlaceWidget.swift */; };
 		A2675B0528527E4E00AA1BE0 /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
@@ -874,6 +876,7 @@
 				48AF63F42729AC83009A77C9 /* SimpleFrekPlaceWidget.swift in Sources */,
 				480544F12724485B0046F225 /* FrekThumbnail.swift in Sources */,
 				A2CDB3012800EB6A0036AE8E /* LocalStore.swift in Sources */,
+				A21EE33E28E10B0700220E2D /* LargeChart.swift in Sources */,
 				480544F227244A9F0046F225 /* ValueStore.swift in Sources */,
 				4805455027247BA30046F225 /* FrekFormatter.swift in Sources */,
 				48AF63FB2729B1F7009A77C9 /* FrekChartViewModel.swift in Sources */,
@@ -898,6 +901,7 @@
 				A2675B0428527E4E00AA1BE0 /* SimpleFrekPlaceWidget.swift in Sources */,
 				A2675B0528527E4E00AA1BE0 /* FrekThumbnail.swift in Sources */,
 				A2675B0628527E4E00AA1BE0 /* LocalStore.swift in Sources */,
+				A21EE33D28E10AE700220E2D /* LargeChart.swift in Sources */,
 				A2675B0728527E4E00AA1BE0 /* ValueStore.swift in Sources */,
 				A2675B0828527E4E00AA1BE0 /* FrekFormatter.swift in Sources */,
 				A2675B0928527E4E00AA1BE0 /* FrekChartViewModel.swift in Sources */,
@@ -957,7 +961,7 @@
 				INFOPLIST_FILE = FrekIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekIntent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -986,7 +990,7 @@
 				INFOPLIST_FILE = FrekIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekIntent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1316,7 +1320,7 @@
 				INFOPLIST_FILE = FrekWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1348,7 +1352,7 @@
 				INFOPLIST_FILE = FrekWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1395,6 +1399,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1428,6 +1433,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
