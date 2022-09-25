@@ -8,5 +8,17 @@ struct FrekChart: Identifiable, Decodable, Encodable, Hashable {
     let fmi: Int
     
     var isOpen: Bool { dataset.contains { $0 != 0 } }
-    var fmiDataset: [Double] { dataset.map { _ in Double(fmi) }}
+    var fmiDataset: [Double] { dataset.map { _ in Double(fmi) } }
+    
+    var dayData: [(time: Date, frek: Double)] {
+        let formatter = FrekFormatter()
+        return dataset
+            .enumerated()
+            .map { (index, frek) in (
+                time: formatter.date(
+                    fromFrekTimeIndex: index,
+                    for: date),
+                frek: frek
+            )}
+    }
 }

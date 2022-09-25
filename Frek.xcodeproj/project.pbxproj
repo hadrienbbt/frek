@@ -96,6 +96,8 @@
 		48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
 		A21E796528527FD1003E28F9 /* FrekWidgetExtension WatchKit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A21E79692852895D003E28F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F3272398AF00B9891F /* ComplicationController.swift */; };
+		A21EE33528E1011900220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
+		A21EE33628E1011900220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
 		A2675B0328527E4E00AA1BE0 /* FrekDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925DA2667D04E00770D22 /* FrekDecoder.swift */; };
 		A2675B0428527E4E00AA1BE0 /* SimpleFrekPlaceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF63F32729AC83009A77C9 /* SimpleFrekPlaceWidget.swift */; };
 		A2675B0528527E4E00AA1BE0 /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
@@ -276,6 +278,7 @@
 		48C925DA2667D04E00770D22 /* FrekDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekDecoder.swift; sourceTree = "<group>"; };
 		48C925E3266801B600770D22 /* FrekChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekChartViewModel.swift; sourceTree = "<group>"; };
 		48D1244826226527007E1805 /* FrekPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekPlaceDetail.swift; sourceTree = "<group>"; };
+		A21EE33428E1011900220E2D /* LargeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeChart.swift; sourceTree = "<group>"; };
 		A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWidgetExtension WatchKit.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FrekWidgetExtension copy-Info.plist"; path = "/Users/equilab/Documents/Frek/FrekWidgetExtension copy-Info.plist"; sourceTree = "<absolute>"; };
 		A2CDB2ED2800D9E90036AE8E /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
@@ -485,6 +488,7 @@
 				48435FB82516DED200FFED01 /* IOSView */,
 				4884D1DF25177B690074CA5F /* WatchOSView */,
 				48548A24265EFF5300272ADB /* MapView.swift */,
+				A21EE33428E1011900220E2D /* LargeChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -801,6 +805,7 @@
 				480544F727244D910046F225 /* Intents.intentdefinition in Sources */,
 				48E24CE227239939003CDCB8 /* FrekDecoder.swift in Sources */,
 				A2CDB3032800FEC90036AE8E /* DeviceMeta.swift in Sources */,
+				A21EE33628E1011900220E2D /* LargeChart.swift in Sources */,
 				48E24CE027239939003CDCB8 /* FrekPlaceListViewModel.swift in Sources */,
 				48E24CED27239939003CDCB8 /* FrekPlace.swift in Sources */,
 				480545312724547B0046F225 /* IntentHandler.swift in Sources */,
@@ -829,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21EE33528E1011900220E2D /* LargeChart.swift in Sources */,
 				48952D4F2724437B00A548CD /* Intents.intentdefinition in Sources */,
 				48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */,
 				48C925CC2666382400770D22 /* extensions.swift in Sources */,

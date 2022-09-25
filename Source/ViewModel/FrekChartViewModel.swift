@@ -52,6 +52,13 @@ class FrekChartViewModel: ObservableObject {
         GradientStop(color: .red, location: 1)
     ]
     
+    let gradientStops: [Gradient.Stop] = [
+        Gradient.Stop(color: .green, location: 0),
+        Gradient.Stop(color: .yellow, location: 0.33),
+        Gradient.Stop(color: .orange, location: 0.66),
+        Gradient.Stop(color: .red, location: 1),
+    ]
+    
     lazy var smallLineChartData: LineChartData = {
         var datapoints: [LineChartDataPoint] = chart.dataset
             .filter { $0 != 0 }
