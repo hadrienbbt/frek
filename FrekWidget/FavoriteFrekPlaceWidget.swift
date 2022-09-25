@@ -5,32 +5,16 @@ struct FavoriteFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.favorite"
 
     var body: some WidgetConfiguration {
-        if #available(iOSApplicationExtension 16.0, *) {
-            return StaticConfiguration(kind: kind, provider: FavoriteFrekPlaceProvider()) { entry in
-                FavoriteFrekPlaceEntryView(frekPlaces: entry.frekPlaces)
-            }
-            .configurationDisplayName("Salle de gym favorites")
-            .description("Affiche la fréquentation des salles de gym favorites")
-#if os(watchOS)
-            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular])
-#else
-            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular, .systemLarge])
-#endif
-            .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
-                print("Widget sessionIdentifier: \(sessionIdentifier)")
-            }
-        }
-        
-        return StaticConfiguration(kind: kind, provider: FavoriteFrekPlaceProvider()) { entry in
-            FavoriteFrekPlaceEntryView(frekPlaces: entry.frekPlaces)
-        }
+        let staticConfiguration = StaticConfiguration(
+            kind: kind,
+            provider: FavoriteFrekPlaceProvider(),
+            content: { FavoriteFrekPlaceEntryView(frekPlaces: $0.frekPlaces) }
+        )
+        return staticConfiguration
         .configurationDisplayName("Salle de gym favorites")
         .description("Affiche la fréquentation des salles de gym favorites")
-#if os(watchOS)
         .supportedFamilies([])
-#else
         .supportedFamilies([.systemLarge])
-#endif
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }

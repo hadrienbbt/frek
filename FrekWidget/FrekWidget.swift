@@ -5,7 +5,11 @@ import SwiftUI
 struct FrekBundle: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
+#if os(watchOS)
+        SimpleFrekPlaceWidget()
+#else
         SimpleFrekPlaceWidget()
         FavoriteFrekPlaceWidget()
+#endif
     }
 }

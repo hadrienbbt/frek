@@ -6,32 +6,27 @@ struct SimpleFrekPlaceWidget: Widget {
     let kind: String = "FrekWidget.simple"
 
     var body: some WidgetConfiguration {
-        if #available(iOSApplicationExtension 16.0, *) {
-            return IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
-                SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
-            }
-            .configurationDisplayName("Salle de gym")
-            .description("Affiche la fréquentation d'une salle de gym")
+        let intentConfiguration = IntentConfiguration(
+            kind: kind,
+            intent: SelectGymIntent.self,
+            provider: SimpleFrekPlaceProvider(),
+            content: { SimpleFrekPlaceEntryView(frekPlace: $0.frekPlace) }
+        )
 #if os(watchOS)
-            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular])
+        var supportedFamilies: [WidgetFamily] = []
+        if #available(iOSApplicationExtension 16.0, watchOSApplicationExtension 9.0, *) {
+            supportedFamilies = [.accessoryCircular, .accessoryInline, .accessoryRectangular, .accessoryCorner]
+        }
 #else
-            .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular, .systemSmall, .systemLarge])
+        var supportedFamilies: [WidgetFamily] = [.systemSmall, .systemLarge]
+        if #available(iOSApplicationExtension 16.0, watchOSApplicationExtension 9.0, *) {
+            supportedFamilies = [.accessoryCircular, .accessoryInline, .accessoryRectangular, .systemSmall, .systemLarge]
+        }
 #endif
-            .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
-                print("Widget sessionIdentifier: \(sessionIdentifier)")
-            }
-        }
-        
-        return IntentConfiguration(kind: kind, intent: SelectGymIntent.self, provider: SimpleFrekPlaceProvider()) { entry in
-            SimpleFrekPlaceEntryView(frekPlace: entry.frekPlace)
-        }
+        return intentConfiguration
         .configurationDisplayName("Salle de gym")
         .description("Affiche la fréquentation d'une salle de gym")
-#if os(watchOS)
-        .supportedFamilies([])
-#else
-        .supportedFamilies([.systemSmall, .systemLarge])
-#endif
+        .supportedFamilies(supportedFamilies)
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }
@@ -107,9 +102,11 @@ struct SimpleFrekPlaceEntryView: View {
 }
 
 struct SmallFrekPlaceEntryView: View {
+    @Environment(\.widgetFamily) private var widgetFamily
+
     var frekPlace: FrekPlace
     
-    var body: some View {
+    var systemWidget: some View {
         ZStack {
             GeometryReader { geo in
                 Image(self.frekPlace.suffix)
@@ -131,7 +128,79 @@ struct SmallFrekPlaceEntryView: View {
             .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
         }
     }
+    
+    @State private var current = 67.0
+    @State private var minValue = 50.0
+    @State private var maxValue = 170.0
+    let gradient = Gradient(colors: [.green, .yellow, .red])
+
+    
+    @ViewBuilder
+    var body: some View {
+        if #available(iOSApplicationExtension 16.0, watchOSApplicationExtension 9.0, *) {
+            if widgetFamily == .accessoryCircular {
+//                ZStack {
+//                    AccessoryWidgetBackground()
+//                    VStack {
+//                        Text(frekPlace.crowd.description)
+//                            .font(.title)
+//                            .widgetAccentable()
+//                        Text("/\(frekPlace.fmi)")
+//                            .font(.caption)
+//                    }
+//                }
+                Gauge(value: Double(frekPlace.crowd), in: 0...Double(frekPlace.fmi), label: {
+                    Text("\(frekPlace.name)")
+                }, currentValueLabel: {
+                    Text(frekPlace.crowd.description)
+                        .widgetAccentable()
+                }).gaugeStyle(.accessoryCircularCapacity)
+                
+//                Gauge(value: Double(frekPlace.crowd), in: 0...Double(frekPlace.fmi)) {
+//                    Image(uiImage: UIImage(named: frekPlace.suffix)!)
+//                } currentValueLabel: {
+//                    Text("\(frekPlace.crowd)")
+//                        .foregroundColor(Color.green)
+//                } minimumValueLabel: {
+//                    Text("\(frekPlace.name)")
+//                        .foregroundColor(Color.green)
+//                } maximumValueLabel: {
+//                    Text("\(frekPlace.fmi)")
+//                        .foregroundColor(Color.red)
+//                }
+//                .gaugeStyle(.accessoryCircularCapacity)
+            } else if widgetFamily == .accessoryRectangular {
+                ZStack {
+                    AccessoryWidgetBackground()
+                    VStack {
+                        HStack {
+                            Text(frekPlace.name.capitalized)
+                                .font(.caption)
+                                .widgetAccentable()
+                            Gauge(value: Double(frekPlace.crowd), in: 0...Double(frekPlace.fmi), label: {
+                                Text("\(frekPlace.name)")
+                            }, currentValueLabel: {
+                                Text(frekPlace.crowd.description)
+                                    .widgetAccentable()
+                            }).gaugeStyle(.accessoryLinearCapacity)
+
+                        }
+                        Text("\(frekPlace.crowd)/\(frekPlace.fmi)")
+                            .font(.title)
+                    }
+                }
+            } else if widgetFamily == .accessoryInline {
+                Text("\(frekPlace.name.capitalized) - \(frekPlace.crowd)/\(frekPlace.fmi)")
+            } else {
+                systemWidget
+            }
+        } else {
+            systemWidget
+        }
+    }
 }
+
+#if os(iOS)
 
 struct DetailedFrekPlaceEntryView: View {
     var frekPlace: FrekPlace
@@ -147,3 +216,5 @@ struct DetailedFrekPlaceEntryView: View {
         .padding()
     }
 }
+
+#endif
