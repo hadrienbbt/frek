@@ -30,7 +30,6 @@
 		4805454F27247B990046F225 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925CB2666382400770D22 /* extensions.swift */; };
 		4805455027247BA30046F225 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
 		4805455127247BA40046F225 /* FrekFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C925D72667D04100770D22 /* FrekFormatter.swift */; };
-		4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817E80C2657BA9400128396 /* AppDelegate.swift */; };
 		482A399F2522126900A2028A /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		482E2F31265E526400C60730 /* FrekPlaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */; };
 		482E2F34265E6E9B00C60730 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
@@ -234,7 +233,6 @@
 		480545542725FF220046F225 /* FrekWatch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FrekWatch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		480545552725FF300046F225 /* FrekWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrekWatch.entitlements; sourceTree = "<group>"; };
 		480669FD2673452900B77032 /* Frek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frek.entitlements; sourceTree = "<group>"; };
-		4817E80C2657BA9400128396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		482A399E2522126900A2028A /* FrekThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrekThumbnail.swift; sourceTree = "<group>"; };
 		482E2F30265E526400C60730 /* FrekPlaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrekPlaceAssets.xcassets; sourceTree = "<group>"; };
 		482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrekPlaceList.swift; sourceTree = "<group>"; };
@@ -375,7 +373,6 @@
 			children = (
 				480669FD2673452900B77032 /* Frek.entitlements */,
 				48435FC22516DED500FFED01 /* Info.plist */,
-				4817E80C2657BA9400128396 /* AppDelegate.swift */,
 			);
 			path = Frek;
 			sourceTree = "<group>";
@@ -829,7 +826,6 @@
 				48C6FFE2251A42370051B4B3 /* ValueStore.swift in Sources */,
 				48C925CC2666382400770D22 /* extensions.swift in Sources */,
 				480545302724547B0046F225 /* IntentHandler.swift in Sources */,
-				4817E80D2657BA9400128396 /* AppDelegate.swift in Sources */,
 				A21EE33B28E1044800220E2D /* SmallChart.swift in Sources */,
 				48D1244926226527007E1805 /* FrekPlaceDetail.swift in Sources */,
 				48C925CF266779D700770D22 /* FrekChartRow.swift in Sources */,
