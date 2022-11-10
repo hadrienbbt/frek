@@ -277,7 +277,7 @@
 		A21EE33428E1011900220E2D /* LargeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeChart.swift; sourceTree = "<group>"; };
 		A21EE33A28E1044800220E2D /* SmallChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallChart.swift; sourceTree = "<group>"; };
 		A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FrekWidgetExtension WatchKit.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FrekWidgetExtension copy-Info.plist"; path = "/Users/equilab/Documents/Frek/FrekWidgetExtension copy-Info.plist"; sourceTree = "<absolute>"; };
+		A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FrekWidgetExtension-Info.plist"; path = "/Users/equilab/Documents/Frek/FrekWidgetExtension-Info.plist"; sourceTree = "<absolute>"; };
 		A2CDB2ED2800D9E90036AE8E /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		A2CDB2F92800E1FA0036AE8E /* WebFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
 		A2CDB2FE2800EB6A0036AE8E /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
@@ -391,7 +391,7 @@
 				48054539272459990046F225 /* FrekIntent */,
 				48435FB72516DED200FFED01 /* Products */,
 				48952D3A2724394400A548CD /* Frameworks */,
-				A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension copy-Info.plist */,
+				A2675B2128527E4E00AA1BE0 /* FrekWidgetExtension-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1360,7 +1360,7 @@
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "FrekWidgetExtension copy-Info.plist";
+				INFOPLIST_FILE = "FrekWidgetExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1394,7 +1394,7 @@
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "FrekWidgetExtension copy-Info.plist";
+				INFOPLIST_FILE = "FrekWidgetExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
