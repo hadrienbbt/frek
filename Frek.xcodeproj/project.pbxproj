@@ -89,6 +89,7 @@
 		48E24CEF27239939003CDCB8 /* FrekPlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E2F33265E6E9B00C60730 /* FrekPlaceList.swift */; };
 		48E24CF027239939003CDCB8 /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8A4D7251A5C4800C29AAD /* ToggleFavoriteButton.swift */; };
 		48E24CF327239ACE003CDCB8 /* FrekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485258EB2663E0E600E68193 /* FrekChart.swift */; };
+		A2107043291DAA040055F6AA /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A2107042291DAA040055F6AA /* AlertToast */; };
 		A21E796528527FD1003E28F9 /* FrekWidgetExtension WatchKit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A2675B2028527E4E00AA1BE0 /* FrekWidgetExtension WatchKit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A21E79692852895D003E28F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483055F3272398AF00B9891F /* ComplicationController.swift */; };
 		A21EE33528E1011900220E2D /* LargeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EE33428E1011900220E2D /* LargeChart.swift */; };
@@ -303,6 +304,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2107043291DAA040055F6AA /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +605,7 @@
 			);
 			name = Frek;
 			packageProductDependencies = (
+				A2107042291DAA040055F6AA /* AlertToast */,
 			);
 			productName = Frek;
 			productReference = 48435FB62516DED200FFED01 /* Frek.app */;
@@ -683,6 +686,7 @@
 			);
 			mainGroup = 48435FAD2516DED200FFED01;
 			packageReferences = (
+				A2107041291DAA040055F6AA /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 48435FB72516DED200FFED01 /* Products */;
 			projectDirPath = "";
@@ -1483,6 +1487,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2107041291DAA040055F6AA /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2107042291DAA040055F6AA /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2107041291DAA040055F6AA /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48435FAE2516DED200FFED01 /* Project object */;
 }
