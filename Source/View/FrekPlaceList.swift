@@ -52,12 +52,9 @@ struct FrekPlaceList: View {
             .navigationBarTitle(Text("Salles de gym"))
             .frekListStyle()
             .onOpenURL(perform: onOpenURL)
+            #if os(iOS)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-#if os(watchOS)
-                    Button("Settings") {}
-#else
-                    
                     Menu {
                         Picker("Data Provider", selection: $isLocal) {
                             Label("Server Data", systemImage: "icloud").tag(false)
@@ -72,25 +69,30 @@ struct FrekPlaceList: View {
                     } label: {
                         Label("Options", systemImage: "ellipsis.circle")
                     }.opacity(DeviceMeta().isTest ? 1 : 0)
-#endif
                 }
             }
-#if os(iOS)
             .toast(isPresenting: $showToast) {
                 AlertToast(
                     type: .systemImage("checkmark", .accentColor),
                     title: "Fréquentations téléchargées"
                 )
             }
-#endif
             .onAppear {
                 viewModel.fetchFrekPlaces()
-#if !os(watchOS)
                 if DeviceMeta().idiom != .phone {
                     selectedId = favorites.first?.id ?? other.first?.id
                 }
-#endif
             }
+            #else
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Settings") {}
+                }
+            }
+            .onAppear {
+                viewModel.fetchFrekPlaces()
+            }
+            #endif
         }
     }
 }
