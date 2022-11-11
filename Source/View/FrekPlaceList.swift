@@ -1,11 +1,15 @@
 import SwiftUI
+#if os(iOS)
+import AlertToast
+#endif
 
 struct FrekPlaceList: View {
     
     @ObservedObject var viewModel = FrekPlaceListViewModel()
     @State private var selectedId: String? = nil
     @State private var isLocal: Bool = true
-    
+    @State private var showToast = false
+
     func onOpenURL(_ url: URL) {
         guard let host = url.host,
               let frekPlace = viewModel.frekPlaces.first(where: { host == $0.id || host == "frek://\($0.id)" })
@@ -61,7 +65,9 @@ struct FrekPlaceList: View {
                         }
                         .onChange(of: isLocal) { setLocal in
                             self.viewModel.dataProvider = setLocal ? LocalStore() : WebFetcher()
-                            self.viewModel.fetchFrekPlaces()
+                            self.viewModel.fetchFrekPlaces {
+                                self.showToast = true
+                            }
                         }
                     } label: {
                         Label("Options", systemImage: "ellipsis.circle")
@@ -69,6 +75,14 @@ struct FrekPlaceList: View {
 #endif
                 }
             }
+#if os(iOS)
+            .toast(isPresenting: $showToast) {
+                AlertToast(
+                    type: .systemImage("checkmark", .accentColor),
+                    title: "Fréquentations téléchargées"
+                )
+            }
+#endif
             .onAppear {
                 viewModel.fetchFrekPlaces()
 #if !os(watchOS)
