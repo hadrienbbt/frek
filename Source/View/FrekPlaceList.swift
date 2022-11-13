@@ -11,6 +11,7 @@ struct FrekPlaceList: View {
     @State private var showSuccessToast = false
     @State private var showErrorToast = false
     @State private var lastError: FetchError?
+    @State private var query = ""
 
     func onOpenURL(_ url: URL) {
         guard let host = url.host,
@@ -23,8 +24,13 @@ struct FrekPlaceList: View {
     }
     
     var body: some View {
-        let favorites = viewModel.favorites
-        let other = viewModel.sortedFrekPlaces.filter { !$0.favorite }
+        let favorites = viewModel
+            .favorites
+            .filter { query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) }
+        let other = viewModel
+            .sortedFrekPlaces
+            .filter { !$0.favorite }
+            .filter { query.isEmpty || $0.name.localizedCaseInsensitiveContains(query) }
         
         return NavigationStack {
             List {
@@ -52,6 +58,7 @@ struct FrekPlaceList: View {
                 FrekPlaceDetail(frekPlace: $viewModel.frekPlaces[index])
             }
             .navigationBarTitle(Text("Salles de gym"))
+            .searchable(text: $query, placement: .automatic)
             .frekListStyle()
             .onOpenURL(perform: onOpenURL)
             #if os(iOS)
