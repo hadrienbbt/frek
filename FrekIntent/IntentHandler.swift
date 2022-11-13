@@ -11,12 +11,12 @@ class IntentHandler: INExtension, SelectGymIntentHandling {
         }
     }
         
-    func provideFrekPlaceOptionsCollection(for intent: SelectGymIntent, searchTerm: String?, with completion: @escaping (INObjectCollection<Gym>?, Error?) -> Void) {
+    func provideFrekPlaceOptionsCollection(for intent: SelectGymIntent, searchTerm: String?) async throws -> INObjectCollection<Gym> {
         let viewModel = FrekPlaceListViewModel()
-        viewModel.fetchFrekPlaces {
-            let frekplaces = viewModel.sortedFrekPlaces.map { $0.toGym() }
-            let collection = INObjectCollection(items: frekplaces)
-            completion(collection, nil)
-        }
+        await viewModel.fetchFrekPlaces()
+        let gyms = viewModel.frekPlaces
+            .sorted(by: { $0.name < $1.name })
+            .map { $0.toGym() }
+        return INObjectCollection(items: gyms)
     }
 }

@@ -8,7 +8,9 @@ struct FrekPlaceList: View {
     @ObservedObject var viewModel = FrekPlaceListViewModel()
     @State private var selectedId: String? = nil
     @State private var isLocal: Bool = true
-    @State private var showToast = false
+    @State private var showSuccessToast = false
+    @State private var showErrorToast = false
+    @State private var lastError: FetchError?
 
     func onOpenURL(_ url: URL) {
         guard let host = url.host,
@@ -61,9 +63,15 @@ struct FrekPlaceList: View {
                             Label("Local Data", systemImage: "iphone").tag(true)
                         }
                         .onChange(of: isLocal) { setLocal in
-                            self.viewModel.dataProvider = setLocal ? LocalStore() : WebFetcher()
-                            self.viewModel.fetchFrekPlaces {
-                                self.showToast = true
+                            viewModel.dataProvider = setLocal ? LocalStore() : WebFetcher()
+                            Task {
+                                let result = await viewModel.fetchFrekPlaces()
+                                switch result {
+                                case .success(_): self.showSuccessToast = true
+                                case .failure(let error):
+                                    self.lastError = error
+                                    self.showErrorToast = true
+                                }
                             }
                         }
                     } label: {
@@ -71,14 +79,22 @@ struct FrekPlaceList: View {
                     }.opacity(DeviceMeta().isTest ? 1 : 0)
                 }
             }
-            .toast(isPresenting: $showToast) {
+            .toast(isPresenting: $showSuccessToast) {
                 AlertToast(
                     type: .systemImage("checkmark", .accentColor),
                     title: "Fréquentations téléchargées"
                 )
             }
+            .toast(isPresenting: $showErrorToast) {
+                AlertToast(
+                    type: .systemImage("x.square.fill", .accentColor),
+                    title: lastError?.message ?? "Erreur de téléchargement"
+                )
+            }
+            .task {
+                await viewModel.fetchFrekPlaces()
+            }
             .onAppear {
-                viewModel.fetchFrekPlaces()
                 if DeviceMeta().idiom != .phone {
                     selectedId = favorites.first?.id ?? other.first?.id
                 }
@@ -89,8 +105,8 @@ struct FrekPlaceList: View {
                     Button("Settings") {}
                 }
             }
-            .onAppear {
-                viewModel.fetchFrekPlaces()
+            .task {
+                await viewModel.fetchFrekPlaces()
             }
             #endif
         }

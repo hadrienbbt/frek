@@ -34,7 +34,8 @@ struct FavoriteFrekPlaceProvider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<FavoriteFrekPlaceEntry>) -> ()) {
         let viewModel = FrekPlaceListViewModel()
-        viewModel.fetchFrekPlaces {
+        Task {
+            await viewModel.fetchFrekPlaces()
             let currentDate = Date()
             let refreshDate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)!
             let entry = getEntry()

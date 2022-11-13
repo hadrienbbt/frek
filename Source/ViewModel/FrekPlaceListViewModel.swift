@@ -37,36 +37,41 @@ class FrekPlaceListViewModel: ObservableObject {
             .filter { $0.favorite }
     }
     
-    func fetchFrekPlaces(_ callback: (() -> Void)? = nil) {
-        Task {
-            let result = await dataProvider.getFrekplaces()
-            switch result {
-            case .success(let frakplaces): onFrekplaceFetched(frakplaces, callback)
-            case .failure(let error): onError(error)
-            }
-            
+    @discardableResult
+    func fetchFrekPlaces() async -> Result<[FrekPlace], FetchError> {
+        let result = await dataProvider.getFrekplaces()
+        switch result {
+        case .success(let frakplaces):
+            onFrekplaceFetched(frakplaces)
+            return .success(self.frekPlaces)
+        case .failure(let error):
+            onError(error)
+            return .failure(error)
         }
     }
     
-    func onFrekplaceFetched(_ frekplaces: [FrekPlace], _ callback: (() -> Void)?) {
+    private func onFrekplaceFetched(_ frekplaces: [FrekPlace]) {
         DispatchQueue.main.async {
             self.frekPlaces = frekplaces.filter { $0.crowd < 2000 }
             self.loading = false
-            callback?()
         }
     }
     
     func onError(_ error: FetchError) {
-        self.error = error
-        self.frekPlaces = []
+        DispatchQueue.main.async {
+            self.error = error
+            self.frekPlaces = []
+        }
     }
 }
 
 struct FetchError: Error {
     let message: String
+    let log: String
     
-    init(message: String) {
+    init(message: String, log: String? = nil) {
         self.message = message
+        self.log = log ?? message
         print(message)
     }
 }

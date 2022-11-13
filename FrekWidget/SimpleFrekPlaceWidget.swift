@@ -63,7 +63,8 @@ struct SimpleFrekPlaceProvider: IntentTimelineProvider {
     
     func getTimeline(for configuration: SelectGymIntent, in context: Context, completion: @escaping (Timeline<SimpleFrekPlaceEntry>) -> Void) {
         let viewModel = FrekPlaceListViewModel()
-        viewModel.fetchFrekPlaces {
+        Task {
+            await viewModel.fetchFrekPlaces()
             let currentDate = Date()
             let refreshDate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)!
             let frekPlace = viewModel.frekPlaces.first(where: { $0.id == configuration.frekPlace?.identifier }) ?? viewModel.frekPlaces.randomElement() ?? FrekPlace.sample1
