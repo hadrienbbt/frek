@@ -2,7 +2,7 @@ import Foundation
 
 class ValueStore {
     
-    let suiteName = "group.fr.fedutia.Frek"
+    let suiteName = "group.fr.fedutia.frekapp"
     
     var frekPlaces: [FrekPlace] {
         get {

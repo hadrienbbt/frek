@@ -6,7 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.fr.fedutia.Frek</string>
+		<string>group.fr.fedutia.frekapp</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>
