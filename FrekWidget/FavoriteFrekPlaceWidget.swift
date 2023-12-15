@@ -15,6 +15,7 @@ struct FavoriteFrekPlaceWidget: Widget {
         .description("Affiche la fréquentation des salles de gym favorites")
         .supportedFamilies([])
         .supportedFamilies([.systemLarge])
+        .contentMarginsDisabled()
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }
@@ -78,6 +79,7 @@ struct FavoriteFrekPlaceEntryView: View {
                     FrekPlaceRow(frekPlace: frekPlace)
                 }
             }
+            .containerBackground(.background, for: .widget)
         }
     }
 }

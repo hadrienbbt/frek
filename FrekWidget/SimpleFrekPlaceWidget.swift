@@ -26,6 +26,7 @@ struct SimpleFrekPlaceWidget: Widget {
         .configurationDisplayName("Salle de gym")
         .description("Affiche la fréquentation d'une salle de gym")
         .supportedFamilies(supportedFamilies)
+        .contentMarginsDisabled()
         .onBackgroundURLSessionEvents { (sessionIdentifier, completion) in
             print("Widget sessionIdentifier: \(sessionIdentifier)")
         }
@@ -127,6 +128,7 @@ struct SmallFrekPlaceEntryView: View {
             .foregroundColor(.clear)
             .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
         }
+        .containerBackground(.background, for: .widget)
     }
     
     @State private var current = 67.0
@@ -213,6 +215,7 @@ struct DetailedFrekPlaceEntryView: View {
             LargeChart(viewModel: viewModel)
         }
         .padding()
+        .containerBackground(.background, for: .widget)
     }
 }
 
