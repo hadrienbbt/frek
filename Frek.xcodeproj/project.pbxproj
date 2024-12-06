@@ -939,7 +939,7 @@
 				CODE_SIGN_ENTITLEMENTS = FrekIntent/FrekIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekIntent;
@@ -951,7 +951,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.FrekIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -968,7 +968,7 @@
 				CODE_SIGN_ENTITLEMENTS = FrekIntent/FrekIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekIntent;
@@ -980,7 +980,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.FrekIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -1000,7 +1000,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
@@ -1014,7 +1014,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1036,7 +1036,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"FrekWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWatch WatchKit Extension/Info.plist";
@@ -1050,7 +1050,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1072,14 +1072,14 @@
 				CODE_SIGN_ENTITLEMENTS = FrekWatch/FrekWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = FrekWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.frekapp;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.Frek;
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1100,14 +1100,14 @@
 				CODE_SIGN_ENTITLEMENTS = FrekWatch/FrekWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = FrekWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.frekapp;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = fr.fedutia.Frek;
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1248,7 +1248,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1257,7 +1257,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1278,7 +1278,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Frek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1287,7 +1287,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1308,7 +1308,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
@@ -1320,7 +1320,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.FrekWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -1340,7 +1340,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FrekWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
@@ -1352,7 +1352,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.FrekWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -1372,7 +1372,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWidgetExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
@@ -1384,7 +1384,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp.watchkitextension.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension.FrekWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1406,7 +1406,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = UA664XCLRX;
+				DEVELOPMENT_TEAM = T7562M4U35;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FrekWidgetExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = FrekWidget;
@@ -1418,7 +1418,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.frekapp.watchkitapp.watchkitextension.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek.watchkitapp.watchkitextension.FrekWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
