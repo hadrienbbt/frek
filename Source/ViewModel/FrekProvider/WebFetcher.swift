@@ -1,5 +1,7 @@
 import Foundation
+#if os(watchOS)
 import ClockKit
+#endif
 
 class WebFetcher: FrekplaceProvider {
     private let url: URL! = URL(string: "https://frek.fedutia.fr/gym")

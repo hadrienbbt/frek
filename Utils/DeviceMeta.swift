@@ -1,11 +1,22 @@
 import Foundation
 import SwiftUI
 
+public enum Platform: Int {
+    case unspecified = -1
+    case phone = 0
+    case pad = 1
+    case tv = 2
+    case carPlay = 3
+    case mac = 5
+    case vision = 6
+}
+
 class DeviceMeta {
-    #if os(iOS)
-        var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
-        var isPortrait: Bool { UIDevice.current.orientation.isPortrait }
-    #endif
+#if os(iOS)
+    var idiom: Platform { Platform(rawValue: UIDevice.current.userInterfaceIdiom.rawValue) ?? .unspecified }
+#elseif os(macOS)
+    var idiom: Platform = .mac
+#endif
     
     var isDebug: Bool {
         #if DEBUG

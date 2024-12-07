@@ -1,5 +1,6 @@
 import SwiftUI
-#if os(iOS)
+#if os(watchOS)
+#else
 import AlertToast
 #endif
 
@@ -21,6 +22,20 @@ struct FrekPlaceList: View {
             return
         }
         selectedId = frekPlace.id
+    }
+    
+    func onDataProviderChange(_ newValue: Bool, _ oldValue: Bool) {
+        guard oldValue != newValue else { return }
+        viewModel.dataProvider = newValue ? LocalStore() : WebFetcher()
+        Task {
+            let result = await viewModel.fetchFrekPlaces()
+            switch result {
+            case .success(_): self.showSuccessToast = true
+            case .failure(let error):
+                self.lastError = error
+                self.showErrorToast = true
+            }
+        }
     }
     
     var body: some View {
@@ -57,11 +72,33 @@ struct FrekPlaceList: View {
                 let index = viewModel.frekPlaces.firstIndex { frekplace.id == $0.id }!
                 FrekPlaceDetail(frekPlace: $viewModel.frekPlaces[index])
             }
-            .navigationBarTitle(Text("Salles de gym"))
             .searchable(text: $query, placement: .automatic)
             .frekListStyle()
             .onOpenURL(perform: onOpenURL)
-            #if os(iOS)
+            .task {
+                await viewModel.fetchFrekPlaces()
+            }
+#if os(watchOS)
+            .navigationBarTitle(Text("Salles de gym"))
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Settings") {}
+                }
+            }
+#elseif os(macOS)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Picker("Data Provider", selection: $isLocal) {
+                        Label("Server Data", systemImage: "icloud").tag(false)
+                        Label("Local Data", systemImage: "iphone").tag(true)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: isLocal, initial: false, onDataProviderChange)
+                }
+            }
+            .dataProviderToasts($showSuccessToast, $showErrorToast, isLocal, lastError)
+#else
+            .navigationBarTitle(Text("Salles de gym"))
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
@@ -69,65 +106,52 @@ struct FrekPlaceList: View {
                             Label("Server Data", systemImage: "icloud").tag(false)
                             Label("Local Data", systemImage: "iphone").tag(true)
                         }
-                        .onChange(of: isLocal) { setLocal in
-                            viewModel.dataProvider = setLocal ? LocalStore() : WebFetcher()
-                            Task {
-                                let result = await viewModel.fetchFrekPlaces()
-                                switch result {
-                                case .success(_): self.showSuccessToast = true
-                                case .failure(let error):
-                                    self.lastError = error
-                                    self.showErrorToast = true
-                                }
-                            }
-                        }
+                        .onChange(of: isLocal, initial: false, onDataProviderChange)
                     } label: {
                         Label("Options", systemImage: "ellipsis.circle")
                     }.opacity(DeviceMeta().isTest ? 1 : 0)
                 }
             }
-            .toast(isPresenting: $showSuccessToast) {
-                AlertToast(
-                    type: .systemImage("checkmark", .accentColor),
-                    title: "Fréquentations téléchargées"
-                )
-            }
-            .toast(isPresenting: $showErrorToast) {
-                AlertToast(
-                    type: .systemImage("x.square.fill", .accentColor),
-                    title: lastError?.message ?? "Erreur de téléchargement"
-                )
-            }
-            .task {
-                await viewModel.fetchFrekPlaces()
-            }
+            .dataProviderToasts($showSuccessToast, $showErrorToast, isLocal, lastError)
             .onAppear {
                 if DeviceMeta().idiom != .phone {
                     selectedId = favorites.first?.id ?? other.first?.id
                 }
             }
-            #else
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Settings") {}
-                }
-            }
-            .task {
-                await viewModel.fetchFrekPlaces()
-            }
-            #endif
+#endif
         }
     }
 }
 
 extension View {
     public func frekListStyle() -> some View  {
-        #if os(watchOS)
-            self.listStyle(.carousel)
-        #else
+#if os(watchOS)
+        self.listStyle(.carousel)
+#elseif os(macOS)
+        self.listStyle(.automatic)
+#else
         self.listStyle(.insetGrouped)
-        #endif
+#endif
     }
+    
+#if os(watchOS)
+#else
+    func dataProviderToasts(_ showSuccess: Binding<Bool>, _ showError: Binding<Bool>, _ isLocal: Bool, _ lastError: FetchError?) -> some View {
+        return self
+            .toast(isPresenting: showSuccess) {
+                AlertToast(
+                    type: .systemImage("checkmark", .accentColor),
+                    title: "Fréquentations \(isLocal ? "chargées" : "téléchargées")"
+                )
+            }
+            .toast(isPresenting: showError) {
+                AlertToast(
+                    type: .systemImage("x.square.fill", .accentColor),
+                    title: lastError?.message ?? "Erreur de téléchargement"
+                )
+            }
+    }
+#endif
 }
 
 struct FrekPlaceList_Previews: PreviewProvider {

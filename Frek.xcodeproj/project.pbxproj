@@ -10,12 +10,12 @@
 		480544F12724485B0046F225 /* FrekThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A399E2522126900A2028A /* FrekThumbnail.swift */; };
 		480544F227244A9F0046F225 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6FFE1251A42360051B4B3 /* ValueStore.swift */; };
 		480544F727244D910046F225 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48952D4A2724437600A548CD /* Intents.intentdefinition */; };
-		480544F827244DAC0046F225 /* FrekWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48952D422724437600A548CD /* FrekWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		480544F827244DAC0046F225 /* FrekWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48952D422724437600A548CD /* FrekWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		480545302724547B0046F225 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805452F2724547B0046F225 /* IntentHandler.swift */; };
 		480545312724547B0046F225 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805452F2724547B0046F225 /* IntentHandler.swift */; };
 		480545322724547B0046F225 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805452F2724547B0046F225 /* IntentHandler.swift */; };
 		48054538272459990046F225 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4805450D272453E40046F225 /* Intents.framework */; };
-		4805453F272459990046F225 /* FrekIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48054537272459990046F225 /* FrekIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4805453F272459990046F225 /* FrekIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48054537272459990046F225 /* FrekIntent.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48054544272459B70046F225 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805452F2724547B0046F225 /* IntentHandler.swift */; };
 		48054545272459C00046F225 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48952D4A2724437600A548CD /* Intents.intentdefinition */; };
 		4805454627246D660046F225 /* FrekPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435FEC2516E18F00FFED01 /* FrekPlace.swift */; };
@@ -906,11 +906,13 @@
 /* Begin PBXTargetDependency section */
 		480544FA27244DAC0046F225 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 48952D412724437600A548CD /* FrekWidgetExtension */;
 			targetProxy = 480544F927244DAC0046F225 /* PBXContainerItemProxy */;
 		};
 		4805453E272459990046F225 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 48054536272459990046F225 /* FrekIntent */;
 			targetProxy = 4805453D272459990046F225 /* PBXContainerItemProxy */;
 		};
@@ -921,6 +923,7 @@
 		};
 		48952D3C2724394700A548CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 483055DD272398AB00B9891F /* FrekWatch */;
 			targetProxy = 48952D3B2724394700A548CD /* PBXContainerItemProxy */;
 		};
@@ -1260,7 +1263,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
@@ -1290,7 +1294,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Frek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;

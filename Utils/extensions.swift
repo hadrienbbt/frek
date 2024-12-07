@@ -24,10 +24,6 @@ extension String {
     }
 }
 
-extension UIColor {
-    static var chartGrid = UIColor(red: 150, green: 150, blue: 150, alpha: 0.5)
-}
-
 extension Date {
     var isFullHour: Bool {
         let comps = Calendar.current.dateComponents([.minute, .second], from: self)
